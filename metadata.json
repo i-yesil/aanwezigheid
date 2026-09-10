@@ -1,0 +1,7 @@
+{
+  "name": "Werken aan Aanwezigheidsethos",
+  "description": "Een stapsgewijs interactief kader voor het gesprek over aanwezigheid, zonder het probleem tot 'wel of geen plicht' te reduceren.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
