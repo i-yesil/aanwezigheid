@@ -4,7 +4,7 @@ export const STEPS: StepSummary[] = [
   {
     number: 1,
     name: 'Feitelijke dimensie',
-    shortName: 'Wat is het probleem?',
+    shortName: 'Feitelijke dimensie',
     tag: 'Feitelijk',
     leadQuestion: 'Wat is eigenlijk het probleem?',
     description: 'Voordat we over een maatregel spreken: waar zit het probleem eigenlijk? Aanwezigheid heeft zeven feitelijke domeinen. Vaak wijst het werkelijke probleem naar een ander domein dan we denken.',
@@ -15,7 +15,7 @@ export const STEPS: StepSummary[] = [
   {
     number: 2,
     name: 'Normatieve dimensie',
-    shortName: 'Welke waarden?',
+    shortName: 'Normatieve dimensie',
     tag: 'Normatief',
     leadQuestion: 'Welke waarden spelen hier?',
     description: 'Feiten alleen wijzen geen aanpak aan. Elke feitelijke dimensie rust op waarden die vaak impliciet blijven. De drie perspectieven maken die waarden bespreekbaar vóór je besluit.',
@@ -25,33 +25,22 @@ export const STEPS: StepSummary[] = [
   },
   {
     number: 3,
-    name: 'Handelingsrichtingen',
-    shortName: 'Welke aanpak?',
-    tag: 'Routes',
-    leadQuestion: 'Welke aanpak kiezen we?',
-    description: 'Een aanwezigheidsplicht is zelden de eerste aanpak. Welke route past hier, of welke combinatie van systeem, begeleiding en normering?',
+    name: 'Handelingsperspectieven',
+    shortName: 'Handelingsperspectieven',
+    tag: 'Handelingsperspectieven',
+    leadQuestion: 'Hoe stimuleren we aanwezigheid en wanneer is aanwezigheidsplicht zinvol?',
+    description: 'Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan het systeem en werken aan begeleiding. Pas als dat aantoonbaar niet volstaat, onderzoek je of een formele aanwezigheidsplicht didactisch proportioneel is en juridisch voldoet aan de WHW en OER.',
     color: '#00b0eb',
     activeBorderColor: 'border-[#00b0eb]',
-    dimensions: ['p-routeA', 'p-routeB', 'p-routeC']
+    dimensions: ['p-routeA', 'p-routeB', 'p-routeC', 'p-juridisch']
   },
   {
     number: 4,
-    name: 'Juridische voorwaarden',
-    shortName: 'Wat mag?',
-    tag: 'Voorwaarden',
-    leadQuestion: 'Wat mag juridisch?',
-    description: 'Kies je Route C (normatieve ingreep), dan gelden er strikte juridische randvoorwaarden volgens de WHW en jurisprudentie. Studenten hebben academische vrijheid; een plicht moet expliciet en didactisch onderbouwd zijn.',
-    color: '#b41e4b',
-    activeBorderColor: 'border-[#b41e4b]',
-    dimensions: ['p-juridisch']
-  },
-  {
-    number: 5,
     name: "De vier G's",
-    shortName: 'Staat het stevig?',
-    tag: "4 G's",
-    leadQuestion: 'Staat het beleid stevig?',
-    description: 'Vier evaluatievragen om te toetsen of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat. Alle vier moeten ja zijn, anders weet je waar het werk ligt.',
+    shortName: "De vier G's",
+    tag: "De vier G's",
+    leadQuestion: 'Houdt ons beleid stand?',
+    description: 'Vier evaluatievragen om te toetsen of de voorgenomen aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
     color: '#fcc200',
     activeBorderColor: 'border-[#fcc200]',
     dimensions: ['p-g1', 'p-g2', 'p-g3', 'p-g4']
@@ -68,7 +57,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Wie is onze student eigenlijk? Leefwereld, belasting, behoeften',
     shortDescription: 'Wie is onze student eigenlijk? Leefwereld, belasting en behoeften.',
     leadParagraph: 'Voordat we beleid maken, is de vraag wie onze studenten eigenlijk zijn. Verzuim is vaak een rationele keuze binnen een druk leven, niet onwil. Kwalitatief onderzoek onder eerstejaars schetst een herkenbaar beeld van hun leefwereld.',
-    dialogueQuestion: 'Kennen wij onze studentpopulatie goed genoeg om beleid op af te stemmen, of ontwerpen we voor een student die niet meer bestaat?',
+    dialogueQuestion: 'Waarom blijven studenten weg? Kennen wij onze studentpopulatie goed genoeg om beleid op af te stemmen, of ontwerpen we voor een student die niet meer bestaat?',
     insights: [
       {
         text: 'School is voor veel studenten "één van de ballen die hoog gehouden moeten worden", naast werk, zorgtaken en sociaal leven; zij maken bewuste keuzes op basis van nut en timing.',
@@ -77,12 +66,17 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       },
       {
         text: 'Een ruime meerderheid van de hbo-studenten ervaart vaak stress door studie- en prestatiedruk, en meer dan de helft kampt met emotionele of psychische klachten.',
-        citation: 'Dopmeijer et al., 2022 / RIVM',
+        citation: 'Dopmeijer et al., 2022',
         citationUrl: 'https://doi.org/10.21945/RIVM-2022-0100'
       },
       {
-        text: 'De voltijdstudent van vandaag is in de praktijk vaak een "voltijds ingeschreven, deeltijds beschikbare" student: waar hbo-bachelors in 2016 nog 39 uur/week aan studie besteedden, is dat gedaald naar 29 uur; circa 60% heeft een bijbaan en 1 op 8 werkt zelfs voltijds naast de studie.',
-        citation: 'Themahogeronderwijs, 2026; Studentenmonitor 2024, ResearchNed/OCW',
+        text: 'De voltijdstudent van vandaag is in de praktijk vaak "voltijds ingeschreven, maar deeltijds beschikbaar": waar hbo-bachelors in 2016 nog 39 uur per week aan studie besteedden, is dat gedaald naar 29 uur.',
+        citation: 'Dekker et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Door de deeltijdse beschikbaarheid maken studenten pragmatische afwegingen rondom contacttijd: zij plannen aanwezigheid strategisch rondom deadlines en werkschema’s; als een lesbijeenkomst passief is of geen directe toets- en leermeerwaarde heeft, verliest fysieke aanwezigheid het stelselmatig van betaald werk of zelfstudie.',
+        citation: 'Dekker et al., 2026',
         citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
@@ -98,12 +92,12 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Studenten passen "cherry-picking" toe: ze wonen niet alle lessen bij maar maken een bewuste selectie van bijeenkomsten die zij als essentieel beschouwen.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       },
       {
         text: 'Post-COVID wegen studenten actiever af tussen fysieke aanwezigheid en digitale alternatieven; aanwezigheid is minder vanzelfsprekend geworden en onderwijs moet zichtbaar toegevoegde waarde bieden.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ],
     practicalMaterials: [
@@ -137,11 +131,11 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Onderwijskundig',
-    name: 'Activerende didactiek en aanwezigheid',
+    name: 'Onderwijskundig',
     subtitle: 'Activerende didactiek, constructive alignment, docentkwaliteit',
     shortDescription: 'Activerende didactiek, constructive alignment en docentkwaliteit.',
-    leadParagraph: 'Wat studenten in de les ervaren, bepaalt sterker dan beleid of de keuze om te komen. Aanwezigheid stijgt significant wanneer lessen interactief zijn en een duidelijke leerwaarde bieden.',
-    dialogueQuestion: 'Als een aanwezigheidsplicht wordt overwogen om "kwalitatief onder de maat" college af te dwingen, is didactiek dan niet het eigenlijke probleem?',
+    leadParagraph: 'Wat studenten in de les ervaren, bepaalt sterker dan beleid de keuze om te komen. Aanwezigheid stijgt significant wanneer lessen interactief zijn en een duidelijke leerwaarde bieden.',
+    dialogueQuestion: 'Wat ervaren studenten tijdens onze bijeenkomsten, en hoe zorgen we dat fysieke aanwezigheid voor hen een merkbare en onmisbare meerwaarde heeft die zelfstudie niet kan bieden?',
     insights: [
       {
         text: 'Aanwezigheid stijgt significant bij activerende didactiek en constructive alignment.',
@@ -176,7 +170,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'De ervaren meerwaarde van onderwijs is de belangrijkste voorspeller van aanwezigheid: relevantie voor toetsing, samenwerkingskansen en interactiviteit wegen zwaarder dan plichten.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ],
     practicalMaterials: [
@@ -208,8 +202,8 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     id: 'p-ontwerp',
     step: 1,
     stepName: 'Feitelijke dimensie',
-    stepTag: 'Ontwerp',
-    name: 'Curriculair ontwerp',
+    stepTag: 'Curriculair Ontwerp',
+    name: 'Curriculair Ontwerp',
     subtitle: 'Rooster-/deadlineconflicten, online alternatieven, interdependentie',
     shortDescription: 'Rooster-/deadlineconflicten, online alternatieven en interdependentie.',
     leadParagraph: 'Studenten blijven zelden zomaar weg. Als het ontwerp een gemakkelijk alternatief biedt (opnames, samenvattingen, losse deadlines), wordt wegblijven al gauw een logische en tijdsefficiënte keuze.',
@@ -265,9 +259,9 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Pedagogiek',
-    name: 'Gedragsregulatie en pedagogiek',
-    subtitle: 'Gedragsregulatie passend bij de doelgroep: straffen, belonen, kiezen',
-    shortDescription: 'Gedragsregulatie passend bij de doelgroep: straffen, belonen, kiezen.',
+    name: 'Pedagogiek',
+    subtitle: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren',
+    shortDescription: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren.',
     leadParagraph: 'Sancties en beloningen werken, maar niet voor iedereen even sterk en zonder risico\'s. Te veel dwang kan averechts werken op de motivatie- en autonomie-ontwikkeling van hbo-studenten.',
     dialogueQuestion: 'Welke mix van sturen, belonen en kiezen past bij onze doelgroep, en hoe voorkomen we dat dwang de intrinsieke motivatie wegneemt?',
     insights: [
@@ -312,7 +306,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Beleid',
-    name: 'Beleidskwaliteit',
+    name: 'Beleid',
     subtitle: 'Eenduidige definitie, zwaarwegend beleid, coulance',
     shortDescription: 'Eenduidige definitie, zwaarwegend beleid en coulance.',
     leadParagraph: 'Een helder geformuleerd beleid is een randvoorwaarde, maar "one size fits all" werkt niet. Heldere regels over consequenties verkleinen de kans op verzuim, mits afgestemd op de studiefase.',
@@ -341,7 +335,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Praktijkgerichte onderwijsvormen (practica, workshops) hebben hogere opkomst dan traditionele colleges; beleid moet contextafhankelijk zijn.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ],
     practicalMaterials: [
@@ -359,7 +353,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Technisch',
-    name: 'Effectieve registratie',
+    name: 'Registratie',
     subtitle: 'Registratiesysteem, betrouwbare data, beperkte administratielast',
     shortDescription: 'Registratiesysteem, betrouwbare data en beperkte administratielast.',
     leadParagraph: 'Registratie lijkt een technisch detail, maar heeft zelfstandig effect: het enkel registreren van aanwezigheid stimuleert al de opkomst en levert data voor vroegsignalering.',
@@ -435,7 +429,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Eenduidige, hoge verwachtingen; geen dubbele boodschappen',
     shortDescription: 'Eenduidige, hoge verwachtingen; geen dubbele boodschappen.',
     leadParagraph: 'Eén docent die wel handhaaft en een ander die dat laat lopen, ondermijnt elk beleid. Een sterk teamethos zorgt dat verwachtingen consistent en collegiaal worden uitgedragen.',
-    dialogueQuestion: 'Dragen we aanwezigheid als team eenduidig uit, of krijgen studenten verschillende signalen? Zonder eenduidige effectuering verliest het beleid geloofwaardigheid.',
+    dialogueQuestion: 'Hoe dragen we als team aanwezigheid en onze verwachtingen eenduidig uit, en wat spreken we met elkaar af om tegenstrijdige signalen naar studenten te voorkomen?',
     insights: [
       {
         text: 'Opleidingen met positief effect op retentie kenmerken zich door een sterk teamethos waarin aanwezigheid als absolute vereiste wordt uitgedragen, niet als vrijblijvende verwachting.',
@@ -495,9 +489,9 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Logistiek',
-    name: 'Rooster en organisatiekwaliteit',
-    subtitle: 'Rooster- en organisatiekwaliteit',
-    shortDescription: 'Rooster- en organisatiekwaliteit: tussenuren en vroege uren.',
+    name: 'Onderwijslogistiek & Rooster',
+    subtitle: 'Rooster- en organisatiekwaliteit: tussenuren en bloktijden',
+    shortDescription: 'Rooster- en organisatiekwaliteit: tussenuren en bloktijden.',
     leadParagraph: 'Vaak wordt hier niet over gesproken in het aanwezigheidsdebat, ten onrechte. Het rooster is een van de grootste structurele oorzaken van verzuim.',
     dialogueQuestion: 'Welke roosterkeuzes maken bij ons aanwezigheid onnodig moeilijk, en wie kan daar iets aan veranderen?',
     insights: [
@@ -514,7 +508,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Wanneer reistijd langer is dan de duur van een enkele losse les, kiezen studenten vrijwel altijd voor zelfstudie.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ],
     practicalMaterials: [
@@ -552,7 +546,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Het rimpeleffect van afwezigheid: bij een kantelpunt gaan aanwezige studenten zich de uitzondering voelen in plaats van de norm, wat een neerwaartse spiraal veroorzaakt.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ]
   },
@@ -586,7 +580,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Studenten met lage academische zelfeffectiviteit vermijden soms lessen uit angst voor mislukking of gebrek aan voorbereiding; eerstejaars trekken zich eerder terug.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/'
+        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
       }
     ]
   },
@@ -615,16 +609,16 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ]
   },
 
-  // STAP 3: ROUTES
+  // STAP 3: HANDELINGSPERSPECTIEVEN (STIMULEREN & NORMEREN)
   'p-routeA': {
     id: 'p-routeA',
     step: 3,
-    stepName: 'Handelingsrichtingen',
-    stepTag: 'Route A',
-    name: 'Route A · Structurele herkadering (Systeem)',
-    subtitle: 'Herontwerp van rooster, didactiek of betekenis van bijeenkomsten',
-    shortDescription: 'Herontwerp van rooster, didactiek of betekenis van bijeenkomsten.',
-    leadParagraph: 'De eerste route: verander niet primair het gedrag van studenten, maar verander het systeem en de context die verzuim nu rationeel maken.',
+    stepName: 'Handelingsperspectieven',
+    stepTag: 'Handelingsperspectieven',
+    name: 'Werken aan het systeem',
+    subtitle: 'Rooster, studeerbaarheid & didactische meerwaarde',
+    shortDescription: 'Herontwerp van rooster, activerende didactiek en studeerbaarheid.',
+    leadParagraph: 'Verander niet primair het gedrag van studenten, maar verander de context en randvoorwaarden die verzuim nu de makkelijkste keuze maken. Zorg voor merkbare meerwaarde in de les en een studeerbaar rooster.',
     dialogueQuestion: 'Welk deel van het verzuim in onze opleiding is het gevolg van rooster, didactiek of ontwerp — en wat kunnen wij daar zelf aan doen zonder studenten aan te spreken op gedrag?',
     insights: [
       {
@@ -656,12 +650,12 @@ export const DIMENSIONS: Record<string, DimensionData> = {
   'p-routeB': {
     id: 'p-routeB',
     step: 3,
-    stepName: 'Handelingsrichtingen',
-    stepTag: 'Route B',
-    name: 'Route B · Relationele interventie (Begeleiding)',
-    subtitle: 'Vroegtijdige signalering, data-gedreven nudges, directe follow-up',
-    shortDescription: 'Vroegtijdige signalering, data-gedreven nudges, directe follow-up.',
-    leadParagraph: 'Werk niet met de starre regel, maar met de relatie en preventieve opvolging.',
+    stepName: 'Handelingsperspectieven',
+    stepTag: 'Handelingsperspectieven',
+    name: 'Werken aan begeleiding',
+    subtitle: 'Binding, vroegsignalering & persoonlijke follow-up',
+    shortDescription: 'Vroegtijdige signalering, warme follow-up en preventieve begeleiding.',
+    leadParagraph: 'Werk niet met een starre regel, maar met de relatie en preventieve opvolging. Versterk binding en docentnabijheid, en spreek studenten tijdig persoonlijk aan bij verzuim.',
     dialogueQuestion: 'Welke rol nemen wij als docenten en SLC in het opbouwen van de relatie en het opvangen van beginnend verzuim — en waar staan we nu?',
     insights: [
       {
@@ -689,24 +683,30 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ]
   },
 
+  // STAP 3 (VERVOLG): NORMEREN (WANNEER IS PLICHT ZINVOL?)
   'p-routeC': {
     id: 'p-routeC',
     step: 3,
-    stepName: 'Handelingsrichtingen',
-    stepTag: 'Route C',
-    name: 'Route C · Normatieve ingreep (Beleid & Plicht)',
-    subtitle: 'Aanwezigheidseis of keuzearchitectuur ("optioneel-verplicht")',
-    shortDescription: 'Aanwezigheidseis of keuzearchitectuur ("optioneel-verplicht").',
-    leadParagraph: 'Een expliciete aanwezigheidseis of keuzearchitectuur, maar alleen onder strikte juridische en didactische randvoorwaarden.',
-    dialogueQuestion: 'Voor welke groep studenten en welke soort onderwijs is een normatieve ingreep proportioneel — en wat is de didactische onderbouwing?',
+    stepName: 'Handelingsperspectieven',
+    stepTag: 'Handelingsperspectieven',
+    name: 'Werken aan aanwezigheids- en of participatieplicht',
+    subtitle: 'Spoor 3 · Wanneer is een formele norm didactisch proportioneel en verdedigbaar?',
+    shortDescription: 'Spoor 3: Werken aan aanwezigheids- en of participatieplicht. Didactische afweging en proportionaliteit.',
+    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel (drempelcheck). Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de didactische modellen en wettelijke randvoorwaarden onverkort.',
+    dialogueQuestion: 'Hebben we als opleidingsteam eerst alle mogelijkheden binnen het systeem (activerende didactiek, rooster) en begeleiding ten volle benut, en waarom is een formele norm of verplichting in dít specifieke vak didactisch noodzakelijk en proportioneel?',
     insights: [
+      {
+        text: 'Drempelcheck: Een aanwezigheidseis is een ultimum remedium. Als stimuleren via didactiek en relatie volstaat, blijft de academische studievrijheid (art. 1.6 WHW) intact en is geen OER-wijziging vereist.',
+        citation: 'Art. 1.6 & 7.13 WHW; Kappe, 2026',
+        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+      },
       {
         text: 'Een aanwezigheidsplicht vereist formele borging in de OER (art. 7.13 WHW) en een aantoonbare didactische koppeling aan een praktische oefening.',
         citation: 'Biggs, 1996; Artikel 7.13 WHW',
         citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
       {
-        text: 'Optioneel-verplicht (keuzearchitectuur): de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel.',
+        text: '"Optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel.',
         citation: 'Cullen & Oppenheimer, 2024',
         citationUrl: 'https://doi.org/10.1126/sciadv.ado6759'
       },
@@ -715,20 +715,31 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citation: 'Bijsmans & Schakel, 2018; Dobkin et al., 2010; Klatter & Smeets, 2023',
         citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/'
       }
+    ],
+    practicalMaterials: [
+      {
+        title: 'Model: Optioneel-verplicht (Cullen & Oppenheimer, 2024)',
+        description: 'Studenten kiezen aan de start van de cursus of aanwezigheid meetelt voor de beoordeling of dat zij een alternatieve opdracht maken. Behoudt academische autonomie en verhoogt opkomst met 14-22%.',
+        type: 'framework'
+      },
+      {
+        title: 'Doelgroep- & Werkvormmatrix',
+        description: 'Overzicht van onderwijsvormen waar een formele eis didactisch en juridisch verdedigbaar is (practica, patiëntencontact, vaardigheidstrainingen) versus waar studievrijheid prevaleert.',
+        type: 'guide'
+      }
     ]
   },
 
-  // STAP 4: JURIDISCH
   'p-juridisch': {
     id: 'p-juridisch',
-    step: 4,
-    stepName: 'Juridische voorwaarden',
-    stepTag: 'Juridisch',
-    name: 'Juridische randvoorwaarden aanwezigheidsplicht',
-    subtitle: 'WHW artikelen 1.6, 7.10, 7.13, 7.34 en jurisprudentie',
-    shortDescription: 'Juridische randvoorwaarden: WHW-basis, praktische oefening en jurisprudentie.',
-    leadParagraph: 'Studenten zijn in beginsel vrij om al dan niet aanwezig te zijn. Een plicht beperkt die vrijheid en moet daarom aan specifieke eisen voldoen. De wettelijke basis ligt in de WHW; op instellingsniveau is de OER het enige juridisch bindende document.',
-    dialogueQuestion: 'Voldoen we aan de wettelijke voorwaarden voor een aanwezigheidsverplichting, of doen we een claim die juridisch bij het CBE of de rechter niet standhoudt?',
+    step: 3,
+    stepName: 'Handelingsperspectieven',
+    stepTag: 'Handelingsperspectieven',
+    name: 'Juridische kaders, OER & Medezeggenschap',
+    subtitle: 'WHW artikelen 1.6, 7.10, 7.13, 9.18, 10.3c en jurisprudentie',
+    shortDescription: 'Juridische randvoorwaarden: WHW-basis, OER, medezeggenschap en jurisprudentie.',
+    leadParagraph: 'Studenten zijn in beginsel vrij om al dan niet aanwezig te zijn (art. 1.6 WHW). Een aanwezigheidsplicht beperkt die vrijheid en moet daarom aan strikte wettelijke eisen voldoen. De OER is het enige juridisch bindende document, met instemmingsrecht voor de IMR en advies-/instemmingsrecht voor de opleidingscommissie (OC).',
+    dialogueQuestion: 'Voldoen we aan de wettelijke voorwaarden voor een aanwezigheidsverplichting (OER, medezeggenschap, praktische oefening, constructive alignment), of doen we een claim die bij het CBE of de rechter sneuvelt?',
     insights: [
       {
         text: 'Aanwezigheidsplicht als losstaande maatregel heeft beperkt effect op leerprestaties; effectief is een gecombineerde aanpak waarin didactiek, teamethos en organisatie op orde zijn.',
@@ -736,9 +747,14 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citationUrl: 'https://www.researchgate.net/publication/359802934'
       },
       {
-        text: 'Een aanwezigheidsplicht zonder didactische onderbouwing (constructive alignment, actieve werkvormen) is juridisch kwetsbaar én werkt averechts op intrinsieke motivatie.',
+        text: 'Een aanwezigheidsplicht zonder didactische onderbouwing (constructive alignment, actieve werkvormen) is juridisch kwetsbaar én werkt averechts op intrinsieke motivatie. Ook een vervangende opdracht moet constructive aligned zijn.',
         citation: 'Biggs, 1996; Cullen & Oppenheimer, 2024',
         citationUrl: 'https://doi.org/10.1126/sciadv.ado6759'
+      },
+      {
+        text: 'Een aanwezigheidsplicht hoort thuis in de OER (art. 7.13 WHW) en is daarmee geen papieren formaliteit. De medezeggenschap heeft er wettelijk positie in: de centrale of instituutsmedezeggenschapsraad heeft instemmingsrecht op de OER, en de opleidingscommissie heeft instemmings- of adviesrecht afhankelijk van het onderdeel (art. 9.18 en 10.3c WHW). Betrek beide dus tijdig, niet pas bij vaststelling.',
+        citation: 'Artikel 9.18 en 10.3c WHW',
+        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
       {
         text: 'Behavioristische maatregelen (zoals toetskansreductie of bonuspunten) zijn juridisch alleen toegestaan als de OER daar expliciet grondslag voor biedt.',
@@ -769,6 +785,12 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         lawRef: 'Artikel 7.13 lid 2 sub d en t',
         title: 'Praktische oefeningen & Toelatingseis',
         description: 'Sub d regelt de inrichting van praktische oefeningen. Sub t bepaalt dat verplichte deelname aan praktische oefeningen als toelatingsvoorwaarde voor een tentamen mag worden gesteld, mits met vervangende eisen bij overmacht.',
+        link: 'https://wetten.overheid.nl/BWBR0005682'
+      },
+      {
+        lawRef: 'Artikelen 9.18 & 10.3c WHW',
+        title: 'Positie Medezeggenschap (IMR & OC)',
+        description: 'De centrale of instituutsmedezeggenschapsraad heeft instemmingsrecht op de OER. De opleidingscommissie heeft instemmings- of adviesrecht afhankelijk van het onderdeel. Betrek beide tijdig bij het opstellen van aanwezigheidskaders.',
         link: 'https://wetten.overheid.nl/BWBR0005682'
       }
     ],
@@ -867,15 +889,15 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ]
   },
 
-  // STAP 5: 4 G's
+  // STAP 4: 4 G's
   'p-g1': {
     id: 'p-g1',
-    step: 5,
+    step: 4,
     stepName: "De vier G's",
     stepTag: 'G1',
     name: 'G1 · Gedragen',
-    subtitle: 'Worden verwachtingen institutioneel consistent ondersteund?',
-    shortDescription: 'Worden verwachtingen institutioneel consistent ondersteund?',
+    subtitle: 'Worden verwachtingen consistent ondersteund?',
+    shortDescription: 'Worden verwachtingen consistent ondersteund?',
     leadParagraph: '"Gedragen" gaat over de mate waarin de organisatie als geheel achter de afspraak staat. Heldere beleidskaders, een coherente toepassing in het team, en organisatorische randvoorwaarden op orde (rooster, registratie, ondersteuning). Zonder dit blijven verwachtingen losse initiatieven van individuele docenten.',
     dialogueQuestion: 'Staat aanwezigheid consequent in OER, studiehandleiding en Brightspace? Krijgt de student dezelfde reactie van docenten en SLC? Is aanwezig zijn praktisch haalbaar (rooster, lokaal)?',
     insights: [
@@ -899,7 +921,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
 
   'p-g2': {
     id: 'p-g2',
-    step: 5,
+    step: 4,
     stepName: "De vier G's",
     stepTag: 'G2',
     name: 'G2 · Geloofwaardig',
@@ -928,7 +950,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
 
   'p-g3': {
     id: 'p-g3',
-    step: 5,
+    step: 4,
     stepName: "De vier G's",
     stepTag: 'G3',
     name: 'G3 · Gerechtvaardigd',
@@ -962,7 +984,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
 
   'p-g4': {
     id: 'p-g4',
-    step: 5,
+    step: 4,
     stepName: "De vier G's",
     stepTag: 'G4',
     name: 'G4 · Gedeeld',
@@ -1008,13 +1030,14 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       { text: 'Cullen, S., & Oppenheimer, D. (2024). Choosing to learn: The importance of student autonomy in higher education. Science Advances, 10(29), eado6759.', citation: 'doi.org/10.1126/sciadv.ado6759', citationUrl: 'https://doi.org/10.1126/sciadv.ado6759' },
       { text: 'Cutler, C. W., et al. (2016). Should attendance be required in lecture classrooms in dental education? Two viewpoints. Journal of Dental Education, 80(12), 1474–1478.', citation: 'doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x', citationUrl: 'https://doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x' },
       { text: 'Dekker, I. (2026). Terug naar de klas: hoe we de studeercrisis tegengaan [Essay]. Hogeschool van Amsterdam, Lectoraat Kansrijke Schoolloopbanen.', citation: 'hva.nl', citationUrl: 'https://cms.web.hva.nl/sites/default/files/lectoraten/foo/kansrijke-schoolloopbanen-een-diverse-stad/260527-essay-lks-izaak-dekker.pdf' },
+      { text: 'Dekker, I., Theelen, H., & Debats, P. (2026). Voltijds ingeschreven, deeltijds beschikbaar. Thema Hoger Onderwijs.', citation: 'themahogeronderwijs.org', citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar' },
       { text: 'De Bruyckere, P. (2022). Het collectieve (leraar)vertrouwen samen creëren [VO-praat]. VO-academie / VO-raad.', citation: 'vo-raad.nl', citationUrl: 'https://www.vo-raad.nl/artikelen/het-collectieve-leraar-vertrouwen-samen-creeren-vo-praat-met-pedro-de-bruyckere' },
       { text: 'Dobkin, C., Gil, R., & Marion, J. (2010). Skipping class in college and exam performance. Economics of Education Review, 29(4), 566–575.', citation: 'doi.org/10.1016/j.econedurev.2009.09.004', citationUrl: 'https://doi.org/10.1016/j.econedurev.2009.09.004' },
       { text: 'Dopmeijer, J., Nuijen, J., Busch, M., Tak, N., & Verweij, A. (2022). Monitor Mentale gezondheid en Middelengebruik Studenten hoger onderwijs. RIVM, Trimbos-instituut en GGD GHOR Nederland.', citation: 'doi.org/10.21945/RIVM-2022-0100', citationUrl: 'https://doi.org/10.21945/RIVM-2022-0100' },
       { text: 'Fitzpatrick, J., Cronin, K., & Byrne, E. (2011). Is attending lectures still relevant in engineering education? European Journal of Engineering Education, 36(3), 301–312.', citation: 'doi.org/10.1080/03043797.2011.585226', citationUrl: 'https://doi.org/10.1080/03043797.2011.585226' },
       { text: 'Hattie, J. (2016). Collective Teacher Efficacy [Visible Learning].', citation: 'visible-learning.org', citationUrl: 'https://visible-learning.org/2018/03/collective-teacher-efficacy-hattie/' },
       { text: 'Jaftha, N., Micallef, M., & Chircop, T. (2022). Absenteeism in post-secondary education [Research report]. ResearchGate.', citation: 'researchgate.net', citationUrl: 'https://www.researchgate.net/publication/359802934' },
-      { text: 'Kappe, F. R. (2026). Afwezig maar aanwezig: Het rimpeleffect van afwezigheid van studenten (Lectoraatsuitgave Studiesucces 2026-01). Hogeschool Inholland.', citation: 'inholland.nl', citationUrl: 'https://www.inholland.nl/onderzoek/lectoraten/studiesucces/' },
+      { text: 'Kappe, F. R. (2026). Afwezig maar aanwezig: Het rimpeleffect van afwezigheid van studenten (Lectoraatsuitgave Studiesucces 2026-01). Hogeschool Inholland.', citation: 'surf.nl', citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8' },
       { text: 'Klatter, E., & Smeets, E. (2023). Studentsucces verbeteren: focus op oorzaken, niet op symptomen. ScienceGuide.', citation: 'scienceguide.nl', citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/' },
       { text: 'Ralph, V. R., Dube, T., & Ainsworth, M. C. (2025). Attendance, belonging, and engagement in higher education.', citation: 'doi.org/10.71634/er166487', citationUrl: 'https://doi.org/10.71634/er166487' },
       { text: 'Tahir, L., Josso Loureiro, P., & Vissenberg, C. (2024). Sense of belonging: een kwalitatief participatief onderzoek naar de sense of belonging van studenten bij Windesheim in Almere.', citation: 'fleviskenniswerkplaatsjeugd.nl', citationUrl: 'https://www.fleviskenniswerkplaatsjeugd.nl/wp-content/uploads/2024/01/Rapport-Sense-of-Belonging-nov2023-kleiner.pdf' },

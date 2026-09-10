@@ -1,4 +1,4 @@
-export type StepNumber = 1 | 2 | 3 | 4 | 5 | 'bronnen';
+export type StepNumber = 1 | 2 | 3 | 4 | 'bronnen';
 
 export interface ScientificInsight {
   text: string;
@@ -85,7 +85,8 @@ export interface AssessmentState {
   courseName: string;
   targetYear: string;
   selectedIssues: string[]; // e.g. 'didactics', 'scheduling', 'belonging'
-  chosenRoute: 'A' | 'B' | 'C' | null;
+  chosenRoute: 'A' | 'B' | 'AB' | 'C' | null;
+  isObligationPlanned?: boolean;
   legalChecked: {
     inOER: boolean;
     practicalExercise: boolean;

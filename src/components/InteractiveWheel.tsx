@@ -83,7 +83,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         >
           <path
             d="M 169.54,554.61 A 290,290 0 0 1 64.19,230.39 L 235.38,286.01 A 110,110 0 0 0 275.34,408.99 Z"
-            fill="#b41e4b"
+            fill="#3ab7b0"
             stroke="#ffffff"
             strokeWidth={activeStep === 4 || hoveredStep === 4 ? '4' : '2.5'}
             className="transition-all duration-200"
@@ -138,39 +138,39 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         {/* Segment 3 Text */}
         <g pointerEvents="none" className="font-['Poppins',sans-serif]">
           <text x="340" y="540" textAnchor="middle" fill="#ffffff" className="text-[13px] font-semibold">
-            Welke aanpak
+            Hoe stimuleren
           </text>
           <text x="340" y="558" textAnchor="middle" fill="#ffffff" className="text-[13px] font-semibold">
-            kiezen we?
+            we aanwezigheid?
           </text>
           <text x="340" y="576" textAnchor="middle" fill="#ffffff" opacity="0.95" className="text-[10px] uppercase tracking-wider font-semibold">
-            Routes
+            Fase 1
           </text>
         </g>
 
         {/* Segment 4 Text */}
         <g pointerEvents="none" className="font-['Poppins',sans-serif]">
-          <text x="121" y="381" textAnchor="middle" fill="#ffffff" className="text-[13px] font-semibold">
-            Wat mag
+          <text x="121" y="381" textAnchor="middle" fill="#ffffff" className="text-[12px] font-semibold">
+            Wanneer is plicht
           </text>
-          <text x="121" y="399" textAnchor="middle" fill="#ffffff" className="text-[13px] font-semibold">
-            juridisch?
+          <text x="121" y="399" textAnchor="middle" fill="#ffffff" className="text-[12px] font-semibold">
+            zinvol?
           </text>
           <text x="121" y="417" textAnchor="middle" fill="#ffffff" opacity="0.85" className="text-[10px] uppercase tracking-wider">
-            Voorwaarden
+            Fase 2
           </text>
         </g>
 
         {/* Segment 5 Text */}
         <g pointerEvents="none" className="font-['Poppins',sans-serif]">
           <text x="205" y="124" textAnchor="middle" fill="#003340" className="text-[13px] font-semibold">
-            Staat het
+            Houdt ons
           </text>
           <text x="205" y="142" textAnchor="middle" fill="#003340" className="text-[13px] font-semibold">
-            beleid stevig?
+            beleid stand?
           </text>
           <text x="205" y="160" textAnchor="middle" fill="#003340" opacity="0.8" className="text-[10px] uppercase tracking-wider font-semibold">
-            4 G's
+            De vier G's
           </text>
         </g>
 
@@ -271,7 +271,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             cy="365"
             r="28"
             fill="#ffffff"
-            stroke="#b41e4b"
+            stroke="#3ab7b0"
             strokeWidth={activeStep === 4 || hoveredStep === 4 ? '3' : '1.5'}
             className="transition-transform duration-150 group-hover:scale-105"
           />
@@ -280,7 +280,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             y="365"
             textAnchor="middle"
             dy="0.35em"
-            fill="#b41e4b"
+            fill="#3ab7b0"
             className="font-['Poppins',sans-serif] text-[18px] font-semibold pointer-events-none"
           >
             4

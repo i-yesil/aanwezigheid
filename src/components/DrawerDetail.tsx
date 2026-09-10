@@ -25,7 +25,7 @@ interface DrawerDetailProps {
   onNavigate: (dimensionId: string) => void;
 }
 
-type TabType = 'inzichten' | 'praktijk' | 'media' | 'whw' | 'zaken';
+type TabType = 'inzichten' | 'tools' | 'media' | 'whw' | 'zaken';
 
 export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   dimensionId,
@@ -40,7 +40,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   // Reset tab and expanded cases on dimension change
   useEffect(() => {
     if (dimension) {
-      if (dimension.step === 4) {
+      if (dimension.id === 'p-juridisch') {
         setActiveTab('whw');
       } else {
         setActiveTab('inzichten');
@@ -69,9 +69,11 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   const nextDimensionId = currentIndex < stepDimensions.length - 1 ? stepDimensions[currentIndex + 1] : null;
 
   const hasPractical = (dimension.practicalMaterials && dimension.practicalMaterials.length > 0) || (dimension.pilots && dimension.pilots.length > 0);
-  const hasMedia = dimension.media && dimension.media.length > 0;
-  const hasWHW = dimension.lawArticles && dimension.lawArticles.length > 0;
-  const hasCases = dimension.courtCases && dimension.courtCases.length > 0;
+  const hasMedia = Boolean(dimension.media && dimension.media.length > 0);
+  const hasWHW = Boolean(dimension.lawArticles && dimension.lawArticles.length > 0);
+  const hasCases = Boolean(dimension.courtCases && dimension.courtCases.length > 0);
+  const hasTools = hasPractical || Boolean(dimension.policyRecommendations && dimension.policyRecommendations.length > 0) || Boolean(dimension.proportionalityQuestions && dimension.proportionalityQuestions.length > 0);
+  const hasInsights = Boolean(dimension.insights && dimension.insights.length > 0);
 
   const toggleCase = (id: string) => {
     setOpenCases((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -82,7 +84,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
       case 1: return 'bg-[#d3104c] text-white';
       case 2: return 'bg-[#003340] text-white';
       case 3: return 'bg-[#00b0eb] text-[#003340]';
-      case 4: return 'bg-[#b41e4b] text-white';
+      case 4: return 'bg-[#3ab7b0] text-white';
       case 5: return 'bg-[#fcc200] text-[#003340]';
       default: return 'bg-[#003340] text-white';
     }
@@ -105,39 +107,38 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
           aria-modal="true"
           aria-labelledby="drawer-title"
         >
-          {/* Header */}
-          <div className="p-6 pb-4 bg-[#f7efe3] border-b border-[#003340]/15 flex items-start justify-between gap-4 sticky top-0 z-20 shadow-2xs">
-            <div className="flex-1 pr-6">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#d3104c] block mb-1">
-                {dimension.step === 'bronnen' ? 'Bronnen' : `Stap ${dimension.step} · ${dimension.stepTag}`}
-              </span>
-              <h2 id="drawer-title" className="text-xl sm:text-2xl font-bold text-[#003340] leading-snug">
-                {dimension.name}
-              </h2>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className={`px-3 py-2 rounded-lg text-center shrink-0 shadow-2xs ${getStepBgColor()}`}>
-                <span className="block text-lg font-bold leading-none mb-0.5">
-                  {dimension.step === 'bronnen' ? 'Ref' : dimension.step}
+          {/* Header - Consistent with hoofdpagina */}
+          <div className="p-5 sm:p-6 pb-4 bg-[#f7efe3] border-b border-[#003340]/15 flex items-start justify-between gap-4 sticky top-0 z-20 shadow-2xs">
+            <div className="flex-1 min-w-0 pr-2">
+              <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase shadow-2xs ${getStepBgColor()}`}>
+                  {dimension.step === 'bronnen' ? 'Bronnen' : `Stap ${dimension.step}`}
                 </span>
-                <span className="text-[9px] uppercase tracking-wider font-semibold block">
-                  {dimension.stepTag}
+                <span className="text-xs font-semibold text-[#003340]/75 uppercase tracking-wider">
+                  · {dimension.stepName || 'Dimensie'}
                 </span>
               </div>
-
-              <button
-                onClick={onClose}
-                className="w-8 h-8 rounded-full bg-white/80 border border-[#003340]/20 hover:bg-white hover:text-[#d3104c] transition-all flex items-center justify-center text-[#003340] cursor-pointer shadow-2xs"
-                aria-label="Sluit paneel"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <h2 id="drawer-title" className="text-xl sm:text-2xl font-bold text-[#003340] leading-tight">
+                {dimension.name}
+              </h2>
+              {dimension.subtitle && (
+                <p className="text-xs sm:text-sm text-[#003340]/80 mt-1 font-normal leading-relaxed">
+                  {dimension.subtitle}
+                </p>
+              )}
             </div>
+
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-white/90 border border-[#003340]/20 hover:bg-white hover:text-[#d3104c] transition-all flex items-center justify-center text-[#003340] cursor-pointer shadow-2xs shrink-0"
+              aria-label="Sluit paneel"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           {/* Drawer Body Content */}
-          <div className="p-6 space-y-6 flex-1">
+          <div className="p-5 sm:p-6 space-y-5 flex-1">
             {/* Lead paragraph */}
             <p className="text-sm sm:text-[15px] text-[#003340] leading-relaxed">
               <strong className="font-semibold">{dimension.leadParagraph.split('.')[0]}.</strong>
@@ -146,7 +147,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
 
             {/* Dialogue Question / Gespreksvraag Card */}
             {dimension.dialogueQuestion && (
-              <div className="bg-white border-l-4 border-l-[#d3104c] border border-[#003340]/10 rounded-r-md p-4 shadow-2xs">
+              <div className="bg-white border border-[#003340]/15 rounded-lg p-3.5 shadow-2xs">
                 <div className="flex items-start gap-2.5">
                   <HelpCircle className="w-4 h-4 text-[#d3104c] shrink-0 mt-0.5" />
                   <div className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
@@ -185,9 +186,6 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                           </a>
                         )}
                       </div>
-                      {s.summary && (
-                        <p className="text-[#003340]/70 mt-1 text-[11px]">{s.summary}</p>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -197,37 +195,41 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                 <div className="flex items-center gap-2 flex-wrap pt-1 border-b border-[#003340]/10 pb-3">
                   {dimension.step === 4 ? (
                     <>
-                      <button
-                        onClick={() => setActiveTab('whw')}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                          activeTab === 'whw'
-                            ? 'bg-[#b41e4b] text-white shadow-xs'
-                            : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#b41e4b]'
-                        }`}
-                      >
-                        <Scale className="w-3.5 h-3.5" />
-                        <span>WHW-Kapstok</span>
-                      </button>
+                      {hasInsights && (
+                        <button
+                          onClick={() => setActiveTab('inzichten')}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                            activeTab === 'inzichten'
+                              ? 'bg-[#3ab7b0] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
+                          }`}
+                        >
+                          <BookOpen className="w-3.5 h-3.5" />
+                          <span>Inzichten</span>
+                        </button>
+                      )}
 
-                      <button
-                        onClick={() => setActiveTab('inzichten')}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                          activeTab === 'inzichten'
-                            ? 'bg-[#b41e4b] text-white shadow-xs'
-                            : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#b41e4b]'
-                        }`}
-                      >
-                        <BookOpen className="w-3.5 h-3.5" />
-                        <span>Inzichten</span>
-                      </button>
+                      {hasWHW && (
+                        <button
+                          onClick={() => setActiveTab('whw')}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                            activeTab === 'whw'
+                              ? 'bg-[#3ab7b0] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
+                          }`}
+                        >
+                          <Scale className="w-3.5 h-3.5" />
+                          <span>WHW-Kapstok</span>
+                        </button>
+                      )}
 
                       {hasCases && (
                         <button
                           onClick={() => setActiveTab('zaken')}
                           className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                             activeTab === 'zaken'
-                              ? 'bg-[#b41e4b] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#b41e4b]'
+                              ? 'bg-[#3ab7b0] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
                           }`}
                         >
                           <Award className="w-3.5 h-3.5" />
@@ -235,43 +237,61 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                         </button>
                       )}
 
-                      <button
-                        onClick={() => setActiveTab('praktijk')}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                          activeTab === 'praktijk'
-                            ? 'bg-[#b41e4b] text-white shadow-xs'
-                            : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#b41e4b]'
-                        }`}
-                      >
-                        <Hammer className="w-3.5 h-3.5" />
-                        <span>Aan de slag</span>
-                      </button>
+                      {hasTools && (
+                        <button
+                          onClick={() => setActiveTab('tools')}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                            activeTab === 'tools'
+                              ? 'bg-[#3ab7b0] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
+                          }`}
+                        >
+                          <Hammer className="w-3.5 h-3.5" />
+                          <span>Tools</span>
+                        </button>
+                      )}
+
+                      {hasMedia && (
+                        <button
+                          onClick={() => setActiveTab('media')}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                            activeTab === 'media'
+                              ? 'bg-[#3ab7b0] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
+                          }`}
+                        >
+                          <Film className="w-3.5 h-3.5" />
+                          <span>Media</span>
+                        </button>
+                      )}
                     </>
                   ) : (
                     <>
-                      <button
-                        onClick={() => setActiveTab('inzichten')}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                          activeTab === 'inzichten'
-                            ? 'bg-[#003340] text-white shadow-xs'
-                            : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
-                        }`}
-                      >
-                        <BookOpen className="w-3.5 h-3.5" />
-                        <span>Inzichten</span>
-                      </button>
-
-                      {hasPractical && (
+                      {hasInsights && (
                         <button
-                          onClick={() => setActiveTab('praktijk')}
+                          onClick={() => setActiveTab('inzichten')}
                           className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'praktijk'
+                            activeTab === 'inzichten'
+                              ? 'bg-[#003340] text-white shadow-xs'
+                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
+                          }`}
+                        >
+                          <BookOpen className="w-3.5 h-3.5" />
+                          <span>Inzichten</span>
+                        </button>
+                      )}
+
+                      {hasTools && (
+                        <button
+                          onClick={() => setActiveTab('tools')}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                            activeTab === 'tools'
                               ? 'bg-[#003340] text-white shadow-xs'
                               : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
                           }`}
                         >
                           <Hammer className="w-3.5 h-3.5" />
-                          <span>Aan de slag & Tools</span>
+                          <span>Tools</span>
                         </button>
                       )}
 
@@ -285,7 +305,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                           }`}
                         >
                           <Film className="w-3.5 h-3.5" />
-                          <span>Media & Podcasts</span>
+                          <span>Media</span>
                         </button>
                       )}
                     </>
@@ -294,35 +314,44 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
               </>
             )}
 
-            {/* TAB CONTENT: Inzichten */}
+            {/* TAB CONTENT: Inzichten - Compact with inline active APA 7 citations */}
             {activeTab === 'inzichten' && (
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#d3104c]">
-                  Wetenschappelijke inzichten & onderzoek
+                  Wetenschappelijke inzichten
                 </h3>
-                <ul className="space-y-3">
-                  {dimension.insights.map((insight, idx) => (
-                    <li
-                      key={idx}
-                      className="bg-white border border-[#003340]/10 rounded-md p-3.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs"
-                    >
-                      <div className="text-[#003340] mb-1.5">{insight.text}</div>
-                      <div className="text-[11px] text-[#003340]/60 italic flex items-center justify-between">
-                        <span>— {insight.citation}</span>
-                        {insight.citationUrl && (
-                          <a
-                            href={insight.citationUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[#00a0db] hover:underline font-normal"
-                          >
-                            <span>Bron openen</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
+                <ul className="space-y-2">
+                  {dimension.insights.map((insight, idx) => {
+                    const cleanText = insight.text.trim().replace(/\.\s*$/, '');
+                    return (
+                      <li
+                        key={idx}
+                        className="bg-white border border-[#003340]/10 rounded-md p-2.5 sm:p-3 text-xs sm:text-[13px] leading-relaxed text-[#003340] shadow-2xs"
+                      >
+                        <span>{cleanText} </span>
+                        {insight.citation && (
+                          <span className="text-[#003340]/75">
+                            (
+                            {insight.citationUrl ? (
+                              <a
+                                href={insight.citationUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#00a0db] hover:underline font-medium inline"
+                                title={`Open bron: ${insight.citation}`}
+                              >
+                                {insight.citation}
+                                <ExternalLink className="w-2.5 h-2.5 inline ml-0.5 -mt-0.5 shrink-0" />
+                              </a>
+                            ) : (
+                              <span>{insight.citation}</span>
+                            )}
+                            ).
+                          </span>
                         )}
-                      </div>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}
@@ -330,14 +359,14 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: WHW (Step 4 only) */}
             {activeTab === 'whw' && dimension.lawArticles && (
               <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#b41e4b]">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0]">
                   Wettelijk kader (Wet op het Hoger Onderwijs en Wetenschappelijk Onderzoek)
                 </h3>
                 <div className="space-y-3">
                   {dimension.lawArticles.map((art, idx) => (
                     <div key={idx} className="bg-white border border-[#003340]/15 rounded-md p-4 shadow-2xs">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-[#b41e4b] uppercase tracking-wider">
+                        <span className="text-xs font-bold text-[#3ab7b0] uppercase tracking-wider">
                           {art.lawRef}
                         </span>
                         <span className="text-sm font-semibold text-[#003340]">{art.title}</span>
@@ -367,7 +396,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: Jurisprudentie (Step 4) */}
             {activeTab === 'zaken' && dimension.courtCases && (
               <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#b41e4b]">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0]">
                   Rechtspraak & Uitspraken CBE / CBHO
                 </h3>
                 <p className="text-xs text-[#003340]/75">
@@ -394,7 +423,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             <span
                               className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded ${
                                 c.verdictType === 'student'
-                                  ? 'bg-[#fbe8ee] text-[#b41e4b]'
+                                  ? 'bg-[#eaf8f7] text-[#3ab7b0]'
                                   : 'bg-[#003340]/10 text-[#003340]'
                               }`}
                             >
@@ -416,7 +445,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             </div>
 
                             <div>
-                              <strong className="text-xs uppercase tracking-wider text-[#b41e4b] block mb-1">
+                              <strong className="text-xs uppercase tracking-wider text-[#3ab7b0] block mb-1">
                                 Geciteerde wetsartikelen
                               </strong>
                               <ul className="space-y-1 pl-3 text-xs text-[#003340]/75">
@@ -428,8 +457,8 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                               </ul>
                             </div>
 
-                            <div className="bg-[#f7efe3] border-l-2 border-[#b41e4b] p-2.5 rounded-r text-xs">
-                              <strong className="text-[#b41e4b] block mb-0.5">Oordeel & Belangrijkste les:</strong>
+                            <div className="bg-[#f7efe3] border border-[#003340]/10 p-2.5 rounded text-xs">
+                              <strong className="text-[#3ab7b0] block mb-0.5">Oordeel & Belangrijkste les:</strong>
                               {c.keyLessons}
                             </div>
                           </div>
@@ -441,18 +470,18 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
               </div>
             )}
 
-            {/* TAB CONTENT: Praktijk & Tools */}
-            {activeTab === 'praktijk' && (
+            {/* TAB CONTENT: Tools */}
+            {activeTab === 'tools' && (
               <div className="space-y-5">
                 {dimension.step === 4 && dimension.proportionalityQuestions && (
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#b41e4b] mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0] mb-2">
                       Proportionaliteitstoets
                     </h4>
                     <ul className="bg-white border border-[#003340]/15 rounded p-3 text-xs space-y-1.5">
                       {dimension.proportionalityQuestions.map((q, qIdx) => (
                         <li key={qIdx} className="flex items-start gap-1.5 text-[#003340]">
-                          <span className="text-[#b41e4b] font-bold">✓</span>
+                          <span className="text-[#3ab7b0] font-bold">✓</span>
                           <span>{q}</span>
                         </li>
                       ))}
@@ -462,13 +491,13 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
 
                 {dimension.step === 4 && dimension.policyRecommendations && (
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#b41e4b] mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0] mb-2">
                       Beleidsaanbevelingen
                     </h4>
                     <ul className="bg-white border border-[#003340]/15 rounded p-3 text-xs space-y-1.5">
                       {dimension.policyRecommendations.map((r, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-1.5 text-[#003340]">
-                          <span className="text-[#b41e4b] font-bold">•</span>
+                          <span className="text-[#3ab7b0] font-bold">•</span>
                           <span>{r}</span>
                         </li>
                       ))}
@@ -479,12 +508,12 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                 {dimension.practicalMaterials && dimension.practicalMaterials.length > 0 && (
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-widest text-[#d3104c] mb-2">
-                      Praktijkmateriaal & Handreikingen
+                      Tools
                     </h4>
-                    <div className="space-y-3">
+                    <div className="space-y-2.5">
                       {dimension.practicalMaterials.map((mat, mIdx) => (
-                        <div key={mIdx} className="bg-white border border-[#003340]/15 rounded p-3.5 shadow-2xs">
-                          <div className="flex items-center justify-between mb-1">
+                        <div key={mIdx} className="bg-white border border-[#003340]/15 rounded p-3 shadow-2xs">
+                          <div className="flex items-center justify-between gap-2 mb-1">
                             <span className="text-xs sm:text-sm font-semibold text-[#003340]">
                               {mat.title}
                             </span>
@@ -493,7 +522,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                                 href={mat.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[11px] text-[#00a0db] hover:underline inline-flex items-center gap-1"
+                                className="text-[11px] text-[#00a0db] hover:underline inline-flex items-center gap-1 shrink-0 font-medium"
                               >
                                 <span>Openen</span>
                                 <ExternalLink className="w-3 h-3" />
@@ -512,7 +541,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     <h4 className="text-xs font-bold uppercase tracking-widest text-[#003340] mb-2">
                       Lopende Pilots & Experimenten binnen HR
                     </h4>
-                    <div className="space-y-2.5">
+                    <div className="space-y-2">
                       {dimension.pilots.map((pilot, pIdx) => (
                         <div key={pIdx} className="bg-white border border-[#003340]/15 rounded p-3 text-xs shadow-2xs">
                           <div className="font-semibold text-[#003340] mb-0.5">{pilot.title}</div>
@@ -531,36 +560,36 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             )}
 
             {/* TAB CONTENT: Media */}
-            {activeTab === 'media' && dimension.media && (
-              <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#d3104c]">
-                  Video's & Podcasts
-                </h3>
-                <div className="space-y-3">
+            {activeTab === 'media' && dimension.media && dimension.media.length > 0 && (
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-[#d3104c] mb-2">
+                  Media
+                </h4>
+                <div className="space-y-2.5">
                   {dimension.media.map((med) => (
                     <a
                       key={med.id}
                       href={med.mediaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white border border-[#003340]/15 rounded-md p-3.5 flex items-center justify-between gap-3 hover:border-[#d3104c] hover:shadow-xs transition-all block group"
+                      className="bg-white border border-[#003340]/15 rounded-md p-3 flex items-center justify-between gap-3 hover:border-[#d3104c] hover:shadow-xs transition-all block group"
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-md bg-[#d3104c]/10 text-[#d3104c] flex items-center justify-center shrink-0 group-hover:bg-[#d3104c] group-hover:text-white transition-colors">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-8 h-8 rounded-md bg-[#d3104c]/10 text-[#d3104c] flex items-center justify-center shrink-0 group-hover:bg-[#d3104c] group-hover:text-white transition-colors">
                           {med.source === 'spotify' ? (
                             <Headphones className="w-4 h-4" />
                           ) : (
                             <Film className="w-4 h-4" />
                           )}
                         </div>
-                        <div>
-                          <div className="text-xs sm:text-sm font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors">
+                        <div className="min-w-0">
+                          <div className="text-xs sm:text-sm font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors truncate">
                             {med.title}
                           </div>
-                          <div className="text-xs text-[#003340]/70 line-clamp-1">{med.caption}</div>
+                          <div className="text-[11px] text-[#003340]/70 line-clamp-1">{med.caption}</div>
                         </div>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-[#003340]/40 group-hover:text-[#d3104c] shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#003340]/40 group-hover:text-[#d3104c] shrink-0" />
                     </a>
                   ))}
                 </div>

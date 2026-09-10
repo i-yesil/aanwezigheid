@@ -2,7 +2,6 @@
 
 :root {
   --hr-red: #d3104c;
-  --hr-dark-red: #b41e4b;
   --hr-blue: #003340;
   --hr-cream: #f7efe3;
   --hr-white: #ffffff;
@@ -10,8 +9,8 @@
   --hr-muted: rgba(0, 51, 64, 0.65);
   --hr-faint: rgba(0, 51, 64, 0.08);
   --hr-lichtblauw: #00b0eb;
-  --hr-geel: #fcc200;
   --hr-groen: #3ab7b0;
+  --hr-geel: #fcc200;
   --hr-link: #00a0db;
 }
 

@@ -43,8 +43,8 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
     {
       id: 'jurisprudentie',
       label: 'Jurisprudentie (CBHO & CBE)',
-      icon: <Award className="w-4 h-4 text-[#b41e4b]" />,
-      colorClass: 'border-[#b41e4b]',
+      icon: <Award className="w-4 h-4 text-[#3ab7b0]" />,
+      colorClass: 'border-[#3ab7b0]',
     },
     {
       id: 'media',
@@ -139,12 +139,6 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
                           </a>
                         )}
                       </div>
-
-                      {s.summary && (
-                        <p className="text-[#003340]/75 mt-1 text-[11px]">
-                          {s.summary}
-                        </p>
-                      )}
                     </div>
                   ))}
                 </div>

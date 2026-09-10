@@ -23,7 +23,8 @@ const INITIAL_STATE: AssessmentState = {
   courseName: '',
   targetYear: 'Jaar 1',
   selectedIssues: [],
-  chosenRoute: 'A',
+  chosenRoute: 'AB',
+  isObligationPlanned: false,
   legalChecked: {
     inOER: false,
     practicalExercise: false,
@@ -155,14 +156,28 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               </div>
 
               {/* Status Banner */}
-              <div className={`p-4 rounded-lg border flex items-center justify-between ${getReadinessLevel().color}`}>
+              <div className={`p-4 rounded-lg border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${getReadinessLevel().color}`}>
                 <div>
                   <div className="text-xs uppercase tracking-wider font-bold">Toetsoordeel 4 G's</div>
                   <div className="text-lg font-bold">{getReadinessLevel().label}</div>
                   <div className="text-xs mt-0.5">Totaalscore: {calculateTotalScore()} / 20 punten</div>
                 </div>
-                <div className="text-right text-xs">
-                  <strong>Gekozen Route:</strong> Route {assessment.chosenRoute}
+                <div className="text-right text-xs space-y-0.5">
+                  <div>
+                    <strong>Focus:</strong>{' '}
+                    {assessment.chosenRoute === 'A' && 'Spoor 1 · Systeem'}
+                    {assessment.chosenRoute === 'B' && 'Spoor 2 · Begeleiding'}
+                    {assessment.chosenRoute === 'AB' && 'Systeem én Begeleiding'}
+                    {assessment.chosenRoute === 'C' && 'Normering / Plicht'}
+                  </div>
+                  <div>
+                    <strong>Status plicht:</strong>{' '}
+                    {assessment.isObligationPlanned ? (
+                      <span className="font-semibold text-amber-900">Formele eis overwogen</span>
+                    ) : (
+                      <span className="font-semibold text-emerald-800">Geen eis (studievrijheid)</span>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -183,26 +198,38 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
                 <div className="bg-[#f7efe3] p-3.5 rounded border border-[#003340]/10">
                   <strong className="block text-[#003340] font-semibold mb-1.5">Juridische Borging (WHW):</strong>
-                  <ul className="space-y-1 text-[#003340]/80">
-                    <li className="flex items-center gap-1.5">
-                      <span className={assessment.legalChecked.inOER ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
-                        {assessment.legalChecked.inOER ? '✓' : '✗'}
-                      </span>
-                      <span>Opgenomen in OER (art. 7.13 WHW)</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className={assessment.legalChecked.practicalExercise ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
-                        {assessment.legalChecked.practicalExercise ? '✓' : '✗'}
-                      </span>
-                      <span>Kwalificeert als praktische oefening</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className={assessment.legalChecked.hasAlternativeAssignment ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
-                        {assessment.legalChecked.hasAlternativeAssignment ? '✓' : '✗'}
-                      </span>
-                      <span>Vervangende compensatieopdracht</span>
-                    </li>
-                  </ul>
+                  {!assessment.isObligationPlanned ? (
+                    <p className="text-emerald-900 text-[11px] leading-relaxed">
+                      <strong>Niet van toepassing:</strong> Omdat het team kiest voor stimuleren via systeem en begeleiding, is er geen formele aanwezigheidsplicht. De academische studievrijheid (art. 1.6 WHW) blijft intact; OER-verankering is niet nodig.
+                    </p>
+                  ) : (
+                    <ul className="space-y-1 text-[#003340]/80">
+                      <li className="flex items-center gap-1.5">
+                        <span className={assessment.legalChecked.inOER ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
+                          {assessment.legalChecked.inOER ? '✓' : '✗'}
+                        </span>
+                        <span>Opgenomen in OER (art. 7.13 WHW + medezeggenschap)</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className={assessment.legalChecked.practicalExercise ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
+                          {assessment.legalChecked.practicalExercise ? '✓' : '✗'}
+                        </span>
+                        <span>Kwalificeert als praktische oefening</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className={assessment.legalChecked.hasAlternativeAssignment ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
+                          {assessment.legalChecked.hasAlternativeAssignment ? '✓' : '✗'}
+                        </span>
+                        <span>Vervangende constructive aligned opdracht</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className={assessment.legalChecked.proportionalPolicy ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
+                          {assessment.legalChecked.proportionalPolicy ? '✓' : '✗'}
+                        </span>
+                        <span>Proportionele norm met zorgplicht</span>
+                      </li>
+                    </ul>
+                  )}
                 </div>
               </div>
 
@@ -210,25 +237,25 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               <div className="space-y-2 text-xs">
                 <strong className="block text-sm font-semibold text-[#003340]">Aanbevolen Actiestappen voor het Team:</strong>
                 <ol className="list-decimal pl-4 space-y-1.5 text-[#003340]/85">
-                  {assessment.chosenRoute === 'A' && (
+                  {(assessment.chosenRoute === 'A' || assessment.chosenRoute === 'AB') && (
                     <>
-                      <li><strong>Didactische meerwaarde:</strong> Zorg via constructive alignment dat werkvormen niet online te kopiëren zijn.</li>
-                      <li><strong>Roosteroptimalisatie:</strong> Bespreek met de roostermakers om tussenuren weg te werken.</li>
+                      <li><strong>Didactische meerwaarde (Systeem):</strong> Zorg via constructive alignment dat fysieke werkvormen niet online te kopiëren zijn en echte samenwerkings- of feedbackwaarde bieden.</li>
+                      <li><strong>Rooster & Studeerbaarheid (Systeem):</strong> Bespreek met de roostermaker om tussenuren en versnipperde lesdagen te reduceren.</li>
                     </>
                   )}
-                  {assessment.chosenRoute === 'B' && (
+                  {(assessment.chosenRoute === 'B' || assessment.chosenRoute === 'AB') && (
                     <>
-                      <li><strong>Vroegsignalering:</strong> Richt een datagedreven SLC-nudge in vanaf de 2e gemiste les.</li>
-                      <li><strong>Verbondenheid:</strong> Zet in op docentnabijheid en informeel contact.</li>
+                      <li><strong>Warme vroegsignalering (Begeleiding):</strong> Richt vanuit de studieloopbaanbegeleiding (SLC) een laagdrempelige check-in in vanaf de 2e gemiste bijeenkomst.</li>
+                      <li><strong>Docentnabijheid & Binding (Begeleiding):</strong> Investeer in interactief contact, erkenning en het creëren van een veilige leergemeenschap.</li>
                     </>
                   )}
-                  {assessment.chosenRoute === 'C' && (
+                  {assessment.isObligationPlanned && (
                     <>
-                      <li><strong>OER-verankering:</strong> Verifieer met de examencommissie dat de plicht in de OER staat voor een praktische oefening.</li>
-                      <li><strong>Coulance:</strong> Stel een heldere afmeldprocedure op voor mantelzorg en ziekte zonder bureaucratie.</li>
+                      <li><strong>OER-verankering:</strong> Verifieer met de examencommissie dat de plicht tijdig in de OER wordt opgenomen met instemming van de medezeggenschap (IMR/OC).</li>
+                      <li><strong>Coulance & Alternatief:</strong> Stel een heldere compensatieopdracht op bij overmacht zonder onnodige medische bewijslast.</li>
                     </>
                   )}
-                  <li><strong>Teamconsistentie:</strong> Voer de werkvorm <em>"Waar sta jij voor?"</em> uit om één eenduidige norm in het team te hanteren.</li>
+                  <li><strong>Teamconsistentie:</strong> Voer de dialoogwerkvorm <em>"Waar sta jij voor?"</em> uit om één gezamenlijke lijn binnen het docententeam af te spreken.</li>
                 </ol>
               </div>
 
@@ -246,7 +273,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 1 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#d3104c] uppercase tracking-wider">Stap 1 van 5</span>
+                    <span className="text-xs font-bold text-[#d3104c] uppercase tracking-wider">Feitelijke dimensie</span>
                     <h3 className="text-lg font-bold text-[#003340]">Cursus & Knelpuntdiagnose</h3>
                     <p className="text-xs text-[#003340]/75 mt-1 leading-relaxed">
                       Aanwezigheid is een <em>wicked problem</em>: er is geen magische oplossing. Deze toets helpt jullie om keuzes binnen het team en tussen feitelijke en normatieve dimensies op elkaar af te stemmen.
@@ -324,7 +351,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 2 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#003340] uppercase tracking-wider">Stap 2 van 5</span>
+                    <span className="text-xs font-bold text-[#003340] uppercase tracking-wider">Normatieve dimensie</span>
                     <h3 className="text-lg font-bold text-[#003340]">Normatieve Afweging & Psychologisch Contract</h3>
                   </div>
 
@@ -348,32 +375,33 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 3 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#00b0eb] uppercase tracking-wider">Stap 3 van 5</span>
-                    <h3 className="text-lg font-bold text-[#003340]">Handelingsrichting (Route A, B of C)</h3>
+                    <span className="text-xs font-bold text-[#00b0eb] uppercase tracking-wider">Handelingsperspectieven: fase 1</span>
+                    <h3 className="text-lg font-bold text-[#003340]">Hoe stimuleren we aanwezigheid?</h3>
                   </div>
+
+                  <p className="text-xs text-[#003340]/80">
+                    Kies waarop jullie als opleidingsteam primair inzetten om aanwezigheid te bevorderen. Systeem en begeleiding versterken elkaar en vormen altijd het vertrekpunt:
+                  </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {[
                       {
                         route: 'A' as const,
-                        name: 'Route A · Systeem',
-                        subtitle: 'Structurele herkadering',
-                        desc: 'Herontwerp van didactiek, actieve werkvormen of roosteraanpassing.',
-                        color: 'border-[#00b0eb]',
+                        name: 'Spoor 1 · Systeem',
+                        subtitle: 'Werken aan het systeem',
+                        desc: 'Herontwerp van didactiek, interactieve meerwaarde van de les en roosteraanpassing.',
                       },
                       {
                         route: 'B' as const,
-                        name: 'Route B · Begeleiding',
-                        subtitle: 'Relationele interventie',
-                        desc: 'Vroegtijdige SLC-signalering, nudges en directe persoonlijke opvolging.',
-                        color: 'border-[#00b0eb]',
+                        name: 'Spoor 2 · Begeleiding',
+                        subtitle: 'Werken aan begeleiding',
+                        desc: 'Versterken van binding, vroegtijdige signalering en warme follow-up vanuit de SLC.',
                       },
                       {
-                        route: 'C' as const,
-                        name: 'Route C · Beleid',
-                        subtitle: 'Normatieve ingreep',
-                        desc: 'Aanwezigheidseis of optioneel-verplicht model met formele OER-borging.',
-                        color: 'border-[#b41e4b]',
+                        route: 'AB' as const,
+                        name: 'Gecombineerd',
+                        subtitle: 'Systeem én Begeleiding',
+                        desc: 'Gelijktijdig werken aan activerende didactiek, rooster en preventieve begeleiding.',
                       },
                     ].map((r) => {
                       const selected = assessment.chosenRoute === r.route;
@@ -384,11 +412,11 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                           onClick={() => setAssessment({ ...assessment, chosenRoute: r.route })}
                           className={`p-4 rounded-lg border-2 text-left cursor-pointer transition-all ${
                             selected
-                              ? 'bg-white border-[#d3104c] shadow-md'
+                              ? 'bg-white border-[#00b0eb] shadow-md'
                               : 'bg-white/60 border-[#003340]/15 hover:bg-white'
                           }`}
                         >
-                          <span className={`text-xs font-bold uppercase tracking-wider block mb-1 ${selected ? 'text-[#d3104c]' : 'text-[#003340]/60'}`}>
+                          <span className={`text-xs font-bold uppercase tracking-wider block mb-1 ${selected ? 'text-[#00b0eb]' : 'text-[#003340]/60'}`}>
                             {r.name}
                           </span>
                           <strong className="block text-sm text-[#003340] mb-1.5">{r.subtitle}</strong>
@@ -400,51 +428,108 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                 </div>
               )}
 
-              {/* STEP 4: Legal Prerequisites */}
+              {/* STEP 4: Legal Prerequisites / Obligation Check */}
               {activeStep === 4 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#b41e4b] uppercase tracking-wider">Stap 4 van 5</span>
-                    <h3 className="text-lg font-bold text-[#003340]">Juridische Randvoorwaarden (WHW Check)</h3>
+                    <span className="text-xs font-bold text-[#3ab7b0] uppercase tracking-wider">Handelingsperspectieven: fase 2</span>
+                    <h3 className="text-lg font-bold text-[#003340]">Wanneer is aanwezigheidsplicht zinvol?</h3>
                   </div>
 
-                  <p className="text-xs text-[#003340]/80">
-                    Voldoet de voorgenomen aanwezigheidseis aan de wettelijke kaders van de WHW en recente rechtspraak?
+                  <p className="text-xs text-[#003340]/80 leading-relaxed">
+                    Overweegt het team een formele aanwezigheidsplicht, dan gelden er juridische randvoorwaarden. Studenten zijn in beginsel vrij om wel of niet bij colleges aanwezig te zijn (art. 1.6 WHW); een plicht is een beperking van die vrijheid en moet didactisch en in de OER onderbouwd zijn.
                   </p>
 
-                  <div className="space-y-2.5">
-                    {[
-                      { key: 'inOER', label: '1. De aanwezigheidsplicht is expliciet opgenomen in de OER (art. 7.13 WHW) — vermelding in Brightspace alleen is ongeldig.' },
-                      { key: 'practicalExercise', label: '2. De bijeenkomsten kwalificeren didactisch als praktische oefening (practicum, vaardigheidstraining, groepstoetsing).' },
-                      { key: 'hasAlternativeAssignment', label: '3. Er is voorzien in een redelijke vervangende compensatieopdracht bij overmacht of ziekte.' },
-                      { key: 'proportionalPolicy', label: '4. De eis is proportioneel (bijv. 80% norm ipv 100%, passend bij de doelgroep).' },
-                    ].map((item) => {
-                      const k = item.key as keyof AssessmentState['legalChecked'];
-                      const checked = assessment.legalChecked[k];
-                      return (
-                        <button
-                          key={k}
-                          type="button"
-                          onClick={() =>
-                            setAssessment({
-                              ...assessment,
-                              legalChecked: { ...assessment.legalChecked, [k]: !checked },
-                            })
-                          }
-                          className={`w-full p-3 rounded border text-left flex items-start gap-2.5 cursor-pointer transition-all ${
-                            checked
-                              ? 'bg-emerald-50 border-emerald-400 text-emerald-950 font-medium'
-                              : 'bg-white border-[#003340]/15 text-[#003340]/80 hover:bg-[#fbfaf5]'
-                          }`}
-                        >
-                          <span className={`w-4 h-4 rounded flex items-center justify-center text-xs shrink-0 mt-0.5 ${checked ? 'bg-emerald-600 text-white' : 'border border-[#003340]/30'}`}>
-                            {checked && '✓'}
-                          </span>
-                          <span className="text-xs">{item.label}</span>
-                        </button>
-                      );
-                    })}
+                  <div className="bg-white border border-[#003340]/15 rounded-lg p-3.5 space-y-2">
+                    <label className="block text-xs font-bold text-[#003340] uppercase tracking-wider">
+                      Spoor 3: Werken aan aanwezigheids- en of participatieplicht
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                      <button
+                        type="button"
+                        onClick={() => setAssessment({ ...assessment, isObligationPlanned: false })}
+                        className={`p-3 rounded border text-left cursor-pointer transition-all ${
+                          !assessment.isObligationPlanned
+                            ? 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold shadow-2xs'
+                            : 'bg-white border-[#003340]/20 text-[#003340]/75 hover:bg-[#fbfaf5]'
+                        }`}
+                      >
+                        <div className="text-xs font-bold mb-0.5">Nee · Geen aanwezigheidseis</div>
+                        <div className="text-[11px] opacity-85 leading-snug">
+                          We focussen puur op stimuleren via systeem en begeleiding.
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setAssessment({ ...assessment, isObligationPlanned: true })}
+                        className={`p-3 rounded border text-left cursor-pointer transition-all ${
+                          assessment.isObligationPlanned
+                            ? 'bg-[#f2faf9] border-[#3ab7b0] text-[#003340] font-semibold shadow-2xs'
+                            : 'bg-white border-[#003340]/20 text-[#003340]/75 hover:bg-[#fbfaf5]'
+                        }`}
+                      >
+                        <div className="text-xs font-bold mb-0.5">Ja · Wel een eis of model</div>
+                        <div className="text-[11px] opacity-85 leading-snug">
+                          We overwegen een eis of "optioneel-verplicht" voor een praktijkonderdeel.
+                        </div>
+                      </button>
+                    </div>
                   </div>
+
+                  {!assessment.isObligationPlanned ? (
+                    <div className="bg-emerald-50/70 border border-emerald-300 rounded-lg p-4 text-xs text-emerald-950 leading-relaxed space-y-1.5">
+                      <strong className="block text-emerald-900 font-semibold text-sm">
+                        ✓ Geen formele aanwezigheidsplicht van toepassing
+                      </strong>
+                      <p>
+                        Omdat jullie team aanwezigheid stimuleert via <strong>het systeem</strong> en <strong>begeleiding</strong> (Fase 1), blijft de academische studievrijheid (art. 1.6 WHW) volledig gewaarborgd.
+                      </p>
+                      <p className="text-emerald-900/80">
+                        Er is daarom géén wijziging van de OER vereist en géén formele juridische toetsing nodig. Jullie kunnen direct door naar De vier G's.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      <p className="text-xs text-[#003340]/80">
+                        Voldoet de voorgenomen aanwezigheidseis aan de wettelijke kaders van de WHW en recente rechtspraak?
+                      </p>
+
+                      <div className="space-y-2.5">
+                        {[
+                          { key: 'inOER', label: '1. De aanwezigheidsplicht is expliciet opgenomen in de OER (art. 7.13 WHW) met instemming van de IMR en advies/instemming van de OC.' },
+                          { key: 'practicalExercise', label: '2. De bijeenkomsten kwalificeren didactisch als praktische oefening (practicum, vaardigheidstraining, groepstoetsing).' },
+                          { key: 'hasAlternativeAssignment', label: '3. Er is voorzien in een vervangende opdracht bij overmacht/ziekte die constructive aligned is met de leerdoelen.' },
+                          { key: 'proportionalPolicy', label: '4. De eis is proportioneel (bijv. 80% norm ipv 100%, passend bij de doelgroep).' },
+                        ].map((item) => {
+                          const k = item.key as keyof AssessmentState['legalChecked'];
+                          const checked = assessment.legalChecked[k];
+                          return (
+                            <button
+                              key={k}
+                              type="button"
+                              onClick={() =>
+                                setAssessment({
+                                  ...assessment,
+                                  legalChecked: { ...assessment.legalChecked, [k]: !checked },
+                                })
+                              }
+                              className={`w-full p-3 rounded border text-left flex items-start gap-2.5 cursor-pointer transition-all ${
+                                checked
+                                  ? 'bg-emerald-50 border-emerald-400 text-emerald-950 font-medium'
+                                  : 'bg-white border-[#003340]/15 text-[#003340]/80 hover:bg-[#fbfaf5]'
+                              }`}
+                            >
+                              <span className={`w-4 h-4 rounded flex items-center justify-center text-xs shrink-0 mt-0.5 ${checked ? 'bg-emerald-600 text-white' : 'border border-[#003340]/30'}`}>
+                                {checked && '✓'}
+                              </span>
+                              <span className="text-xs">{item.label}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -452,8 +537,8 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 5 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#fcc200] text-[#003340] uppercase tracking-wider">Stap 5 van 5</span>
-                    <h3 className="text-lg font-bold text-[#003340]">De Vier G's Toetsscore (1-5)</h3>
+                    <span className="text-xs font-bold text-[#fcc200] text-[#003340] uppercase tracking-wider">De vier G's</span>
+                    <h3 className="text-lg font-bold text-[#003340]">Houdt ons beleid stand?</h3>
                   </div>
 
                   <p className="text-xs text-[#003340]/80">
@@ -462,7 +547,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
                   <div className="space-y-3.5">
                     {[
-                      { key: 'gedragen' as const, name: 'Gedragen', desc: 'Is het beleid institutioneel consistent en praktisch haalbaar (rooster, registratie)?' },
+                      { key: 'gedragen' as const, name: 'Gedragen', desc: 'Worden verwachtingen consistent ondersteund en is het praktisch haalbaar (rooster, registratie)?' },
                       { key: 'geloofwaardig' as const, name: 'Geloofwaardig', desc: 'Biedt de les aantoonbare interactieve leerwaarde (constructive alignment)?' },
                       { key: 'gerechtvaardigd' as const, name: 'Gerechtvaardigd', desc: 'Is de eis proportioneel gedifferentieerd naar studiefase met zorgplicht?' },
                       { key: 'gedeeld' as const, name: 'Gedeeld', desc: 'Is er partnerschap tussen docenten, management, SLC en studenten?' },
@@ -539,7 +624,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
             activeStep === 5 ? (
               <button
                 onClick={() => setShowReport(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#d3104c] text-white hover:bg-[#b41e4b] transition-colors shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#d3104c] text-white hover:bg-[#b80c3e] transition-colors shadow-sm cursor-pointer"
               >
                 <span>Bekijk Adviesrapport</span>
                 <ChevronRight className="w-3.5 h-3.5" />
