@@ -63,6 +63,16 @@ export interface DimensionData {
   courtCases?: CourtCase[];
   proportionalityQuestions?: string[];
   policyRecommendations?: string[];
+  hrFramework?: {
+    title: string;
+    summary: string;
+    practicalExercises: string[];
+    sourceMemo: {
+      title: string;
+      fileName: string;
+      fileUrl: string;
+    };
+  };
   subGroups?: {
     name: string;
     items: string[];

@@ -7,7 +7,7 @@ import { SourcesLibraryModal } from './components/SourcesLibraryModal';
 import { PrintView } from './components/PrintView';
 import { HrLogo } from './components/HrLogo';
 import { StepNumber } from './types';
-import { Info, BookOpen, ExternalLink, ArrowUp } from 'lucide-react';
+import { Info, BookOpen, ExternalLink, ArrowUp, Mail } from 'lucide-react';
 
 export default function App() {
   const [activeStep, setActiveStep] = useState<StepNumber>(1);
@@ -164,6 +164,22 @@ export default function App() {
               <div className="font-semibold text-[#003340] text-xs">Themagroep Studentgerichte Omgeving</div>
               <div className="text-[11px] text-[#003340]/65 font-medium">2026</div>
             </div>
+          </div>
+
+          {/* Contact TGSO */}
+          <div className="flex flex-col sm:items-end text-left sm:text-right gap-1.5">
+            <p className="text-xs text-[#003340]/80">
+              Wil je sparren of heb je advies nodig?
+            </p>
+            <a
+              id="footer-contact-tgso"
+              href="mailto:TG-SO-adviseurs@hr.nl?subject=Aanwezigheid%20in%20het%20Hoger%20Onderwijs%20-%20Sparren%20of%20advies%20(TG-SO)"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#003340] hover:bg-[#d3104c] text-white text-xs font-medium transition-all shadow-xs group cursor-pointer"
+              title="Stuur een e-mail naar TG-SO-adviseurs@hr.nl"
+            >
+              <Mail className="w-3.5 h-3.5 transition-transform group-hover:scale-110 shrink-0" />
+              <span>Neem contact op</span>
+            </a>
           </div>
         </footer>
       </main>

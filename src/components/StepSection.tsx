@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DIMENSIONS } from '../data/attendanceData';
 import { StepNumber } from '../types';
-import { Info, ArrowRight, BookOpen, Scale, Sparkles, UserCheck, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { Info, ArrowRight, BookOpen, Scale, Sparkles, ChevronDown, ChevronUp, ExternalLink, FileText } from 'lucide-react';
 
 interface StepSectionProps {
   stepNumber: StepNumber;
@@ -15,7 +15,6 @@ export const StepSection: React.FC<StepSectionProps> = ({
   const [showRandvoorwaarden, setShowRandvoorwaarden] = useState(false);
   const [showJurisprudentie, setShowJurisprudentie] = useState(false);
   const [showWhwArtikelen, setShowWhwArtikelen] = useState(false);
-  const [showBeleidsaanbevelingen, setShowBeleidsaanbevelingen] = useState(false);
   if (stepNumber === 1) {
     return (
       <section id="stap-1" className="step-anchor relative pl-12 sm:pl-16 mb-12">
@@ -303,22 +302,22 @@ export const StepSection: React.FC<StepSectionProps> = ({
         </div>
 
         <p className="text-sm sm:text-[15px] text-[#003340]/90 mb-5 leading-relaxed">
-          Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan het systeem en werken aan begeleiding. Dit stevige fundament moet altijd op orde zijn voordat aan normering wordt gedacht.
+          Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan meerwaarde en studeerbaarheid en werken aan relatie en binding. Dit stevige fundament moet altijd op orde zijn voordat aan normering wordt gedacht.
         </p>
 
         {/* The Two Fundamental Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          {/* Spoor 1: Systeem */}
+          {/* Spoor 1: Meerwaarde & Studeerbaarheid */}
           <div
             onClick={() => onOpenDimension('p-routeA')}
             className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex items-center justify-between gap-4 group"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
-                Spoor 1 · Systeem
+                Spoor 1 · Meerwaarde & Studeerbaarheid
               </span>
               <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-1.5">
-                Werken aan het systeem
+                Werken aan meerwaarde en studeerbaarheid
               </h4>
               <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed">
                 Herontwerp van rooster, didactische meerwaarde en studeerbaarheid. Zorg dat bijeenkomsten interactief zijn en iets bieden wat zelfstudie of opnames niet kunnen vervangen.
@@ -332,20 +331,20 @@ export const StepSection: React.FC<StepSectionProps> = ({
             </span>
           </div>
 
-          {/* Spoor 2: Begeleiding */}
+          {/* Spoor 2: Relatie & Binding */}
           <div
             onClick={() => onOpenDimension('p-routeB')}
             className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex items-center justify-between gap-4 group"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
-                Spoor 2 · Begeleiding
+                Spoor 2 · Relatie & Binding
               </span>
               <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-1.5">
-                Werken aan begeleiding
+                Werken aan relatie en binding
               </h4>
               <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed">
-                Versterk de binding en docentnabijheid. Signaleer verzuim tijdig via zichtbare registratie en organiseer een directe, warme follow-up vanuit de docent of de studieloopbaanbegeleider (SLC).
+                Versterk de binding, docentnabijheid en het gevoel gezien en gemist te worden. Signaleer verzuim tijdig via zichtbare registratie en organiseer een directe, warme follow-up.
               </p>
             </div>
             <span
@@ -360,22 +359,13 @@ export const StepSection: React.FC<StepSectionProps> = ({
         {/* Deel 2: Wanneer is aanwezigheidsplicht zinvol? */}
         <div className="border-t border-[#003340]/15 pt-8">
           <div className="border-b border-[#003340]/10 pb-2 mb-4">
-            <div className="flex items-center justify-between mb-1.5">
-              <h2 className="text-2xl sm:text-[26px] font-semibold text-[#003340] tracking-tight">
-                Wanneer is aanwezigheidsplicht zinvol?
-              </h2>
-              <button
-                onClick={() => onOpenDimension('p-juridisch')}
-                className="inline-flex items-center gap-1 text-xs font-semibold text-[#00b0eb] hover:underline cursor-pointer"
-              >
-                <Scale className="w-3.5 h-3.5" />
-                <span>Bekijk WHW-artikelen & Jurisprudentie</span>
-              </button>
-            </div>
+            <h2 className="text-2xl sm:text-[26px] font-semibold text-[#003340] tracking-tight">
+              Wanneer is aanwezigheidsplicht zinvol?
+            </h2>
           </div>
 
           <p className="text-sm sm:text-[15px] text-[#003340]/90 mb-5 leading-relaxed">
-            Een aanwezigheidseis is alleen proportioneel bij specifieke onderwijsvormen (zoals practica, patiëntenzorg of beroepscompetenties) en heeft meer effect bij eerstejaars dan bij ouderejaars.
+            Een algemene aanwezigheidsplicht voor een hele opleiding of studiejaar is juridisch niet toegestaan. Een aanwezigheidseis mag uitsluitend op cursusniveau wanneer sprake is van een praktische oefening (<strong>POA</strong>).
           </p>
 
         {/* Spoor 3 uitgelijnd met Spoor 1, met aan de rechterkant WHW-artikelen, Randvoorwaarden en Jurisprudentie */}
@@ -387,13 +377,13 @@ export const StepSection: React.FC<StepSectionProps> = ({
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
-                Spoor 3 · Normatieve ingreep
+                Spoor 3 · Aanwezigheidsplicht (POA)
               </span>
               <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-1.5">
                 Werken aan aanwezigheidsplicht
               </h4>
               <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
-                Overweegt het team een formele aanwezigheidsplicht, dan gelden er juridische randvoorwaarden. Studenten zijn in beginsel vrij om wel of niet bij colleges aanwezig te zijn (art. 1.6 WHW); een plicht is een beperking van die vrijheid en moet didactisch en in de OER onderbouwd zijn.
+                Overweegt het team een formele aanwezigheidsplicht, dan gelden de strikte kaders van Hogeschool Rotterdam en de WHW: studeren is een recht, geen plicht. Een plicht mag alleen op cursusniveau bij een praktische oefening (POA), met verplichte verankering in OER en curriculumschema.
               </p>
             </div>
             <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
@@ -407,188 +397,243 @@ export const StepSection: React.FC<StepSectionProps> = ({
             </div>
           </div>
 
-          {/* Rechter kolom: WHW-artikelen, Randvoorwaarden, Jurisprudentie en Beleidsaanbevelingen uitklapknoppen */}
-          <div className="flex flex-col gap-2 justify-between h-full">
+          {/* Rechter kolom: WHW-artikelen, Randvoorwaarden & HR-kader en Jurisprudentie */}
+          <div className="flex flex-col gap-3 h-full">
             {/* Card 1: WHW-artikelen */}
-            <button
-              type="button"
+            <div
               onClick={() => {
                 setShowWhwArtikelen(!showWhwArtikelen);
                 if (!showWhwArtikelen) {
                   setShowRandvoorwaarden(false);
                   setShowJurisprudentie(false);
-                  setShowBeleidsaanbevelingen(false);
                 }
               }}
-              className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 ${
+              className={`flex-1 p-3.5 sm:p-4 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 group ${
                 showWhwArtikelen
                   ? 'bg-white border-[#00b0eb] shadow-xs ring-1 ring-[#00b0eb]/30'
                   : 'bg-white border-[#003340]/15 hover:border-[#00b0eb]'
               }`}
             >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="w-7 h-7 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
-                  <BookOpen className="w-3.5 h-3.5 text-[#00b0eb]" />
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="w-8 h-8 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
+                  <BookOpen className="w-4 h-4 text-[#00b0eb]" />
                 </span>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-[13px] font-semibold text-[#003340] leading-tight truncate">
+                  <div className="text-xs sm:text-[13.5px] font-semibold text-[#003340] leading-tight truncate group-hover:text-[#00b0eb] transition-colors">
                     WHW-artikelen
                   </div>
-                  <div className="text-[11px] text-[#003340]/70 truncate">
-                    Art. 1.6, 7.10, 7.13, 9.18 & 10.3c
+                  <div className="text-[11px] sm:text-xs text-[#003340]/70 truncate mt-0.5">
+                    rondom aanwezigheid (o.a. art. 7.13, 7.3 & 9.18)
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[11px] font-semibold text-[#00b0eb] hidden sm:inline">
-                  {showWhwArtikelen ? 'Inklappen' : 'Uitklappen'}
-                </span>
-                {showWhwArtikelen ? (
-                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                )}
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-juridisch');
+                  }}
+                  title="Open in zijpaneel"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Meer info</span>
+                </button>
+                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
+                  <span className="text-[11px] font-semibold hidden lg:inline">
+                    {showWhwArtikelen ? 'Inklappen' : 'Uitklappen'}
+                  </span>
+                  {showWhwArtikelen ? (
+                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
+                  )}
+                </div>
               </div>
-            </button>
+            </div>
 
-            {/* Card 2: Wettelijke randvoorwaarden */}
-            <button
-              type="button"
+            {/* Card 2: Wettelijke randvoorwaarden & HR-kader */}
+            <div
               onClick={() => {
                 setShowRandvoorwaarden(!showRandvoorwaarden);
                 if (!showRandvoorwaarden) {
-                  setShowJurisprudentie(false);
                   setShowWhwArtikelen(false);
-                  setShowBeleidsaanbevelingen(false);
+                  setShowJurisprudentie(false);
                 }
               }}
-              className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 ${
+              className={`flex-1 p-3.5 sm:p-4 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 group ${
                 showRandvoorwaarden
                   ? 'bg-white border-[#00b0eb] shadow-xs ring-1 ring-[#00b0eb]/30'
                   : 'bg-white border-[#003340]/15 hover:border-[#00b0eb]'
               }`}
             >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="w-7 h-7 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="w-8 h-8 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
                   §
                 </span>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-[13px] font-semibold text-[#003340] leading-tight truncate">
-                    Wettelijke randvoorwaarden
+                  <div className="text-xs sm:text-[13.5px] font-semibold text-[#003340] leading-tight truncate group-hover:text-[#00b0eb] transition-colors">
+                    Wettelijke randvoorwaarden & HR-kader
                   </div>
-                  <div className="text-[11px] text-[#003340]/70 truncate">
-                    OER-basis, praktische oefening & maatwerk
+                  <div className="text-[11px] sm:text-xs text-[#003340]/70 truncate mt-0.5">
+                    OER-basis, POA, medezeggenschap & maatwerk
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[11px] font-semibold text-[#00b0eb] hidden sm:inline">
-                  {showRandvoorwaarden ? 'Inklappen' : 'Uitklappen'}
-                </span>
-                {showRandvoorwaarden ? (
-                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                )}
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-juridisch');
+                  }}
+                  title="Open in zijpaneel"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Meer info</span>
+                </button>
+                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
+                  <span className="text-[11px] font-semibold hidden lg:inline">
+                    {showRandvoorwaarden ? 'Inklappen' : 'Uitklappen'}
+                  </span>
+                  {showRandvoorwaarden ? (
+                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
+                  )}
+                </div>
               </div>
-            </button>
+            </div>
 
             {/* Card 3: Jurisprudentie */}
-            <button
-              type="button"
+            <div
               onClick={() => {
                 setShowJurisprudentie(!showJurisprudentie);
                 if (!showJurisprudentie) {
                   setShowRandvoorwaarden(false);
                   setShowWhwArtikelen(false);
-                  setShowBeleidsaanbevelingen(false);
                 }
               }}
-              className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 ${
+              className={`flex-1 p-3.5 sm:p-4 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 group ${
                 showJurisprudentie
                   ? 'bg-white border-[#00b0eb] shadow-xs ring-1 ring-[#00b0eb]/30'
                   : 'bg-white border-[#003340]/15 hover:border-[#00b0eb]'
               }`}
             >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="w-7 h-7 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
-                  <Scale className="w-3.5 h-3.5 text-[#00b0eb]" />
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="w-8 h-8 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
+                  <Scale className="w-4 h-4 text-[#00b0eb]" />
                 </span>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-[13px] font-semibold text-[#003340] leading-tight truncate">
+                  <div className="text-xs sm:text-[13.5px] font-semibold text-[#003340] leading-tight truncate group-hover:text-[#00b0eb] transition-colors">
                     Jurisprudentie
                   </div>
-                  <div className="text-[11px] text-[#003340]/70 truncate">
+                  <div className="text-[11px] sm:text-xs text-[#003340]/70 truncate mt-0.5">
                     4 uitspraken: CBE / CBHO rechtspraak
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[11px] font-semibold text-[#00b0eb] hidden sm:inline">
-                  {showJurisprudentie ? 'Inklappen' : 'Uitklappen'}
-                </span>
-                {showJurisprudentie ? (
-                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                )}
-              </div>
-            </button>
-
-            {/* Card 4: Beleidsaanbevelingen */}
-            <button
-              type="button"
-              onClick={() => {
-                setShowBeleidsaanbevelingen(!showBeleidsaanbevelingen);
-                if (!showBeleidsaanbevelingen) {
-                  setShowRandvoorwaarden(false);
-                  setShowJurisprudentie(false);
-                  setShowWhwArtikelen(false);
-                }
-              }}
-              className={`p-2.5 sm:p-3 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-3 ${
-                showBeleidsaanbevelingen
-                  ? 'bg-white border-[#00b0eb] shadow-xs ring-1 ring-[#00b0eb]/30'
-                  : 'bg-white border-[#003340]/15 hover:border-[#00b0eb]'
-              }`}
-            >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="w-7 h-7 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0">
-                  <UserCheck className="w-3.5 h-3.5 text-[#00b0eb]" />
-                </span>
-                <div className="min-w-0">
-                  <div className="text-xs sm:text-[13px] font-semibold text-[#003340] leading-tight truncate">
-                    Beleidsaanbevelingen
-                  </div>
-                  <div className="text-[11px] text-[#003340]/70 truncate">
-                    OER, IMR & OC, uitzonderingen & handhaving
-                  </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-juridisch');
+                  }}
+                  title="Open in zijpaneel"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Meer info</span>
+                </button>
+                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
+                  <span className="text-[11px] font-semibold hidden lg:inline">
+                    {showJurisprudentie ? 'Inklappen' : 'Uitklappen'}
+                  </span>
+                  {showJurisprudentie ? (
+                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
+                  )}
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="text-[11px] font-semibold text-[#00b0eb] hidden sm:inline">
-                  {showBeleidsaanbevelingen ? 'Inklappen' : 'Uitklappen'}
-                </span>
-                {showBeleidsaanbevelingen ? (
-                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                )}
-              </div>
-            </button>
+            </div>
           </div>
         </div>
 
-        {/* Uitklappaneel 1: Randvoorwaarden */}
+        {/* Uitklappaneel 1: WHW-artikelen */}
+        {showWhwArtikelen && (
+          <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 space-y-3 transition-all animate-in fade-in duration-200 shadow-xs">
+            <div className="flex items-center justify-between border-b border-[#003340]/10 pb-2.5">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold">
+                  <BookOpen className="w-3.5 h-3.5" />
+                </span>
+                <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
+                  Belangrijkste WHW-wetsartikelen rondom aanwezigheid
+                </h4>
+              </div>
+              <button
+                onClick={() => setShowWhwArtikelen(false)}
+                className="text-xs text-[#00b0eb] font-semibold hover:underline cursor-pointer"
+              >
+                Inklappen
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {DIMENSIONS['p-juridisch']?.lawArticles?.map((art, idx) => (
+                <div key={idx} className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3.5 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-1 mb-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#00b0eb] block">
+                        {art.lawRef}
+                      </span>
+                      {art.link && (
+                        <a
+                          href={art.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#00b0eb] hover:underline text-[10px] inline-flex items-center gap-0.5 shrink-0"
+                        >
+                          <span>Wettekst</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </a>
+                      )}
+                    </div>
+                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1.5">{art.title}</h5>
+                    <p className="text-[11px] text-[#003340]/80 leading-relaxed mb-2">{art.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-2 flex justify-end border-t border-[#003340]/10">
+              <button
+                type="button"
+                onClick={() => onOpenDimension('p-juridisch')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all cursor-pointer"
+              >
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info in zijpaneel (volledig juridisch dossier)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Uitklappaneel 2: Randvoorwaarden & HR-kader */}
         {showRandvoorwaarden && (
-          <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 space-y-3 transition-all animate-in fade-in duration-200">
+          <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 sm:p-5 space-y-4 transition-all animate-in fade-in duration-200 shadow-xs">
             <div className="flex items-center justify-between border-b border-[#003340]/10 pb-2.5">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold">
                   §
                 </span>
                 <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
-                  3 wettelijke randvoorwaarden voor een aanwezigheidsplicht
+                  Wettelijke randvoorwaarden & HR-kader
                 </h4>
               </div>
               <button
@@ -599,7 +644,55 @@ export const StepSection: React.FC<StepSectionProps> = ({
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* HR Juridisch Kader Callout: Kernconclusie & POA */}
+            <div className="bg-[#fbfaf5] border border-[#003340]/15 rounded-lg p-4 sm:p-4.5 space-y-3">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#003340] text-white tracking-wide">
+                    HR-kader 2025
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-[#003340]">
+                    Kernconclusie Juridische Zaken en O&K
+                  </span>
+                </div>
+                <a
+                  href="/memo-aanwezigheidsplicht-poa.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00b0eb]/10 hover:bg-[#00b0eb]/20 text-[#003340] font-semibold text-[11px] border border-[#00b0eb]/30 transition-colors"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#00b0eb]" />
+                  <span>Open intern memo (PDF)</span>
+                </a>
+              </div>
+
+              <p className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
+                Het juridisch kader van Hogeschool Rotterdam (Juridische Zaken en O&K, 2025) is helder: <strong>een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan</strong>. Studeren is een recht, geen plicht. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening betreft. Binnen HR heet dit een <strong>POA: een praktische oefening met aanwezigheidsplicht</strong>, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.
+              </p>
+
+              {/* Zes HR-voorbeelden van een praktische oefening */}
+              <div className="bg-white border border-[#003340]/15 rounded-md p-3.5 mt-2">
+                <h5 className="font-bold text-xs sm:text-[13px] text-[#003340] mb-2.5 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#00b0eb]"></span>
+                  Wat telt binnen HR als praktische oefening?
+                </h5>
+                <ul className="space-y-1.5 text-xs sm:text-[12.5px] text-[#003340]/90 list-disc pl-5 leading-relaxed">
+                  <li>Contextrijk onderwijs waarin theorie wordt verbonden aan praktijkvraagstukken, en waarin houdingsaspecten en vaardigheden in de les worden geoefend.</li>
+                  <li>Projectonderwijs, waar samenwerking en actieve deelname essentieel zijn.</li>
+                  <li>Programmatisch toetsen, waar feedbackmomenten verweven zijn met het leerproces.</li>
+                  <li>Het leren van agile werken en scrumvaardigheden, die je alleen in de groep opdoet.</li>
+                  <li>Presenteren.</li>
+                  <li>Het leren van een taal en van (non-verbale) communicatieve vaardigheden, zoals onderhandelen en de dialoog voeren over complexe onderwerpen.</li>
+                </ul>
+              </div>
+
+              <div className="pt-2 border-t border-[#003340]/10 flex items-center justify-between text-[11px] text-[#003340]/75">
+                <span><strong>Bron:</strong> Hogeschool Rotterdam, Aanwezigheidsplicht (POA). Intern kaderdocument (Juridische Zaken en O&K, juni 2025).</span>
+              </div>
+            </div>
+
+            {/* 3 wettelijke randvoorwaarden */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
               <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3.5 flex flex-col justify-between">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
@@ -607,7 +700,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   </span>
                   <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1">Basis in OER & Medezeggenschap</h5>
                   <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed mb-2">
-                    Een aanwezigheidsplicht hoort thuis in de OER (art. 7.13 WHW). De IMR heeft instemmingsrecht op de OER en de opleidingscommissie heeft advies- of instemmingsrecht (art. 9.18 en 10.3c WHW). Betrek beide tijdig.
+                    Een aanwezigheidsplicht hoort thuis in de OER (art. 7.13 WHW). De IMR heeft instemmingsrecht op de aanwezigheidsplicht (POA) en de opleidingscommissie heeft instemmingsrecht op de inrichting van praktische oefeningen en adviesrecht op de plicht.
                   </p>
                 </div>
                 <div className="text-[10px] font-semibold text-[#00b0eb] pt-2 border-t border-[#003340]/10">
@@ -620,9 +713,9 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
                     Randvoorwaarde 2
                   </span>
-                  <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1">Koppeling aan praktische oefening</h5>
+                  <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1">Koppeling aan praktische oefening (POA)</h5>
                   <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed mb-2">
-                    De plicht kan alleen bij praktische oefeningen (practica, stages, vaardigheidstrainingen) waar fysieke participatie noodzakelijk is voor het behalen van de eindkwalificatie.
+                    De plicht kan uitsluitend bij praktische oefeningen op cursusniveau waar fysieke participatie en samenwerking essentieel zijn om het leereffect te behalen.
                   </p>
                 </div>
                 <div className="text-[10px] font-semibold text-[#00b0eb] pt-2 border-t border-[#003340]/10">
@@ -637,7 +730,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   </span>
                   <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1">Vervangende opdracht & Maatwerk</h5>
                   <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed mb-2">
-                    Bied bij overmacht altijd een vervangende compensatieopdracht die <em>constructive aligned</em> is met de te behalen leerdoelen. Houd rekening met de zorgplicht en maatwerk.
+                    Bied bij overmacht altijd een gelijkwaardige vervangende compensatieopdracht die <em>constructive aligned</em> is met de te behalen leerdoelen. Houd rekening met zorgplicht en maatwerk.
                   </p>
                 </div>
                 <div className="text-[10px] font-semibold text-[#00b0eb] pt-2 border-t border-[#003340]/10 uppercase tracking-wider">
@@ -646,19 +739,21 @@ export const StepSection: React.FC<StepSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-1 flex justify-end">
+            <div className="pt-2 flex justify-end border-t border-[#003340]/10">
               <button
+                type="button"
                 onClick={() => onOpenDimension('p-juridisch')}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all cursor-pointer"
               >
-                <span>Volledige WHW wetteksten inzien in zijpaneel</span>
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info in zijpaneel (WHW wetteksten & kaders)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
         )}
 
-        {/* Uitklappaneel 2: Jurisprudentie */}
+        {/* Uitklappaneel 3: Jurisprudentie */}
         {showJurisprudentie && (
           <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 space-y-3 transition-all animate-in fade-in duration-200">
             <div className="flex items-center justify-between border-b border-[#003340]/10 pb-2.5">
@@ -678,6 +773,10 @@ export const StepSection: React.FC<StepSectionProps> = ({
               </button>
             </div>
 
+            <p className="text-xs text-[#003340]/80 leading-relaxed bg-[#fbfaf5] p-2.5 rounded border border-[#003340]/10">
+              De rechtspraak (o.a. Maastricht) sluit naadloos aan op het juridisch kader van HR: de wet biedt <strong>geen grondslag voor een generieke aanwezigheidsplicht</strong>. Een aanwezigheidseis mag alleen op cursusniveau bij een praktische oefening (POA) met specifieke didactische motivering en formele verankering in de OER.
+            </p>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Case 1 */}
               <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3.5 flex flex-col justify-between">
@@ -689,7 +788,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
                     </span>
                   </div>
                   <p className="text-[11px] text-[#003340]/75 mb-2 leading-relaxed">
-                    Een percentage-eis kan niet op een regulier theorie-vak worden gelegd; Calculus kwalificeerde niet als praktische oefening.
+                    Aanwezigheid is geen tentamenonderdeel (geen fraude bij aftekenen). WHW biedt geen grondslag voor aanwezigheidsplicht als toelatingseis voor theorievakken.
                   </p>
                 </div>
                 <div className="text-[10px] text-[#003340]/60 border-t border-[#003340]/10 pt-1.5 flex justify-between items-center">
@@ -756,211 +855,14 @@ export const StepSection: React.FC<StepSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-1 flex justify-end">
+            <div className="pt-2 flex justify-end border-t border-[#003340]/10">
               <button
+                type="button"
                 onClick={() => onOpenDimension('p-juridisch')}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all cursor-pointer"
               >
-                <span>Volledige zaakdossiers en juridische toelichting inzien</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Uitklappaneel 3: WHW-artikelen */}
-        {showWhwArtikelen && (
-          <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 space-y-3 transition-all animate-in fade-in duration-200">
-            <div className="flex items-center justify-between border-b border-[#003340]/10 pb-2.5">
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold">
-                  <BookOpen className="w-3.5 h-3.5" />
-                </span>
-                <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
-                  Belangrijkste WHW-wetsartikelen rondom aanwezigheid
-                </h4>
-              </div>
-              <button
-                onClick={() => setShowWhwArtikelen(false)}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline cursor-pointer"
-              >
-                Inklappen
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {DIMENSIONS['p-juridisch']?.lawArticles?.map((art, idx) => (
-                <div key={idx} className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3.5 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between gap-1 mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#00b0eb] block">
-                        {art.lawRef}
-                      </span>
-                      {art.link && (
-                        <a
-                          href={art.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#00b0eb] hover:underline text-[10px] inline-flex items-center gap-0.5 shrink-0"
-                        >
-                          <span>Wettekst</span>
-                          <ExternalLink className="w-2.5 h-2.5" />
-                        </a>
-                      )}
-                    </div>
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340] mb-1.5">{art.title}</h5>
-                    <p className="text-[11px] text-[#003340]/80 leading-relaxed mb-2">{art.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-1 flex justify-end">
-              <button
-                onClick={() => onOpenDimension('p-juridisch')}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
-              >
-                <span>Volledig juridisch dossier openen in zijpaneel</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Uitklappaneel 4: Beleidsaanbevelingen */}
-        {showBeleidsaanbevelingen && (
-          <div className="bg-white border border-[#00b0eb] rounded-lg overflow-hidden mb-4 p-4 sm:p-5 space-y-3 transition-all animate-in fade-in duration-200">
-            <div className="flex items-center justify-between border-b border-[#003340]/10 pb-2.5">
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold">
-                  <UserCheck className="w-3.5 h-3.5 text-[#00b0eb]" />
-                </span>
-                <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
-                  Beleidsaanbevelingen bij aanwezigheidsbeleid
-                </h4>
-              </div>
-              <button
-                onClick={() => setShowBeleidsaanbevelingen(false)}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline cursor-pointer"
-              >
-                Inklappen
-              </button>
-            </div>
-
-            <div className="space-y-2.5">
-              {/* Aanbeveling 1 */}
-              <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                  1
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340]">
-                      Aanwezigheidsplicht altijd expliciet opnemen in de OER.
-                    </h5>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/10 text-[#003340] border border-[#00b0eb]/20">
-                      OER (art. 7.13 WHW)
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed">
-                    Een aanwezigheidsplicht is een beperking van de studievrijheid en mag nooit alleen in een cursusblok of handleiding staan; de formele grondslag, norm en sancties moeten in de Onderwijs- en Examenregeling zijn vastgelegd.
-                  </p>
-                </div>
-              </div>
-
-              {/* Aanbeveling 2 */}
-              <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                  2
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340]">
-                      Didactische noodzaak onderbouwen; opleidingscommissie (OC) raadplegen (medezeggenschapsraad / IMR heeft instemmingsrecht).
-                    </h5>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/15 text-[#003340] border border-[#00b0eb]/30">
-                      IMR instemming
-                    </span>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/15 text-[#003340] border border-[#00b0eb]/30">
-                      OC raadpleging
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed">
-                    Onderbouw waarom actieve fysieke aanwezigheid noodzakelijk is om de leerdoelen te behalen (praktische oefening). Raadpleeg de Opleidingscommissie (OC) tijdig; de Instituutsmedezeggenschapsraad (IMR) heeft wettelijk instemmingsrecht op de OER.
-                  </p>
-                </div>
-              </div>
-
-              {/* Aanbeveling 3 */}
-              <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                  3
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340]">
-                      Redelijke uitzonderingen mogelijk maken (zorgplicht, functiebeperking, overmacht).
-                    </h5>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-[#003340] border border-amber-500/20">
-                      Zorgplicht & Maatwerk
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed">
-                    Bied altijd een reële vervangende compensatieopdracht die constructive aligned is met de leerdoelen voor studenten met overmacht, ziekte, mantelzorg of een functiebeperking.
-                  </p>
-                </div>
-              </div>
-
-              {/* Aanbeveling 4 */}
-              <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                  4
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340]">
-                      Transparant communiceren naar studenten vóór de start van de cursus.
-                    </h5>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/10 text-[#003340] border border-[#00b0eb]/20">
-                      Tijdige communicatie
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed">
-                    Studenten moeten vooraf via de studiegids en Brightspace precies weten wat de aanwezigheidsnorm is, hoe registratie plaatsvindt en welke procedure geldt bij verzuim.
-                  </p>
-                </div>
-              </div>
-
-              {/* Aanbeveling 5 */}
-              <div className="bg-[#fbfaf5]/60 border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                  5
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                    <h5 className="text-xs sm:text-sm font-semibold text-[#003340]">
-                      Proportioneel en zorgvuldig handelen bij handhaving.
-                    </h5>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/10 text-[#003340] border border-[#00b0eb]/20">
-                      Proportionaliteit
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-[#003340]/75 leading-relaxed">
-                    Weeg af of 100% aanwezigheid strikt noodzakelijk is of dat een lagere norm (bijv. 80%) volstaat. Handhaving en eventuele uitsluiting moeten voldoen aan de algemene beginselen van behoorlijk bestuur (evenredigheid en zorgvuldigheid).
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-2 flex justify-between items-center text-xs text-[#003340]/70 border-t border-[#003340]/10">
-              <span className="font-semibold text-[#00b0eb]">
-                IMR = Instituutsmedezeggenschapsraad · OC = Opleidingscommissie · OER = Onderwijs- en Examenregeling
-              </span>
-              <button
-                onClick={() => onOpenDimension('p-routeC')}
-                className="text-xs text-[#00b0eb] font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
-              >
-                <span>Volledig dossier openen in zijpaneel</span>
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info in zijpaneel (zaakdossiers & jurisprudentie)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

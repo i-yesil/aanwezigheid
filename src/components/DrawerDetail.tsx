@@ -330,6 +330,53 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: WHW */}
             {activeTab === 'whw' && dimension.lawArticles && (
               <div className="space-y-4">
+                {dimension.hrFramework && (
+                  <div className="bg-[#fbfaf5] border border-[#00b0eb]/40 rounded-lg p-4 space-y-3">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#003340] text-white">
+                          HR-Kader 2025
+                        </span>
+                        <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
+                          {dimension.hrFramework.title}
+                        </h4>
+                      </div>
+                      {dimension.hrFramework.sourceMemo?.fileUrl && (
+                        <a
+                          href={dimension.hrFramework.sourceMemo.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00b0eb]/10 hover:bg-[#00b0eb]/20 text-[#003340] font-semibold text-[11px] border border-[#00b0eb]/30 transition-colors"
+                        >
+                          <FileText className="w-3.5 h-3.5 text-[#00b0eb]" />
+                          <span>Open intern memo (PDF)</span>
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
+                      {dimension.hrFramework.summary}
+                    </p>
+
+                    {dimension.hrFramework.practicalExercises && (
+                      <div className="bg-white border border-[#003340]/15 rounded-md p-3">
+                        <h5 className="font-bold text-xs text-[#003340] mb-2 flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#00b0eb]"></span>
+                          Wat telt binnen HR als praktische oefening?
+                        </h5>
+                        <ul className="space-y-1 text-xs text-[#003340]/85 list-disc pl-4 leading-relaxed">
+                          {dimension.hrFramework.practicalExercises.map((ex, i) => (
+                            <li key={i}>{ex}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="pt-1.5 border-t border-[#003340]/10 text-[11px] text-[#003340]/75">
+                      <strong>Bron:</strong> {dimension.hrFramework.sourceMemo?.title || 'Hogeschool Rotterdam (Juridische Zaken en O&K, juni 2025)'}
+                    </div>
+                  </div>
+                )}
+
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb]">
                   Wettelijk kader (Wet op het Hoger Onderwijs en Wetenschappelijk Onderzoek)
                 </h3>

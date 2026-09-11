@@ -29,7 +29,7 @@ export const STEPS: StepSummary[] = [
     shortName: 'Handelingsperspectieven',
     tag: 'Handelingsperspectieven',
     leadQuestion: 'Hoe stimuleren we aanwezigheid en wanneer is aanwezigheidsplicht zinvol?',
-    description: 'Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan het systeem en werken aan begeleiding. Pas als dat aantoonbaar niet volstaat, onderzoek je of een formele aanwezigheidsplicht didactisch proportioneel is en juridisch voldoet aan de WHW en OER.',
+    description: 'Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan meerwaarde en studeerbaarheid en werken aan relatie en binding. Pas als dat aantoonbaar niet volstaat, onderzoek je of een formele aanwezigheidsplicht (POA) didactisch proportioneel is en juridisch voldoet aan de WHW en het HR-kader (2025).',
     color: '#00b0eb',
     activeBorderColor: 'border-[#00b0eb]',
     dimensions: ['p-routeA', 'p-routeB', 'p-routeC', 'p-juridisch']
@@ -57,7 +57,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Wie is onze student eigenlijk? Leefwereld, belasting, behoeften',
     shortDescription: 'Wie is onze student eigenlijk? Leefwereld, belasting en behoeften.',
     leadParagraph: 'Voordat we beleid maken, is de vraag wie onze studenten eigenlijk zijn. Verzuim is vaak een rationele keuze binnen een druk leven, niet onwil. Kwalitatief onderzoek onder eerstejaars schetst een herkenbaar beeld van hun leefwereld.',
-    dialogueQuestion: 'Waarom blijven studenten weg? Kennen wij onze studentpopulatie goed genoeg om beleid op af te stemmen, of ontwerpen we voor een student die niet meer bestaat?',
+    dialogueQuestion: 'Wat weten we feitelijk over de leefwereld, tijdsbesteding en prioriteiten van onze huidige studenten, en hoe sluit ons onderwijs daarop aan?',
     insights: [
       {
         text: 'School is voor veel eerstejaarsstudenten in dit onderzoek "één van de ballen die hoog gehouden moeten worden", naast werk, zorgtaken en sociaal leven; zij maken bewuste keuzes op basis van nut en timing.',
@@ -135,7 +135,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Activerende didactiek, constructive alignment, docentkwaliteit',
     shortDescription: 'Activerende didactiek, constructive alignment en docentkwaliteit.',
     leadParagraph: 'Wat studenten in de les ervaren, bepaalt sterker dan beleid de keuze om te komen. Aanwezigheid stijgt significant wanneer lessen interactief zijn en een duidelijke leerwaarde bieden.',
-    dialogueQuestion: 'Wat ervaren studenten tijdens onze bijeenkomsten, en hoe zorgen we dat fysieke aanwezigheid voor hen een merkbare en onmisbare meerwaarde heeft die zelfstudie niet kan bieden?',
+    dialogueQuestion: 'Wat gebeurt er in onze bijeenkomsten dat studenten nergens anders kunnen ervaren, en welke werkvormen maken fysieke aanwezigheid voor hen onmisbaar?',
     insights: [
       {
         text: 'Interactief, activerend onderwijs bevordert aanwezigheid, al blijkt een sterk gevoel van erbij horen (sense of belonging) uiteindelijk de doorslaggevende factor.',
@@ -212,7 +212,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Rooster-/deadlineconflicten, online alternatieven, interdependentie',
     shortDescription: 'Rooster-/deadlineconflicten, online alternatieven en interdependentie.',
     leadParagraph: 'Studenten blijven zelden zomaar weg. Als het ontwerp een gemakkelijk alternatief biedt (opnames, samenvattingen, losse deadlines), wordt wegblijven al gauw een logische en tijdsefficiënte keuze.',
-    dialogueQuestion: 'Is het "probleem" afwezigheid, of is het een ontwerpkeuze die afwezigheid rationeel maakt?',
+    dialogueQuestion: 'In welke mate nodigt de inrichting van ons curriculum en onze toetsing studenten uit om lessen over te slaan, en wat kunnen we daarin herontwerpen?',
     insights: [
       {
         text: 'Directe beschikbaarheid van volledige college-opnames of uitgebreide digitale notities is een grote voorspeller van fysiek verzuim.',
@@ -268,7 +268,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren',
     shortDescription: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren.',
     leadParagraph: 'Sancties en beloningen werken, maar niet voor iedereen even sterk en zonder risico\'s. Te veel dwang kan averechts werken op de motivatie- en autonomie-ontwikkeling van hbo-studenten.',
-    dialogueQuestion: 'Welke mix van sturen, belonen en kiezen past bij onze doelgroep, en hoe voorkomen we dat dwang de intrinsieke motivatie wegneemt?',
+    dialogueQuestion: 'Welke balans tussen uitnodigen, stimuleren en begrenzen versterkt de motivatie van studenten om actief deel te nemen?',
     insights: [
       {
         text: 'Gedragsregulatie (sancties/beloningen) is effectief voor aanwezigheid, maar onderpresteerders en studenten met beperkte voorkennis profiteren het meest.',
@@ -315,7 +315,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Eenduidige definitie, zwaarwegend beleid, coulance',
     shortDescription: 'Eenduidige definitie, zwaarwegend beleid en coulance.',
     leadParagraph: 'Een helder geformuleerd beleid is een randvoorwaarde, maar "one size fits all" werkt niet. Heldere regels over consequenties verkleinen de kans op verzuim, mits afgestemd op de studiefase.',
-    dialogueQuestion: 'Hebben we een heldere coulance-regeling (bijv. studenten laten afmelden bij docent én groep) die voorkomt dat elke afwezigheid via de examencommissie moet lopen?',
+    dialogueQuestion: 'Hoe vangen we overmacht en afwezigheid in het docententeam laagdrempelig op, en welke afspraken voorkomen onnodige juridisering?',
     insights: [
       {
         text: 'Duidelijke regels over consequenties en afmelden verkleinen de kans op verzuim aanzienlijk.',
@@ -362,7 +362,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Registratiesysteem, betrouwbare data, beperkte administratielast',
     shortDescription: 'Registratiesysteem, betrouwbare data en beperkte administratielast.',
     leadParagraph: 'Registratie lijkt een technisch detail, maar heeft zelfstandig effect: het enkel registreren van aanwezigheid stimuleert al de opkomst en levert data voor vroegsignalering.',
-    dialogueQuestion: 'Registreren we consequent als team? Inconsistentie tussen docenten ondermijnt de betrouwbaarheid voor de SLC, waardoor tijdig handelen onmogelijk wordt.',
+    dialogueQuestion: 'Hoe zetten we aanwezigheidsregistratie in als pedagogisch signaal voor tijdige begeleiding, en wat hebben we als team nodig om daarin één lijn te trekken?',
     insights: [
       {
         text: 'Het enkel zichtbaar registreren van aanwezigheid heeft zelf al een positief effect op opkomst.',
@@ -536,7 +536,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Normvorming: wat vinden we normaal? Effect op de groep die wél komt',
     shortDescription: 'Normvorming: wat vinden we normaal? Hoe wegen we effecten op de groep?',
     leadParagraph: 'Welke aanwezigheid vinden we normaal, en hoe wegen we de effecten op de studenten die wél komen? Afwezigheid heeft een rimpeleffect op de groepsdynamiek.',
-    dialogueQuestion: 'Accepteren we normdivergentie tussen docenten, of zien we dat als een teamverantwoordelijkheid? Wat volgt daaruit voor onze gespreksstructuur?',
+    dialogueQuestion: 'Wat beschouwen wij binnen ons docententeam als een gezonde norm voor aanwezigheid, en hoe zorgen we voor een gedeelde pedagogische lijn tussen docenten?',
     insights: [
       {
         text: 'Een sterk teamethos functioneert sociologisch: aanwezigheid als absolute vereiste, niet als vrijblijvende verwachting.',
@@ -570,7 +570,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Psychologisch contract: wat verwachten student en opleiding van elkaar?',
     shortDescription: 'Psychologisch contract: wederkerigheid tussen student en opleiding.',
     leadParagraph: 'Het psychologisch contract draait om wederkerigheid. Wat verwachten student en opleiding van elkaar, en wordt die relatie als eerlijk en betekenisvol ervaren?',
-    dialogueQuestion: 'Als we meer vragen van studenten, wat bieden we in ruil? Docentbeschikbaarheid, kwaliteit van de bijeenkomst, of heldere feedback?',
+    dialogueQuestion: 'Wanneer we van studenten actieve aanwezigheid verwachten, welke kwaliteit, docentbeschikbaarheid en feedback zetten wij daar als opleiding tegenover?',
     insights: [
       {
         text: 'Dwang zonder wederkerigheid ondermijnt autonomie en intrinsieke motivatie (zelfdeterminatietheorie).',
@@ -604,7 +604,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Leereffect: doet aanwezigheid er aantoonbaar toe, of is het moralisme?',
     shortDescription: 'Leereffect: doet aanwezigheid er aantoonbaar toe of is het moralisme?',
     leadParagraph: 'Is aanwezigheid een moreel oordeel of een didactische noodzaak? Als aanwezigheid geen aantoonbaar leereffect heeft in een specifiek vak, waarom eisen we haar dan?',
-    dialogueQuestion: 'Als aanwezigheid geen aantoonbaar leereffect heeft in dit specifieke vak, waarom eisen we haar dan?',
+    dialogueQuestion: 'Welke concrete bijdrage levert fysieke aanwezigheid aan het leerrendement en de professionele ontwikkeling in dit specifieke vak?',
     insights: [
       {
         text: 'De correlatie tussen aanwezigheid en cijfers is sterk bij eerste- en tweedejaars, maar neemt af bij ouderejaars door betere zelfregulatie.',
@@ -625,7 +625,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 3,
     stepName: 'Handelingsperspectieven',
     stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan het systeem',
+    name: 'Werken aan meerwaarde en studeerbaarheid',
     subtitle: 'Rooster, studeerbaarheid & didactische meerwaarde',
     shortDescription: 'Herontwerp van rooster, activerende didactiek en studeerbaarheid.',
     leadParagraph: 'Verander niet primair het gedrag van studenten, maar verander de context en randvoorwaarden die verzuim nu de makkelijkste keuze maken. Zorg voor merkbare meerwaarde in de les en een studeerbaar rooster.',
@@ -662,7 +662,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 3,
     stepName: 'Handelingsperspectieven',
     stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan begeleiding',
+    name: 'Werken aan relatie en binding',
     subtitle: 'Binding, vroegsignalering & persoonlijke follow-up',
     shortDescription: 'Vroegtijdige signalering, warme follow-up en preventieve begeleiding.',
     leadParagraph: 'Werk niet met een starre regel, maar met de relatie en preventieve opvolging. Versterk binding en docentnabijheid, en spreek studenten tijdig persoonlijk aan bij verzuim.',
@@ -702,11 +702,11 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Werken aan aanwezigheidsplicht',
     subtitle: 'Spoor 3 · Wanneer is een formele norm didactisch proportioneel en verdedigbaar?',
     shortDescription: 'Spoor 3: Werken aan aanwezigheidsplicht. Didactische afweging en proportionaliteit.',
-    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel (drempelcheck). Een alternatief model is "optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt voor de beoordeling. Dit behoudt autonomie en verhoogt opkomst structureel. Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de didactische modellen en wettelijke randvoorwaarden onverkort.',
-    dialogueQuestion: 'Hebben we als opleidingsteam eerst alle mogelijkheden binnen het systeem (activerende didactiek, rooster) en begeleiding ten volle benut, en waarom is een formele norm of verplichting in dít specifieke vak didactisch noodzakelijk en proportioneel?',
+    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel. Een alternatief model is "optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt voor de beoordeling. Dit behoudt autonomie en verhoogt opkomst structureel. Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de wettelijke randvoorwaarden.',
+    dialogueQuestion: 'Hebben we als opleidingsteam eerst alle mogelijkheden benut, en waarom is een verplichting noodzakelijk?',
     insights: [
       {
-        text: 'Drempelcheck: Een aanwezigheidseis is een ultimum remedium. Als stimuleren via didactiek en relatie volstaat, blijft de academische studievrijheid (art. 1.6 WHW) intact en is geen OER-wijziging vereist.',
+        text: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel. Als stimuleren via didactiek en relatie volstaat, blijft de academische studievrijheid (art. 1.6 WHW) intact en is geen OER-wijziging vereist.',
         citation: 'Art. 1.6 & 7.13 WHW; Kappe, 2026',
         citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
@@ -736,8 +736,8 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Juridische kaders, OER & Medezeggenschap',
     subtitle: 'WHW artikelen 1.6, 7.10, 7.13, 9.18, 10.3c en jurisprudentie',
     shortDescription: 'Juridische randvoorwaarden: WHW-basis, OER, medezeggenschap en jurisprudentie.',
-    leadParagraph: 'Studenten zijn in beginsel vrij om al dan niet aanwezig te zijn (art. 1.6 WHW). Een aanwezigheidsplicht beperkt die vrijheid en moet daarom aan strikte wettelijke eisen voldoen. De OER is het enige juridisch bindende document, met instemmingsrecht voor de IMR en advies-/instemmingsrecht voor de opleidingscommissie (OC).',
-    dialogueQuestion: 'Voldoen we aan de wettelijke voorwaarden voor een aanwezigheidsverplichting (OER, medezeggenschap, praktische oefening, constructive alignment), of doen we een claim die bij het CBE of de rechter sneuvelt?',
+    leadParagraph: 'Het juridisch kader van Hogeschool Rotterdam (Juridische Zaken en O&K, 2025) is helder: een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan. Studeren is een recht, geen plicht. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening betreft (POA: praktische oefening met aanwezigheidsplicht). In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is. De OER is het enige juridisch bindende document.',
+    dialogueQuestion: 'Hoe borgen we dat een eventuele aanwezigheidseis juridisch en onderwijskundig standhoudt (OER, medezeggenschap, praktische oefening) en studenten rechtszekerheid biedt?',
     insights: [
       {
         text: 'Aanwezigheidsplicht als losstaande maatregel heeft beperkt effect op leerprestaties; effectief is een gecombineerde aanpak waarin didactiek, teamethos en organisatie op orde zijn.',
@@ -799,7 +799,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         subTitle: 'CBE/JW 20.114a · zaaknummer 2020.105',
         institution: 'Maastricht University',
         instance: 'College van Beroep voor de Examens (CBE)',
-        subject: 'Voor het vak Calculus gold volgens art. 4.4 OER een aanwezigheidsplicht van 70%. Studenten die niet voldeden werden uitgesloten van het hertentamen.',
+        subject: 'Onderwerp: een student tekende tijdens een Calculus-bijeenkomst de aanwezigheid af voor twee afwezige medestudenten en werd door de examencommissie wegens fraude uitgesloten. In beroep toetste het CBE of hier sprake was van fraude in de zin van de WHW.',
         citedArticles: [
           { title: 'Artikel 7.34 lid 1 sub b WHW', text: 'Een ingeschreven student heeft recht om de tentamens af te leggen van de onderwijseenheden van de opleiding.' },
           { title: 'Artikel 7.13 lid 1 sub s en t WHW', text: 'Toelating tot tentamens kan slechts beperkt worden indien in OER opgenomen én gekoppeld aan praktische oefeningen.' },
@@ -807,10 +807,10 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         ],
         verdict: 'Student wint (Beroep gegrond)',
         verdictType: 'student',
-        keyLessons: 'Een percentage-eis kan niet op een regulier theorie-vak worden gelegd; Calculus kwalificeerde niet als praktische oefening. De OER-bepaling was in strijd met de WHW.',
+        keyLessons: 'Het CBE oordeelde dat aanwezigheid geen tentamenonderdeel is en dat de handeling daarom niet als fraude in de zin van de WHW kwalificeert. Aanvullend oordeelde het CBE dat de WHW geen grondslag biedt voor een aanwezigheidsplicht als voorwaarde voor tentamentoelating, omdat geen van de uitzonderingen in artikel 7.13 lid 1 sub s en t van toepassing was.',
         detailedReasons: [
-          'Calculus is een theoretisch vak, geen praktische oefening in de zin van art. 7.13 lid 1 sub t WHW.',
-          'Uitsluiting van tentamens zonder wettelijke grondslag schendt het recht op examinering conform art. 7.34 WHW.'
+          'Aanwezigheid is geen tentamenonderdeel; aftekenen voor een medestudent kwalificeert daarom niet als fraude in de zin van de WHW.',
+          'De WHW biedt geen grondslag voor een aanwezigheidsplicht als toelatingsvoorwaarde voor een theorievak als Calculus, omdat art. 7.13 lid 1 sub s en t WHW niet van toepassing zijn.'
         ]
       },
       {
@@ -819,7 +819,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         subTitle: 'CBHO 2016/069 · bonuspunt voor aanwezigheid',
         institution: 'Erasmus Universiteit Rotterdam, bachelor Rechtsgeleerdheid',
         instance: 'College van Beroep voor het Hoger Onderwijs (CBHO)',
-        subject: 'Examinator weigerde 0,5 bonuspunt voor aanwezigheid bij het eindcijfer toe te kennen.',
+        subject: 'De bestreden examinatorbeslissing dateert van december 2015; het CBHO deed uitspraak op 14 november 2016 (zaak 2016/069). De examinator weigerde 0,5 bonuspunt voor aanwezigheid bij het eindcijfer toe te kennen.',
         citedArticles: [
           { title: 'Artikel 7.3 lid 3 WHW', text: 'Aan elke onderwijseenheid is een tentamen verbonden.' },
           { title: 'Artikel 7.13 lid 2 sub l WHW', text: 'In de OER moet worden vermeld of tentamens mondeling, schriftelijk of op andere wijze worden afgelegd.' },
@@ -878,11 +878,29 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       'Zijn er alternatieven beschikbaar, zoals vervangende opdrachten?',
       'Wat gebeurt er bij ziekte, mantelzorg of overmacht; is er voorzien in maatwerk?'
     ],
+    hrFramework: {
+      title: 'Juridisch kader Hogeschool Rotterdam (Juridische Zaken en O&K, 2025)',
+      summary: 'Het juridisch kader van Hogeschool Rotterdam (Juridische Zaken en O&K, 2025) is helder: een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan. Studeren is een recht, geen plicht. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening betreft. Binnen HR heet dit een POA: een praktische oefening met aanwezigheidsplicht, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.',
+      practicalExercises: [
+        'Contextrijk onderwijs waarin theorie wordt verbonden aan praktijkvraagstukken, en waarin houdingsaspecten en vaardigheden in de les worden geoefend.',
+        'Projectonderwijs, waar samenwerking en actieve deelname essentieel zijn.',
+        'Programmatisch toetsen, waar feedbackmomenten verweven zijn met het leerproces.',
+        'Het leren van agile werken en scrumvaardigheden, die je alleen in de groep opdoet.',
+        'Presenteren.',
+        'Het leren van een taal en van (non-verbale) communicatieve vaardigheden, zoals onderhandelen en de dialoog voeren over complexe onderwerpen.'
+      ],
+      sourceMemo: {
+        title: 'Hogeschool Rotterdam, Aanwezigheidsplicht (POA). Intern kaderdocument',
+        fileName: 'Memo aanwezigheidsplicht versie 1.4.pdf',
+        fileUrl: '/memo-aanwezigheidsplicht-poa.pdf'
+      }
+    },
     policyRecommendations: [
-      'Aanwezigheidsplicht altijd expliciet opnemen in de OER.',
-      'Didactische noodzaak onderbouwen; Opleidingscommissie (OC) raadplegen (de Instituutsmedezeggenschapsraad / IMR heeft instemmingsrecht op de OER).',
-      'Redelijke uitzonderingen mogelijk maken (zorgplicht, functiebeperking, overmacht).',
-      'Transparant communiceren naar studenten vóór de start van de cursus.',
+      'Aanwezigheidsplicht altijd expliciet opnemen in de OER (art. 7.13 WHW) en uitsluitend koppelen aan een praktische oefening (POA) op cursusniveau.',
+      'De medezeggenschap toetst de onderbouwing per cursus. De opleidingscommissie heeft instemmingsrecht op de inrichting van praktische oefeningen en adviesrecht op de daaraan gekoppelde aanwezigheidsplicht. De instituutsmedezeggenschapsraad (IMR) heeft instemmingsrecht op de aanwezigheidsplicht (POA). Betrek de medezeggenschap dus tijdig, niet pas bij vaststelling.',
+      'Een aanwezigheidsplicht is altijd onderdeel van een breder pakket gericht op studiesucces, bijvoorbeeld onboarding, studentbesprekingen, en professionalisering van docenten. Overweeg ook of een advies om aanwezig te zijn volstaat in plaats van een plicht. Betrek de onderwijsadviseur bij het inrichten van dit pakket.',
+      'Redelijke uitzonderingen mogelijk maken (zorgplicht, functiebeperking, overmacht & vervangende opdracht).',
+      'Transparant communiceren naar studenten vóór de start van de cursus via de cursushandleiding en het curriculumschema in de hogeschoolgids.',
       'Proportioneel en zorgvuldig handelen bij handhaving.'
     ]
   },
@@ -897,7 +915,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Worden verwachtingen consistent ondersteund?',
     shortDescription: 'Worden verwachtingen consistent ondersteund?',
     leadParagraph: '"Gedragen" gaat over de mate waarin de organisatie als geheel achter de afspraak staat. Heldere beleidskaders, een coherente toepassing in het team, en organisatorische randvoorwaarden op orde (rooster, registratie, ondersteuning). Zonder dit blijven verwachtingen losse initiatieven van individuele docenten.',
-    dialogueQuestion: 'Staat aanwezigheid consequent in OER, studiehandleiding en Brightspace? Krijgt de student dezelfde reactie van docenten en SLC? Is aanwezig zijn praktisch haalbaar (rooster, lokaal)?',
+    dialogueQuestion: 'Hoe borgen we dat onze verwachtingen rondom aanwezigheid consistent worden ondersteund door beleid, rooster en het docententeam?',
     insights: [
       {
         text: 'Management en roostermakers zorgen voor studentvriendelijke roosters met aaneengesloten kerntijden, zodat aanwezigheid logistiek verenigbaar is met reistijd en bijbanen.',
@@ -926,7 +944,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Draagt aanwezigheid aantoonbaar bij aan leren?',
     shortDescription: 'Draagt aanwezigheid aantoonbaar bij aan leren?',
     leadParagraph: '"Geloofwaardig" gaat over didactische intentionaliteit en zichtbare leerwaarde. Aanwezigheid wordt pas geloofwaardig als de bijeenkomst iets biedt dat zelfstudie niet kan. Dat vraagt om constructive alignment en actieve werkvormen, niet om een plicht die passief aanwezig zijn afdwingt.',
-    dialogueQuestion: 'Wat gebeurt er in de les dat niet uit opname of boek te halen is? Zijn leerdoelen, werkvormen en toetsing op elkaar afgestemd? Zouden studenten zelf uitleggen waaróm ze er zijn?',
+    dialogueQuestion: 'Wat maakt onze bijeenkomsten didactisch zo betekenisvol dat studenten zelf ervaren dat fysieke aanwezigheid onmisbaar is voor hun leerproces?',
     insights: [
       {
         text: 'Aanwezigheid heeft pas geloofwaardige meerwaarde wanneer constructive alignment wordt toegepast: doelen, actieve werkvormen en toetsing zijn naadloos afgestemd.',
@@ -955,7 +973,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Zijn verwachtingen proportioneel en rechtvaardig?',
     shortDescription: 'Zijn verwachtingen proportioneel en rechtvaardig?',
     leadParagraph: '"Gerechtvaardigd" vraagt om differentiatie naar context en studiefase, en aandacht voor zorgplicht en kwetsbare studenten. Dezelfde eis kan bij eerstejaars terecht zijn en bij ouderejaars onnodig dwingend. Proportionaliteit betekent: is dit de minst zware maatregel die het leerdoel dient?',
-    dialogueQuestion: 'Is 100% aanwezigheid echt nodig, of volstaat minder? Zijn er alternatieven (vervangende opdrachten)? Wat gebeurt er bij ziekte, mantelzorg, functiebeperking? Onderscheid tussen eerste- en ouderejaars?',
+    dialogueQuestion: 'Welke kaders en maatwerkmogelijkheden zorgen ervoor dat onze aanwezigheidsnorm rechtvaardig, proportioneel en haalbaar blijft voor álle studenten?',
     insights: [
       {
         text: 'Een strikte aanwezigheidsplicht is sterk te rechtvaardigen in het eerste studiejaar om uitval te voorkomen, maar wordt disproportioneel in latere jaren.',
@@ -989,7 +1007,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Wordt verantwoordelijkheid gezamenlijk gedragen?',
     shortDescription: 'Wordt verantwoordelijkheid gezamenlijk gedragen?',
     leadParagraph: '"Gedeeld" benadrukt partnerschap tussen instelling, teams, docenten en studenten. Aanwezigheid is niet iets dat een opleiding eenzijdig oplegt; het is een gezamenlijke afspraak waarin elk niveau iets bijdraagt.',
-    dialogueQuestion: 'Wat vraagt het van management (rooster, faciliteiten)? Wat vraagt het van docenten (didactische kwaliteit)? Wat vraagt het van studenten en wat krijgen zij terug?',
+    dialogueQuestion: 'Hoe verdelen we de verantwoordelijkheid voor aanwezigheid evenwichtig tussen organisatie (faciliteiten/rooster), docent (didactiek) en student (inzet)?',
     insights: [
       {
         text: 'De primaire verantwoordelijkheid voor studiesucces mag niet eenzijdig bij de student worden gelegd; management en docententeams zijn gezamenlijk verantwoordelijk voor een studeerbaar programma.',
