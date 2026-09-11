@@ -63,7 +63,7 @@ export const ALL_SOURCES: SourceItem[] = [
     url: 'https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/eindrapport_samen_leren_in_het_hbo-zestor.pdf',
     doiOrRef: 'Zestor Eindrapport',
     topicTags: ['Docententeams', 'Professionele Leergemeenschap', 'Teamethos'],
-    summary: 'Rapport over hoe docententeams samenhang creëren door gezamenlijk normen vast te stellen en elkaars onderwijspraktijk te versterken.',
+    summary: 'Rapport over hoe docententeams samenhang creëren door gezamenlijk normen vast te stellen en elkaars onderwijspraktijk te versterken; richt zich op teamprofessionalisering in het hbo en wordt hier naar analogie toegepast op normvorming rond aanwezigheid.',
     keyQuoteOrTakeaway: 'Een gedeelde teamnorm voorkomt dat studenten willekeur of docent-afhankelijke aanwezigheidsregels ervaren.'
   },
   {
@@ -242,7 +242,7 @@ export const ALL_SOURCES: SourceItem[] = [
     authors: 'Kappe, F. R.',
     year: 2026,
     sourceOrPublisher: 'Lectoraatsuitgave Studiesucces 2026-01, Hogeschool Inholland',
-    url: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8',
+    url: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/',
     doiOrRef: 'Lectoraat Studiesucces 2026-01',
     topicTags: ['Rimpeleffect', 'Sense of Belonging', 'Cherry-picking', 'HBO-Onderzoek'],
     summary: 'Baanbrekend Nederlands onderzoek naar het rimpeleffect van verzuim: afwezigheid van student A ontmoedigt student B en demotiveert docenten. Analyseert ook cherry-picking en post-COVID verzuimpatronen.',

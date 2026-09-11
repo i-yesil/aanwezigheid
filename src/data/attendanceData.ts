@@ -60,7 +60,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     dialogueQuestion: 'Waarom blijven studenten weg? Kennen wij onze studentpopulatie goed genoeg om beleid op af te stemmen, of ontwerpen we voor een student die niet meer bestaat?',
     insights: [
       {
-        text: 'School is voor veel studenten "één van de ballen die hoog gehouden moeten worden", naast werk, zorgtaken en sociaal leven; zij maken bewuste keuzes op basis van nut en timing.',
+        text: 'School is voor veel eerstejaarsstudenten in dit onderzoek "één van de ballen die hoog gehouden moeten worden", naast werk, zorgtaken en sociaal leven; zij maken bewuste keuzes op basis van nut en timing.',
         citation: 'Tahir et al., 2024',
         citationUrl: 'https://www.fleviskenniswerkplaatsjeugd.nl/wp-content/uploads/2024/01/Rapport-Sense-of-Belonging-nov2023-kleiner.pdf'
       },
@@ -85,19 +85,19 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citationUrl: 'https://doi.org/10.71634/er166487'
       },
       {
-        text: 'Persoonlijk gevraagd worden en docentnabijheid verhogen deelname veel sterker dan algemene e-mails of communicatiecampagnes in de huisstijl.',
+        text: 'Persoonlijk gevraagd worden en docentnabijheid verhogen in dit onderzoek de deelname veel sterker dan algemene e-mails of communicatiecampagnes in de huisstijl.',
         citation: 'Tahir et al., 2024',
         citationUrl: 'https://www.fleviskenniswerkplaatsjeugd.nl/wp-content/uploads/2024/01/Rapport-Sense-of-Belonging-nov2023-kleiner.pdf'
       },
       {
         text: 'Studenten passen "cherry-picking" toe: ze wonen niet alle lessen bij maar maken een bewuste selectie van bijeenkomsten die zij als essentieel beschouwen.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       },
       {
         text: 'Post-COVID wegen studenten actiever af tussen fysieke aanwezigheid en digitale alternatieven; aanwezigheid is minder vanzelfsprekend geworden en onderwijs moet zichtbaar toegevoegde waarde bieden.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ],
     practicalMaterials: [
@@ -138,6 +138,11 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     dialogueQuestion: 'Wat ervaren studenten tijdens onze bijeenkomsten, en hoe zorgen we dat fysieke aanwezigheid voor hen een merkbare en onmisbare meerwaarde heeft die zelfstudie niet kan bieden?',
     insights: [
       {
+        text: 'Interactief, activerend onderwijs bevordert aanwezigheid, al blijkt een sterk gevoel van erbij horen (sense of belonging) uiteindelijk de doorslaggevende factor.',
+        citation: 'Ralph et al., 2025',
+        citationUrl: 'https://doi.org/10.71634/er166487'
+      },
+      {
         text: 'Aanwezigheid stijgt significant bij activerende didactiek en constructive alignment.',
         citation: 'Biggs, 1996; Biggs & Tang, 2011',
         citationUrl: 'https://doi.org/10.1007/BF00138871'
@@ -170,7 +175,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'De ervaren meerwaarde van onderwijs is de belangrijkste voorspeller van aanwezigheid: relevantie voor toetsing, samenwerkingskansen en interactiviteit wegen zwaarder dan plichten.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ],
     practicalMaterials: [
@@ -335,7 +340,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Praktijkgerichte onderwijsvormen (practica, workshops) hebben hogere opkomst dan traditionele colleges; beleid moet contextafhankelijk zijn.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ],
     practicalMaterials: [
@@ -442,8 +447,8 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citationUrl: 'https://www.researchgate.net/publication/359802934'
       },
       {
-        text: 'Aanwezigheid lukt zelden met één losse maatregel; ze volgt uit een gezamenlijke, consistente teamaanpak waarin didactiek, begeleiding én organisatie samenkomen.',
-        citation: 'Brouwer, Van Middelkoop et al., 2024 / Zestor',
+        text: 'Aanwezigheid lukt zelden met één losse maatregel; ze volgt uit een gezamenlijke, consistente teamaanpak waarin didactiek, begeleiding én organisatie samenkomen; dit onderzoek richt zich op teamprofessionalisering in het hbo en wordt hier naar analogie toegepast op normvorming rond aanwezigheid.',
+        citation: 'Brouwer, Van Middelkoop et al., 2024',
         citationUrl: 'https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/eindrapport_samen_leren_in_het_hbo-zestor.pdf'
       },
       {
@@ -508,7 +513,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Wanneer reistijd langer is dan de duur van een enkele losse les, kiezen studenten vrijwel altijd voor zelfstudie.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ],
     practicalMaterials: [
@@ -539,6 +544,11 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citationUrl: 'https://doi.org/10.1080/07294360600947368'
       },
       {
+        text: 'Aanwezigheid lukt zelden met één losse maatregel; ze volgt uit een gezamenlijke, consistente teamaanpak waarin didactiek, begeleiding én organisatie samenkomen; dit onderzoek richt zich op teamprofessionalisering in het hbo en wordt hier naar analogie toegepast op normvorming rond aanwezigheid.',
+        citation: 'Brouwer, Van Middelkoop et al., 2024',
+        citationUrl: 'https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/eindrapport_samen_leren_in_het_hbo-zestor.pdf'
+      },
+      {
         text: 'Sociale integratie en het gevoel van verbondenheid zijn directe voorspellers van opkomst; isolatie voorspelt verzuim.',
         citation: 'Ralph et al., 2025',
         citationUrl: 'https://doi.org/10.71634/er166487'
@@ -546,7 +556,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Het rimpeleffect van afwezigheid: bij een kantelpunt gaan aanwezige studenten zich de uitzondering voelen in plaats van de norm, wat een neerwaartse spiraal veroorzaakt.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ]
   },
@@ -580,7 +590,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       {
         text: 'Studenten met lage academische zelfeffectiviteit vermijden soms lessen uit angst voor mislukking of gebrek aan voorbereiding; eerstejaars trekken zich eerder terug.',
         citation: 'Kappe, 2026',
-        citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8'
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
     ]
   },
@@ -1025,7 +1035,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       { text: 'Fitzpatrick, J., Cronin, K., & Byrne, E. (2011). Is attending lectures still relevant in engineering education? European Journal of Engineering Education, 36(3), 301–312.', citation: 'doi.org/10.1080/03043797.2011.585226', citationUrl: 'https://doi.org/10.1080/03043797.2011.585226' },
       { text: 'Hattie, J. (2016). Collective Teacher Efficacy [Visible Learning].', citation: 'visible-learning.org', citationUrl: 'https://visible-learning.org/2018/03/collective-teacher-efficacy-hattie/' },
       { text: 'Jaftha, N., Micallef, M., & Chircop, T. (2022). Absenteeism in post-secondary education [Research report]. ResearchGate.', citation: 'researchgate.net', citationUrl: 'https://www.researchgate.net/publication/359802934' },
-      { text: 'Kappe, F. R. (2026). Afwezig maar aanwezig: Het rimpeleffect van afwezigheid van studenten (Lectoraatsuitgave Studiesucces 2026-01). Hogeschool Inholland.', citation: 'surf.nl', citationUrl: 'https://objectstore.surf.nl/live/objectstore/aff0d953-ff8d-4dab-86d8-f0138e12e564/202605%20Lectoraatsuitgave%20onderzoek%20aanwezigheid%20HO%20vDef.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=8ea577ad65394dfeb2d62886e3056a36%2F20260910%2FNL%2Fs3%2Faws4_request&X-Amz-Date=20260910T142122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=cc4b78fec4bc0b45492a71abcade135903910a59f43349e7a0bc0842ed8090c8' },
+      { text: 'Kappe, F. R. (2026). Afwezig maar aanwezig: Het rimpeleffect van afwezigheid van studenten (Lectoraatsuitgave Studiesucces 2026-01). Hogeschool Inholland.', citation: 'inholland.nl', citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/' },
       { text: 'Klatter, E., & Smeets, E. (2023). Studentsucces verbeteren: focus op oorzaken, niet op symptomen. ScienceGuide.', citation: 'scienceguide.nl', citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/' },
       { text: 'Ralph, V. R., Dube, T., & Ainsworth, M. C. (2025). Attendance, belonging, and engagement in higher education.', citation: 'doi.org/10.71634/er166487', citationUrl: 'https://doi.org/10.71634/er166487' },
       { text: 'Tahir, L., Josso Loureiro, P., & Vissenberg, C. (2024). Sense of belonging: een kwalitatief participatief onderzoek naar de sense of belonging van studenten bij Windesheim in Almere.', citation: 'fleviskenniswerkplaatsjeugd.nl', citationUrl: 'https://www.fleviskenniswerkplaatsjeugd.nl/wp-content/uploads/2024/01/Rapport-Sense-of-Belonging-nov2023-kleiner.pdf' },
