@@ -29,6 +29,7 @@ const INITIAL_STATE: AssessmentState = {
     inOER: false,
     practicalExercise: false,
     hasAlternativeAssignment: false,
+    transparentCommunication: false,
     proportionalPolicy: false,
   },
   fourGScores: {
@@ -208,25 +209,31 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                         <span className={assessment.legalChecked.inOER ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
                           {assessment.legalChecked.inOER ? '✓' : '✗'}
                         </span>
-                        <span>Opgenomen in OER (art. 7.13 WHW + medezeggenschap)</span>
+                        <span>1. Opgenomen in OER (art. 7.13 WHW)</span>
                       </li>
                       <li className="flex items-center gap-1.5">
                         <span className={assessment.legalChecked.practicalExercise ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
                           {assessment.legalChecked.practicalExercise ? '✓' : '✗'}
                         </span>
-                        <span>Kwalificeert als praktische oefening</span>
+                        <span>2. Didactische noodzaak + OC geraadpleegd & IMR instemming</span>
                       </li>
                       <li className="flex items-center gap-1.5">
                         <span className={assessment.legalChecked.hasAlternativeAssignment ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
                           {assessment.legalChecked.hasAlternativeAssignment ? '✓' : '✗'}
                         </span>
-                        <span>Vervangende constructive aligned opdracht</span>
+                        <span>3. Uitzonderingen mogelijk (zorgplicht/overmacht) & vervangende opdracht</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className={assessment.legalChecked.transparentCommunication ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
+                          {assessment.legalChecked.transparentCommunication ? '✓' : '✗'}
+                        </span>
+                        <span>4. Transparante communicatie vóór start cursus</span>
                       </li>
                       <li className="flex items-center gap-1.5">
                         <span className={assessment.legalChecked.proportionalPolicy ? 'text-emerald-600 font-bold' : 'text-rose-600 font-bold'}>
                           {assessment.legalChecked.proportionalPolicy ? '✓' : '✗'}
                         </span>
-                        <span>Proportionele norm met zorgplicht</span>
+                        <span>5. Proportioneel en zorgvuldig bij handhaving</span>
                       </li>
                     </ul>
                   )}
@@ -432,7 +439,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 4 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#3ab7b0] uppercase tracking-wider">Handelingsperspectieven: fase 2</span>
+                    <span className="text-xs font-bold text-[#00b0eb] uppercase tracking-wider">Handelingsperspectieven: fase 2</span>
                     <h3 className="text-lg font-bold text-[#003340]">Wanneer is aanwezigheidsplicht zinvol?</h3>
                   </div>
 
@@ -442,7 +449,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
                   <div className="bg-white border border-[#003340]/15 rounded-lg p-3.5 space-y-2">
                     <label className="block text-xs font-bold text-[#003340] uppercase tracking-wider">
-                      Spoor 3: Werken aan aanwezigheids- en of participatieplicht
+                      Spoor 3: Werken aan aanwezigheidsplicht
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                       <button
@@ -465,7 +472,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                         onClick={() => setAssessment({ ...assessment, isObligationPlanned: true })}
                         className={`p-3 rounded border text-left cursor-pointer transition-all ${
                           assessment.isObligationPlanned
-                            ? 'bg-[#f2faf9] border-[#3ab7b0] text-[#003340] font-semibold shadow-2xs'
+                            ? 'bg-[#f0f9fd] border-[#00b0eb] text-[#003340] font-semibold shadow-2xs'
                             : 'bg-white border-[#003340]/20 text-[#003340]/75 hover:bg-[#fbfaf5]'
                         }`}
                       >
@@ -497,10 +504,11 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
                       <div className="space-y-2.5">
                         {[
-                          { key: 'inOER', label: '1. De aanwezigheidsplicht is expliciet opgenomen in de OER (art. 7.13 WHW) met instemming van de IMR en advies/instemming van de OC.' },
-                          { key: 'practicalExercise', label: '2. De bijeenkomsten kwalificeren didactisch als praktische oefening (practicum, vaardigheidstraining, groepstoetsing).' },
-                          { key: 'hasAlternativeAssignment', label: '3. Er is voorzien in een vervangende opdracht bij overmacht/ziekte die constructive aligned is met de leerdoelen.' },
-                          { key: 'proportionalPolicy', label: '4. De eis is proportioneel (bijv. 80% norm ipv 100%, passend bij de doelgroep).' },
+                          { key: 'inOER', label: '1. Aanwezigheidsplicht altijd expliciet opnemen in de OER (art. 7.13 WHW).' },
+                          { key: 'practicalExercise', label: '2. Didactische noodzaak onderbouwen; Opleidingscommissie (OC) raadplegen (IMR heeft instemmingsrecht op de OER).' },
+                          { key: 'hasAlternativeAssignment', label: '3. Redelijke uitzonderingen mogelijk maken (zorgplicht, functiebeperking, overmacht & vervangende opdracht).' },
+                          { key: 'transparentCommunication', label: '4. Transparant communiceren naar studenten vóór de start van de cursus (studiegids & Brightspace).' },
+                          { key: 'proportionalPolicy', label: '5. Proportioneel en zorgvuldig handelen bij handhaving (evenredigheidstoets).' },
                         ].map((item) => {
                           const k = item.key as keyof AssessmentState['legalChecked'];
                           const checked = assessment.legalChecked[k];
@@ -538,7 +546,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
                     <span className="text-xs font-bold text-[#fcc200] text-[#003340] uppercase tracking-wider">De vier G's</span>
-                    <h3 className="text-lg font-bold text-[#003340]">Houdt ons beleid stand?</h3>
+                    <h3 className="text-lg font-bold text-[#003340]">Staat het beleid stevig?</h3>
                   </div>
 
                   <p className="text-xs text-[#003340]/80">

@@ -39,7 +39,7 @@ export const STEPS: StepSummary[] = [
     name: "De vier G's",
     shortName: "De vier G's",
     tag: "De vier G's",
-    leadQuestion: 'Houdt ons beleid stand?',
+    leadQuestion: 'Staat het beleid stevig?',
     description: 'Vier evaluatievragen om te toetsen of de voorgenomen aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
     color: '#fcc200',
     activeBorderColor: 'border-[#fcc200]',
@@ -689,10 +689,10 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 3,
     stepName: 'Handelingsperspectieven',
     stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan aanwezigheids- en of participatieplicht',
+    name: 'Werken aan aanwezigheidsplicht',
     subtitle: 'Spoor 3 · Wanneer is een formele norm didactisch proportioneel en verdedigbaar?',
-    shortDescription: 'Spoor 3: Werken aan aanwezigheids- en of participatieplicht. Didactische afweging en proportionaliteit.',
-    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel (drempelcheck). Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de didactische modellen en wettelijke randvoorwaarden onverkort.',
+    shortDescription: 'Spoor 3: Werken aan aanwezigheidsplicht. Didactische afweging en proportionaliteit.',
+    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel (drempelcheck). Een alternatief model is "optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt voor de beoordeling. Dit behoudt autonomie en verhoogt opkomst structureel. Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de didactische modellen en wettelijke randvoorwaarden onverkort.',
     dialogueQuestion: 'Hebben we als opleidingsteam eerst alle mogelijkheden binnen het systeem (activerende didactiek, rooster) en begeleiding ten volle benut, en waarom is een formele norm of verplichting in dít specifieke vak didactisch noodzakelijk en proportioneel?',
     insights: [
       {
@@ -714,18 +714,6 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         text: 'Een normatieve ingreep past goed bij eerstejaars, praktische vaardigheden en beroepscompetenties; minder bij theoretische hoorcolleges van ouderejaars.',
         citation: 'Bijsmans & Schakel, 2018; Dobkin et al., 2010; Klatter & Smeets, 2023',
         citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/'
-      }
-    ],
-    practicalMaterials: [
-      {
-        title: 'Model: Optioneel-verplicht (Cullen & Oppenheimer, 2024)',
-        description: 'Studenten kiezen aan de start van de cursus of aanwezigheid meetelt voor de beoordeling of dat zij een alternatieve opdracht maken. Behoudt academische autonomie en verhoogt opkomst met 14-22%.',
-        type: 'framework'
-      },
-      {
-        title: 'Doelgroep- & Werkvormmatrix',
-        description: 'Overzicht van onderwijsvormen waar een formele eis didactisch en juridisch verdedigbaar is (practica, patiëntencontact, vaardigheidstrainingen) versus waar studievrijheid prevaleert.',
-        type: 'guide'
       }
     ]
   },
@@ -882,7 +870,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ],
     policyRecommendations: [
       'Aanwezigheidsplicht altijd expliciet opnemen in de OER.',
-      'Didactische noodzaak onderbouwen; opleidingscommissie raadplegen (medezeggenschapsraad heeft instemmingsrecht).',
+      'Didactische noodzaak onderbouwen; Opleidingscommissie (OC) raadplegen (de Instituutsmedezeggenschapsraad / IMR heeft instemmingsrecht op de OER).',
       'Redelijke uitzonderingen mogelijk maken (zorgplicht, functiebeperking, overmacht).',
       'Transparant communiceren naar studenten vóór de start van de cursus.',
       'Proportioneel en zorgvuldig handelen bij handhaving.'
@@ -1017,7 +1005,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 'bronnen',
     stepName: 'Referentie',
     stepTag: 'Bronnen',
-    name: 'Geraadpleegde literatuur en bronnen',
+    name: 'Geraadpleegde bronnen',
     shortDescription: 'Alle wetenschappelijke publicaties, jurisprudentie en wetsartikelen.',
     leadParagraph: 'Alle wetenschappelijke publicaties, jurisprudentie en wetsartikelen die in deze handreiking worden aangehaald. Klik op een titel om direct naar de bron of DOI te gaan.',
     dialogueQuestion: 'Wilt u zich verder verdiepen in de empirische literatuur of wetgeving rond aanwezigheid?',

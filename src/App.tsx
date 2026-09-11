@@ -20,7 +20,7 @@ export default function App() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
 
-      const stepIds: StepNumber[] = [1, 2, 3, 4, 5];
+      const stepIds: StepNumber[] = [1, 2, 3, 4];
       const scrollThreshold = window.innerHeight * 0.35;
 
       for (let i = stepIds.length - 1; i >= 0; i--) {
@@ -75,7 +75,7 @@ export default function App() {
             aanwezigheids<span className="text-[#d3104c]">ethos</span>
           </h1>
           <p className="text-base sm:text-lg text-[#003340]/90 mb-2 leading-relaxed font-normal">
-            Een stapsgewijs kader voor het gesprek over aanwezigheid, zonder het probleem tot "wel of geen plicht" te reduceren.
+            Een gespreksleidraad over aanwezigheid.
           </p>
           <p className="text-xs sm:text-sm text-[#003340]/65 italic flex flex-wrap items-center gap-1.5">
             <span>Klik op</span>
@@ -91,14 +91,11 @@ export default function App() {
         <div className="space-y-6 mb-12">
           {/* Wicked Problem Callout Box */}
           <div className="bg-white border border-[#003340]/15 rounded-xl p-5 sm:p-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#d3104c] block mb-2">
-              Voer het gesprek
-            </span>
             <p className="text-sm sm:text-[15px] text-[#003340] leading-relaxed mb-3 font-medium">
               Aanwezigheid van studenten in de les is een <strong>wicked problem</strong>: veel actoren, veel factoren, en beleidskeuzes die elkaar beïnvloeden. Er is geen één magische oplossing. Wat wel werkt: zorgen dat de keuzes die je maakt op elkaar zijn afgestemd; binnen het team en tussen de feitelijke en normatieve dimensies.
             </p>
             <p className="text-sm text-[#003340]/80 leading-relaxed mb-3">
-              Deze handreiking neemt je mee langs vijf stappen om tot een onderbouwd advies of een afgestemde aanpak te komen.
+              Deze handreiking neemt je mee langs vier stappen om tot een onderbouwd advies of een afgestemde aanpak te komen.
             </p>
             <div className="pt-3 border-t border-[#003340]/10 text-xs text-[#003340]/70 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
               <span>
@@ -119,7 +116,7 @@ export default function App() {
           <div className="bg-transparent py-2 sm:py-4">
             <div className="text-center mb-3">
               <h3 className="text-sm sm:text-base font-semibold text-[#003340]">
-                Doorloop de vijf stappen in het wiel voor het teamgesprek
+                Doorloop de vier stappen in het wiel voor het teamgesprek
               </h3>
               <p className="text-xs sm:text-[13px] text-[#003340]/75 mt-0.5">
                 Klik op een stap of cijfer om direct naar de toelichting en praktische handvatten te gaan
@@ -129,13 +126,12 @@ export default function App() {
           </div>
         </div>
 
-        {/* 5 Steps Container */}
+        {/* 4 Steps Container */}
         <div className="relative space-y-2">
           <StepSection stepNumber={1} onOpenDimension={(id) => setOpenDrawerId(id)} />
           <StepSection stepNumber={2} onOpenDimension={(id) => setOpenDrawerId(id)} />
           <StepSection stepNumber={3} onOpenDimension={(id) => setOpenDrawerId(id)} />
           <StepSection stepNumber={4} onOpenDimension={(id) => setOpenDrawerId(id)} />
-          <StepSection stepNumber={5} onOpenDimension={(id) => setOpenDrawerId(id)} />
         </div>
 
         {/* Conclusion / Afsluiting Box */}
@@ -144,7 +140,7 @@ export default function App() {
             Tot slot
           </span>
           <p className="text-sm text-[#003340] leading-relaxed mb-4">
-            Een aanwezigheidsethos bouw je niet in één gesprek. De vijf stappen zijn geen eenmalige checklist, maar een leidraad die steeds opnieuw langsgelopen kan worden wanneer het curriculum verandert, de studentenpopulatie verschuift of het team roteert. De vier G's blijven daarbij het kompas: zodra één G gaat schuren, ligt daar het volgende gesprek.
+            Een aanwezigheidsethos bouw je niet in één gesprek. De vier stappen zijn geen eenmalige checklist, maar een leidraad die steeds opnieuw langsgelopen kan worden wanneer het curriculum verandert, de studentenpopulatie verschuift of het team roteert. De vier G's blijven daarbij het kompas: zodra één G gaat schuren, ligt daar het volgende gesprek.
           </p>
           <div className="flex items-center gap-3 text-xs text-[#003340]/80 pt-3 border-t border-[#003340]/10 flex-wrap sm:flex-nowrap">
             <button

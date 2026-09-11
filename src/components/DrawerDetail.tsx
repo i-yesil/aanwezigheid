@@ -72,7 +72,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   const hasMedia = Boolean(dimension.media && dimension.media.length > 0);
   const hasWHW = Boolean(dimension.lawArticles && dimension.lawArticles.length > 0);
   const hasCases = Boolean(dimension.courtCases && dimension.courtCases.length > 0);
-  const hasTools = hasPractical || Boolean(dimension.policyRecommendations && dimension.policyRecommendations.length > 0) || Boolean(dimension.proportionalityQuestions && dimension.proportionalityQuestions.length > 0);
+  const hasTools = (hasPractical || Boolean(dimension.policyRecommendations && dimension.policyRecommendations.length > 0) || Boolean(dimension.proportionalityQuestions && dimension.proportionalityQuestions.length > 0));
   const hasInsights = Boolean(dimension.insights && dimension.insights.length > 0);
 
   const toggleCase = (id: string) => {
@@ -84,8 +84,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
       case 1: return 'bg-[#d3104c] text-white';
       case 2: return 'bg-[#003340] text-white';
       case 3: return 'bg-[#00b0eb] text-[#003340]';
-      case 4: return 'bg-[#3ab7b0] text-white';
-      case 5: return 'bg-[#fcc200] text-[#003340]';
+      case 4: return 'bg-[#fcc200] text-[#003340]';
       default: return 'bg-[#003340] text-white';
     }
   };
@@ -193,122 +192,88 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             ) : (
               <>
                 <div className="flex items-center gap-2 flex-wrap pt-1 border-b border-[#003340]/10 pb-3">
-                  {dimension.step === 4 ? (
-                    <>
-                      {hasInsights && (
-                        <button
-                          onClick={() => setActiveTab('inzichten')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'inzichten'
-                              ? 'bg-[#3ab7b0] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
-                          }`}
-                        >
-                          <BookOpen className="w-3.5 h-3.5" />
-                          <span>Inzichten</span>
-                        </button>
-                      )}
+                  {hasInsights && (
+                    <button
+                      onClick={() => setActiveTab('inzichten')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'inzichten'
+                          ? dimension.step === 4
+                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            : dimension.step === 3
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                            : dimension.step === 1
+                            ? 'bg-[#d3104c] text-white shadow-xs'
+                            : 'bg-[#003340] text-white shadow-xs'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
+                      }`}
+                    >
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>Inzichten</span>
+                    </button>
+                  )}
 
-                      {hasWHW && (
-                        <button
-                          onClick={() => setActiveTab('whw')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'whw'
-                              ? 'bg-[#3ab7b0] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
-                          }`}
-                        >
-                          <Scale className="w-3.5 h-3.5" />
-                          <span>WHW-Kapstok</span>
-                        </button>
-                      )}
+                  {hasWHW && (
+                    <button
+                      onClick={() => setActiveTab('whw')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'whw'
+                          ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
+                      }`}
+                    >
+                      <Scale className="w-3.5 h-3.5" />
+                      <span>WHW-Kapstok</span>
+                    </button>
+                  )}
 
-                      {hasCases && (
-                        <button
-                          onClick={() => setActiveTab('zaken')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'zaken'
-                              ? 'bg-[#3ab7b0] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
-                          }`}
-                        >
-                          <Award className="w-3.5 h-3.5" />
-                          <span>Jurisprudentie ({dimension.courtCases?.length})</span>
-                        </button>
-                      )}
+                  {hasCases && (
+                    <button
+                      onClick={() => setActiveTab('zaken')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'zaken'
+                          ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
+                      }`}
+                    >
+                      <Award className="w-3.5 h-3.5" />
+                      <span>Jurisprudentie ({dimension.courtCases?.length})</span>
+                    </button>
+                  )}
 
-                      {hasTools && (
-                        <button
-                          onClick={() => setActiveTab('tools')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'tools'
-                              ? 'bg-[#3ab7b0] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
-                          }`}
-                        >
-                          <Hammer className="w-3.5 h-3.5" />
-                          <span>Tools</span>
-                        </button>
-                      )}
+                  {hasTools && (
+                    <button
+                      onClick={() => setActiveTab('tools')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'tools'
+                          ? dimension.step === 4
+                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            : dimension.step === 3
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                            : 'bg-[#003340] text-white shadow-xs'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
+                      }`}
+                    >
+                      <Hammer className="w-3.5 h-3.5" />
+                      <span>{dimension.id === 'p-routeC' ? 'Beleidsaanbevelingen' : 'Tools'}</span>
+                    </button>
+                  )}
 
-                      {hasMedia && (
-                        <button
-                          onClick={() => setActiveTab('media')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'media'
-                              ? 'bg-[#3ab7b0] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#3ab7b0]'
-                          }`}
-                        >
-                          <Film className="w-3.5 h-3.5" />
-                          <span>Media</span>
-                        </button>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      {hasInsights && (
-                        <button
-                          onClick={() => setActiveTab('inzichten')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'inzichten'
-                              ? 'bg-[#003340] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
-                          }`}
-                        >
-                          <BookOpen className="w-3.5 h-3.5" />
-                          <span>Inzichten</span>
-                        </button>
-                      )}
-
-                      {hasTools && (
-                        <button
-                          onClick={() => setActiveTab('tools')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'tools'
-                              ? 'bg-[#003340] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
-                          }`}
-                        >
-                          <Hammer className="w-3.5 h-3.5" />
-                          <span>Tools</span>
-                        </button>
-                      )}
-
-                      {hasMedia && (
-                        <button
-                          onClick={() => setActiveTab('media')}
-                          className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                            activeTab === 'media'
-                              ? 'bg-[#003340] text-white shadow-xs'
-                              : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]'
-                          }`}
-                        >
-                          <Film className="w-3.5 h-3.5" />
-                          <span>Media</span>
-                        </button>
-                      )}
-                    </>
+                  {hasMedia && (
+                    <button
+                      onClick={() => setActiveTab('media')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'media'
+                          ? dimension.step === 4
+                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            : dimension.step === 3
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                            : 'bg-[#003340] text-white shadow-xs'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
+                      }`}
+                    >
+                      <Film className="w-3.5 h-3.5" />
+                      <span>Media</span>
+                    </button>
                   )}
                 </div>
               </>
@@ -317,7 +282,13 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: Inzichten - Compact with inline active APA 7 citations */}
             {activeTab === 'inzichten' && (
               <div className="space-y-3">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#d3104c]">
+                <h3 className={`text-xs font-bold uppercase tracking-widest ${
+                  dimension.step === 4
+                    ? 'text-[#b58a00]'
+                    : dimension.step === 3
+                    ? 'text-[#00b0eb]'
+                    : 'text-[#d3104c]'
+                }`}>
                   Wetenschappelijke inzichten
                 </h3>
                 <ul className="space-y-2">
@@ -356,17 +327,17 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
               </div>
             )}
 
-            {/* TAB CONTENT: WHW (Step 4 only) */}
+            {/* TAB CONTENT: WHW */}
             {activeTab === 'whw' && dimension.lawArticles && (
               <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0]">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb]">
                   Wettelijk kader (Wet op het Hoger Onderwijs en Wetenschappelijk Onderzoek)
                 </h3>
                 <div className="space-y-3">
                   {dimension.lawArticles.map((art, idx) => (
                     <div key={idx} className="bg-white border border-[#003340]/15 rounded-md p-4 shadow-2xs">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-xs font-bold text-[#3ab7b0] uppercase tracking-wider">
+                        <span className="text-xs font-bold text-[#00b0eb] uppercase tracking-wider">
                           {art.lawRef}
                         </span>
                         <span className="text-sm font-semibold text-[#003340]">{art.title}</span>
@@ -393,10 +364,10 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
               </div>
             )}
 
-            {/* TAB CONTENT: Jurisprudentie (Step 4) */}
+            {/* TAB CONTENT: Jurisprudentie */}
             {activeTab === 'zaken' && dimension.courtCases && (
               <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0]">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb]">
                   Rechtspraak & Uitspraken CBE / CBHO
                 </h3>
                 <p className="text-xs text-[#003340]/75">
@@ -423,7 +394,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             <span
                               className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded ${
                                 c.verdictType === 'student'
-                                  ? 'bg-[#eaf8f7] text-[#3ab7b0]'
+                                  ? 'bg-[#00b0eb]/15 text-[#003340] border border-[#00b0eb]/30'
                                   : 'bg-[#003340]/10 text-[#003340]'
                               }`}
                             >
@@ -445,7 +416,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             </div>
 
                             <div>
-                              <strong className="text-xs uppercase tracking-wider text-[#3ab7b0] block mb-1">
+                              <strong className="text-xs uppercase tracking-wider text-[#00b0eb] block mb-1">
                                 Geciteerde wetsartikelen
                               </strong>
                               <ul className="space-y-1 pl-3 text-xs text-[#003340]/75">
@@ -458,7 +429,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             </div>
 
                             <div className="bg-[#f7efe3] border border-[#003340]/10 p-2.5 rounded text-xs">
-                              <strong className="text-[#3ab7b0] block mb-0.5">Oordeel & Belangrijkste les:</strong>
+                              <strong className="text-[#00b0eb] block mb-0.5">Oordeel & Belangrijkste les:</strong>
                               {c.keyLessons}
                             </div>
                           </div>
@@ -473,15 +444,15 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: Tools */}
             {activeTab === 'tools' && (
               <div className="space-y-5">
-                {dimension.step === 4 && dimension.proportionalityQuestions && (
+                {dimension.proportionalityQuestions && (
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0] mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb] mb-2">
                       Proportionaliteitstoets
                     </h4>
                     <ul className="bg-white border border-[#003340]/15 rounded p-3 text-xs space-y-1.5">
                       {dimension.proportionalityQuestions.map((q, qIdx) => (
                         <li key={qIdx} className="flex items-start gap-1.5 text-[#003340]">
-                          <span className="text-[#3ab7b0] font-bold">✓</span>
+                          <span className="text-[#00b0eb] font-bold">✓</span>
                           <span>{q}</span>
                         </li>
                       ))}
@@ -489,15 +460,25 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                   </div>
                 )}
 
-                {dimension.step === 4 && dimension.policyRecommendations && (
+                {dimension.policyRecommendations && (
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-[#3ab7b0] mb-2">
-                      Beleidsaanbevelingen
-                    </h4>
-                    <ul className="bg-white border border-[#003340]/15 rounded p-3 text-xs space-y-1.5">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb]">
+                        Beleidsaanbevelingen
+                      </h4>
+                      <div className="flex items-center gap-1">
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/10 text-[#003340] border border-[#00b0eb]/20">
+                          IMR
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b0eb]/10 text-[#003340] border border-[#00b0eb]/20">
+                          OC
+                        </span>
+                      </div>
+                    </div>
+                    <ul className="bg-white border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 text-xs sm:text-[13px] space-y-2.5 shadow-2xs">
                       {dimension.policyRecommendations.map((r, rIdx) => (
-                        <li key={rIdx} className="flex items-start gap-1.5 text-[#003340]">
-                          <span className="text-[#3ab7b0] font-bold">•</span>
+                        <li key={rIdx} className="flex items-start gap-2.5 text-[#003340] leading-relaxed">
+                          <span className="w-4 h-4 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">•</span>
                           <span>{r}</span>
                         </li>
                       ))}

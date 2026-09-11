@@ -16,7 +16,7 @@ export const PrintView: React.FC = () => {
           Werken aan Aanwezigheidsethos
         </h1>
         <p className="text-xs text-neutral-700 font-medium">
-          Een stapsgewijs kader voor het gesprek over aanwezigheid, zonder het probleem tot "wel of geen plicht" te reduceren.
+          Een gespreksleidraad over aanwezigheid.
         </p>
         <p className="text-[11px] text-neutral-600 mt-1 italic">
           Aanwezigheid van studenten in de les is een wicked problem: veel actoren, veel factoren, en beleidskeuzes die elkaar beïnvloeden. Er is geen één magische oplossing. Wat wel werkt: zorgen dat de keuzes die je maakt op elkaar zijn afgestemd; binnen het team en tussen de feitelijke en normatieve dimensies.
@@ -61,7 +61,7 @@ export const PrintView: React.FC = () => {
 
       <div className="pt-6 border-t border-neutral-400 space-y-4">
         <h2 className="text-sm font-bold uppercase tracking-wider text-[#d3104c]">
-          Geraadpleegde Literatuur, Wetgeving en Jurisprudentie ({ALL_SOURCES.length} bronnen)
+          Geraadpleegde bronnen, wetgeving en jurisprudentie ({ALL_SOURCES.length} bronnen)
         </h2>
 
         {/* Wetenschap */}

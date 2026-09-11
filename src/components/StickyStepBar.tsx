@@ -33,7 +33,7 @@ export const StickyStepBar: React.FC<StickyStepBarProps> = ({
                 style={{
                   backgroundColor: isActive ? step.color : undefined,
                   borderColor: isActive ? step.color : undefined,
-                  color: isActive && (step.number === 3 || step.number === 5) ? '#003340' : undefined,
+                  color: isActive && (step.number === 3 || step.number === 4) ? '#003340' : undefined,
                 }}
                 title={`Stap ${step.number} · ${step.name}`}
               >
@@ -41,11 +41,11 @@ export const StickyStepBar: React.FC<StickyStepBarProps> = ({
                   className="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold text-white shrink-0"
                   style={{
                     backgroundColor: isActive
-                      ? step.number === 3 || step.number === 5
+                      ? step.number === 3 || step.number === 4
                         ? 'rgba(0, 51, 64, 0.2)'
                         : 'rgba(255, 255, 255, 0.25)'
                       : step.color,
-                    color: !isActive && (step.number === 3 || step.number === 5) ? '#003340' : '#ffffff',
+                    color: !isActive && (step.number === 3 || step.number === 4) ? '#003340' : '#ffffff',
                   }}
                 >
                   {step.number}

@@ -91,6 +91,7 @@ export interface AssessmentState {
     inOER: boolean;
     practicalExercise: boolean;
     hasAlternativeAssignment: boolean;
+    transparentCommunication?: boolean;
     proportionalPolicy: boolean;
   };
   fourGScores: {

@@ -71,7 +71,7 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold leading-tight">
-                Geraadpleegde Literatuur en Bronnen
+                Geraadpleegde bronnen
               </h2>
               <p className="text-xs text-white/70 mt-0.5">
                 Overzicht van alle aangehaalde publicaties, wetgeving en jurisprudentie
