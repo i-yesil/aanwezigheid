@@ -119,7 +119,7 @@ export default function App() {
                 Doorloop de vier stappen in het wiel voor het teamgesprek
               </h3>
               <p className="text-xs sm:text-[13px] text-[#003340]/75 mt-0.5">
-                Klik op een stap of cijfer om direct naar de toelichting en praktische handvatten te gaan
+                Klik op een stap of cijfer om direct naar inzichten en praktische handvatten te gaan
               </p>
             </div>
             <InteractiveWheel activeStep={activeStep} onSelectStep={scrollToStep} />
