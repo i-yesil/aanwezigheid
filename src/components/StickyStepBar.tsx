@@ -3,7 +3,7 @@ import { STEPS } from '../data/attendanceData';
 import { StepNumber } from '../types';
 
 interface StickyStepBarProps {
-  activeStep: StepNumber;
+  activeStep: StepNumber | null;
   onSelectStep: (stepNumber: StepNumber) => void;
 }
 

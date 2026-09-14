@@ -5,7 +5,7 @@ import { Info, ArrowRight, BookOpen, Scale, Sparkles, ChevronDown, ChevronUp, Ex
 
 interface StepSectionProps {
   stepNumber: StepNumber;
-  onOpenDimension: (dimensionId: string) => void;
+  onOpenDimension: (dimensionId: string, initialTab?: string) => void;
 }
 
 export const StepSection: React.FC<StepSectionProps> = ({
@@ -217,69 +217,75 @@ export const StepSection: React.FC<StepSectionProps> = ({
           Feiten alleen wijzen geen aanpak aan. Elke feitelijke dimensie rust op waarden die vaak impliciet blijven. De drie perspectieven hieronder maken die waarden bespreekbaar; wat we normaal vinden, wat we van elkaar verwachten en waarom we aanwezigheid waarderen.
         </p>
 
-        {/* 3 Perspectives Individual Cards - Same design as Feitelijke dimensie */}
-        <div className="space-y-2.5">
+        {/* 3 Perspectives Individual Cards - Naast elkaar in 3 kolommen */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
           {/* Sociologisch perspectief */}
           <div
             onClick={() => onOpenDimension('p-soc')}
-            className="bg-white border border-[#003340]/15 rounded p-3 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex items-center justify-between gap-3 group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-3.5 sm:p-4 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex flex-col justify-between shadow-2xs group"
           >
             <div>
-              <div className="text-sm font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors">
+              <div className="text-sm sm:text-[15px] font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors mb-1.5">
                 Sociologisch perspectief
               </div>
-              <div className="text-xs text-[#003340]/70 mt-0.5">
+              <p className="text-xs text-[#003340]/75 leading-relaxed">
                 Normvorming: wat vinden we normaal? Hoe wegen we effecten op de groep die wél komt?
-              </div>
+              </p>
             </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
-            >
-              <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-              <span>Meer info</span>
-            </span>
+            <div className="mt-3 flex justify-end">
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
+              >
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info</span>
+              </span>
+            </div>
           </div>
 
           {/* Psychologisch perspectief */}
           <div
             onClick={() => onOpenDimension('p-psy')}
-            className="bg-white border border-[#003340]/15 rounded p-3 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex items-center justify-between gap-3 group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-3.5 sm:p-4 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex flex-col justify-between shadow-2xs group"
           >
             <div>
-              <div className="text-sm font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors">
+              <div className="text-sm sm:text-[15px] font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors mb-1.5">
                 Psychologisch perspectief
               </div>
-              <div className="text-xs text-[#003340]/70 mt-0.5">
+              <p className="text-xs text-[#003340]/75 leading-relaxed">
                 Psychologisch contract: wat verwachten student en opleiding van elkaar?
-              </div>
+              </p>
             </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
-            >
-              <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-              <span>Meer info</span>
-            </span>
+            <div className="mt-3 flex justify-end">
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
+              >
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info</span>
+              </span>
+            </div>
           </div>
 
           {/* Onderwijskundig perspectief */}
           <div
             onClick={() => onOpenDimension('p-ok')}
-            className="bg-white border border-[#003340]/15 rounded p-3 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex items-center justify-between gap-3 group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-3.5 sm:p-4 hover:bg-[#fbfaf5] hover:border-[#003340]/40 transition-all cursor-pointer flex flex-col justify-between shadow-2xs group"
           >
             <div>
-              <div className="text-sm font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors">
+              <div className="text-sm sm:text-[15px] font-semibold text-[#003340] group-hover:text-[#d3104c] transition-colors mb-1.5">
                 Onderwijskundig perspectief
               </div>
-              <div className="text-xs text-[#003340]/70 mt-0.5">
+              <p className="text-xs text-[#003340]/75 leading-relaxed">
                 Leereffect: doet aanwezigheid er aantoonbaar toe, of is het moralisme?
-              </div>
+              </p>
             </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
-            >
-              <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-              <span>Meer info</span>
-            </span>
+            <div className="mt-3 flex justify-end">
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#003340] text-[#003340] bg-[#003340]/5 group-hover:bg-[#003340] group-hover:text-white transition-all shrink-0"
+              >
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info</span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -386,14 +392,53 @@ export const StepSection: React.FC<StepSectionProps> = ({
                 Overweegt het team een formele aanwezigheidsplicht, dan gelden de strikte kaders van Hogeschool Rotterdam en de WHW: studeren is een recht, geen plicht. Een plicht mag alleen op cursusniveau bij een praktische oefening (POA), met verplichte verankering in OER en curriculumschema.
               </p>
             </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-3 border-t border-[#003340]/10 mt-auto">
               <span className="text-[11px] font-semibold text-[#00b0eb]">
-                Bekijk didactische proportionaliteit
+                Dossiers & wetgeving:
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
-                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-                <span>Meer info</span>
-              </span>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {/* Pilletje Aanwezigheid */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-routeC');
+                  }}
+                  title="Aanwezigheidsplicht (Spoor 3)"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Aanwezigheid</span>
+                </button>
+
+                {/* Pilletje WHW */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-juridisch', 'whw');
+                  }}
+                  title="WHW-wetsartikelen"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>WHW</span>
+                </button>
+
+                {/* Pilletje Jurisprudentie */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenDimension('p-juridisch', 'zaken');
+                  }}
+                  title="Jurisprudentie & uitspraken"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Jurisprudentie</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -427,29 +472,15 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenDimension('p-juridisch');
-                  }}
-                  title="Open in zijpaneel"
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
-                >
-                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-                  <span>Meer info</span>
-                </button>
-                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
-                  <span className="text-[11px] font-semibold hidden lg:inline">
-                    {showWhwArtikelen ? 'Inklappen' : 'Uitklappen'}
-                  </span>
-                  {showWhwArtikelen ? (
-                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                  )}
-                </div>
+              <div className="flex items-center gap-1 text-[#00b0eb] shrink-0">
+                <span className="text-[11px] font-semibold hidden sm:inline">
+                  {showWhwArtikelen ? 'Inklappen' : 'Uitklappen'}
+                </span>
+                {showWhwArtikelen ? (
+                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-[#003340]/60 group-hover:text-[#00b0eb] transition-colors" />
+                )}
               </div>
             </div>
 
@@ -474,36 +505,22 @@ export const StepSection: React.FC<StepSectionProps> = ({
                 </span>
                 <div className="min-w-0">
                   <div className="text-xs sm:text-[13.5px] font-semibold text-[#003340] leading-tight truncate group-hover:text-[#00b0eb] transition-colors">
-                    Wettelijke randvoorwaarden & HR-kader
+                    Randvoorwaarden en HR-kaders
                   </div>
                   <div className="text-[11px] sm:text-xs text-[#003340]/70 truncate mt-0.5">
                     OER-basis, POA, medezeggenschap & maatwerk
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenDimension('p-juridisch');
-                  }}
-                  title="Open in zijpaneel"
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
-                >
-                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-                  <span>Meer info</span>
-                </button>
-                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
-                  <span className="text-[11px] font-semibold hidden lg:inline">
-                    {showRandvoorwaarden ? 'Inklappen' : 'Uitklappen'}
-                  </span>
-                  {showRandvoorwaarden ? (
-                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                  )}
-                </div>
+              <div className="flex items-center gap-1 text-[#00b0eb] shrink-0">
+                <span className="text-[11px] font-semibold hidden sm:inline">
+                  {showRandvoorwaarden ? 'Inklappen' : 'Uitklappen'}
+                </span>
+                {showRandvoorwaarden ? (
+                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-[#003340]/60 group-hover:text-[#00b0eb] transition-colors" />
+                )}
               </div>
             </div>
 
@@ -535,29 +552,15 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenDimension('p-juridisch');
-                  }}
-                  title="Open in zijpaneel"
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 hover:bg-[#00b0eb] hover:text-white transition-all shrink-0 cursor-pointer"
-                >
-                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-                  <span>Meer info</span>
-                </button>
-                <div className="flex items-center gap-1 text-[#00b0eb] pl-1 border-l border-[#003340]/10">
-                  <span className="text-[11px] font-semibold hidden lg:inline">
-                    {showJurisprudentie ? 'Inklappen' : 'Uitklappen'}
-                  </span>
-                  {showJurisprudentie ? (
-                    <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 text-[#003340]/60" />
-                  )}
-                </div>
+              <div className="flex items-center gap-1 text-[#00b0eb] shrink-0">
+                <span className="text-[11px] font-semibold hidden sm:inline">
+                  {showJurisprudentie ? 'Inklappen' : 'Uitklappen'}
+                </span>
+                {showJurisprudentie ? (
+                  <ChevronUp className="w-4 h-4 text-[#00b0eb]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 text-[#003340]/60 group-hover:text-[#00b0eb] transition-colors" />
+                )}
               </div>
             </div>
           </div>
@@ -633,7 +636,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
                   §
                 </span>
                 <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
-                  Wettelijke randvoorwaarden & HR-kader
+                  Randvoorwaarden en HR-kaders
                 </h4>
               </div>
               <button

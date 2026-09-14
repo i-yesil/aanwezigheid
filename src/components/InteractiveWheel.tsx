@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StepNumber } from '../types';
 
 interface InteractiveWheelProps {
-  activeStep: StepNumber;
+  activeStep: StepNumber | null;
   onSelectStep: (stepNumber: StepNumber) => void;
 }
 
@@ -20,10 +20,12 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
     step4: { fill: '#d49400', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#d49400', stroke: '#ffffff' },
   };
 
-  // Helper voor translation offsets per kwadrant (uit elkaar geschoven segmenten)
+  // Helper voor translation offsets per kwadrant.
+  // In rusttoestand hebben alle 4 de kwadranten exact dezelfde afstand (7px),
+  // zodat het wiel optisch 100% symmetrisch en gecentreerd blijft.
   const getOffset = (step: number) => {
-    const isSpecial = activeStep === step || hoveredStep === step;
-    const distance = isSpecial ? 12 : 7;
+    const isHovered = hoveredStep === step;
+    const distance = isHovered ? 11 : 7;
     switch (step) {
       case 1: // Linksboven (NW)
         return `translate(-${distance}, -${distance})`;
@@ -64,19 +66,19 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             d="M 40,340 A 300,300 0 0 1 340,40 L 340,210 A 130,130 0 0 0 210,340 Z"
             fill={stepColors.step1.fill}
             stroke={stepColors.step1.stroke}
-            strokeWidth={activeStep === 1 || hoveredStep === 1 ? '3.5' : '1.5'}
+            strokeWidth={hoveredStep === 1 ? '2.5' : '1.5'}
             className="transition-all duration-200"
-            opacity={hoveredStep && hoveredStep !== 1 ? 0.82 : 1}
+            opacity={hoveredStep && hoveredStep !== 1 ? 0.85 : 1}
           />
 
           {/* Cijferbadge 1 */}
           <circle
             cx="188"
             cy="140"
-            r="19"
+            r={activeStep === 1 ? "21" : "19"}
             fill={stepColors.step1.badgeBg}
             stroke={stepColors.step1.badgeText}
-            strokeWidth="1.5"
+            strokeWidth={activeStep === 1 ? "2.5" : "1.5"}
             className="shadow-xs transition-transform duration-150"
           />
           <text
@@ -138,19 +140,19 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             d="M 340,40 A 300,300 0 0 1 640,340 L 470,340 A 130,130 0 0 0 340,210 Z"
             fill={stepColors.step2.fill}
             stroke={stepColors.step2.stroke}
-            strokeWidth={activeStep === 2 || hoveredStep === 2 ? '3.5' : '1.5'}
+            strokeWidth={hoveredStep === 2 ? '2.5' : '1.5'}
             className="transition-all duration-200"
-            opacity={hoveredStep && hoveredStep !== 2 ? 0.82 : 1}
+            opacity={hoveredStep && hoveredStep !== 2 ? 0.85 : 1}
           />
 
           {/* Cijferbadge 2 */}
           <circle
             cx="492"
             cy="140"
-            r="19"
+            r={activeStep === 2 ? "21" : "19"}
             fill={stepColors.step2.badgeBg}
             stroke={stepColors.step2.badgeText}
-            strokeWidth="1.5"
+            strokeWidth={activeStep === 2 ? "2.5" : "1.5"}
             className="shadow-xs transition-transform duration-150"
           />
           <text
@@ -212,19 +214,19 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             d="M 640,340 A 300,300 0 0 1 340,640 L 340,470 A 130,130 0 0 0 470,340 Z"
             fill={stepColors.step3.fill}
             stroke={stepColors.step3.stroke}
-            strokeWidth={activeStep === 3 || hoveredStep === 3 ? '3.5' : '1.5'}
+            strokeWidth={hoveredStep === 3 ? '2.5' : '1.5'}
             className="transition-all duration-200"
-            opacity={hoveredStep && hoveredStep !== 3 ? 0.82 : 1}
+            opacity={hoveredStep && hoveredStep !== 3 ? 0.85 : 1}
           />
 
           {/* Cijferbadge 3 */}
           <circle
             cx="492"
             cy="445"
-            r="19"
+            r={activeStep === 3 ? "21" : "19"}
             fill={stepColors.step3.badgeBg}
             stroke={stepColors.step3.badgeText}
-            strokeWidth="1.5"
+            strokeWidth={activeStep === 3 ? "2.5" : "1.5"}
             className="shadow-xs transition-transform duration-150"
           />
           <text
@@ -286,19 +288,19 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             d="M 340,640 A 300,300 0 0 1 40,340 L 210,340 A 130,130 0 0 0 340,470 Z"
             fill={stepColors.step4.fill}
             stroke={stepColors.step4.stroke}
-            strokeWidth={activeStep === 4 || hoveredStep === 4 ? '3.5' : '1.5'}
+            strokeWidth={hoveredStep === 4 ? '2.5' : '1.5'}
             className="transition-all duration-200"
-            opacity={hoveredStep && hoveredStep !== 4 ? 0.82 : 1}
+            opacity={hoveredStep && hoveredStep !== 4 ? 0.85 : 1}
           />
 
           {/* Cijferbadge 4 */}
           <circle
             cx="188"
             cy="445"
-            r="19"
+            r={activeStep === 4 ? "21" : "19"}
             fill={stepColors.step4.badgeBg}
             stroke={stepColors.step4.badgeText}
-            strokeWidth="1.5"
+            strokeWidth={activeStep === 4 ? "2.5" : "1.5"}
             className="shadow-xs transition-transform duration-150"
           />
           <text

@@ -711,12 +711,27 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
       {
-        text: 'Een aanwezigheidsplicht vereist formele borging in de OER (art. 7.13 WHW) en een aantoonbare didactische koppeling aan een praktische oefening.',
+        text: 'Een generieke aanwezigheidsplicht voor een heel studiejaar of opleiding is juridisch niet toegestaan. Een aanwezigheidseis mag uitsluitend op cursusniveau wanneer sprake is van een praktische oefening (POA).',
+        citation: 'Juridische Zaken & O&K Hogeschool Rotterdam, 2025; Art. 7.13 WHW',
+        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+      },
+      {
+        text: 'Een aanwezigheidsplicht vereist formele borging in de OER (art. 7.13 WHW) en een aantoonbare didactische koppeling aan een praktische oefening waarin interactie, vaardigheden of samenwerking onmisbaar zijn.',
         citation: 'Biggs, 1996; Artikel 7.13 WHW',
         citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
       {
-        text: '"Optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel.',
+        text: 'Bij een aanwezigheidseis is een regeling voor vervangende opdrachten bij overmacht of geoorloofde afwezigheid wettelijk verplicht (art. 7.13 lid 2 sub t WHW); de vervanging moet didactisch evenredig en toetsbaar zijn.',
+        citation: 'Artikel 7.13 lid 2 sub t WHW; CBE Maastricht 2020.105',
+        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+      },
+      {
+        text: 'Tijdige betrokkenheid van de medezeggenschap (opleidingscommissie en instituutsmedezeggenschapsraad) is wettelijk verplicht bij OER-wijzigingen en toetsbeleid (art. 9.18 & 10.3c WHW).',
+        citation: 'Artikelen 9.18 en 10.3c WHW',
+        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+      },
+      {
+        text: '"Optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel zonder juridische dwang.',
         citation: 'Cullen & Oppenheimer, 2024',
         citationUrl: 'https://doi.org/10.1126/sciadv.ado6759'
       },

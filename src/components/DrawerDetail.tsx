@@ -21,14 +21,16 @@ import {
 
 interface DrawerDetailProps {
   dimensionId: string | null;
+  initialTab?: string;
   onClose: () => void;
-  onNavigate: (dimensionId: string) => void;
+  onNavigate: (dimensionId: string, initialTab?: string) => void;
 }
 
 type TabType = 'inzichten' | 'tools' | 'media' | 'whw' | 'zaken';
 
 export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   dimensionId,
+  initialTab,
   onClose,
   onNavigate,
 }) => {
@@ -40,14 +42,16 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   // Reset tab and expanded cases on dimension change
   useEffect(() => {
     if (dimension) {
-      if (dimension.id === 'p-juridisch') {
+      if (initialTab && (initialTab === 'whw' || initialTab === 'zaken' || initialTab === 'inzichten' || initialTab === 'tools' || initialTab === 'media')) {
+        setActiveTab(initialTab as TabType);
+      } else if (dimension.id === 'p-juridisch') {
         setActiveTab('whw');
       } else {
         setActiveTab('inzichten');
       }
       setOpenCases({});
     }
-  }, [dimensionId]);
+  }, [dimensionId, initialTab]);
 
   // Handle ESC key to close
   useEffect(() => {
@@ -324,6 +328,26 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     );
                   })}
                 </ul>
+
+                {dimension.id === 'p-routeC' && (
+                  <div className="mt-4 p-3.5 bg-[#fbfaf5] border border-[#00b0eb]/30 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <Scale className="w-4 h-4 text-[#00b0eb] shrink-0" />
+                      <div className="text-xs text-[#003340] leading-snug">
+                        <span className="font-semibold block">Volledig juridisch dossier inzien?</span>
+                        Bekijk de relevante WHW-artikelen, het HR-kader 2025 en de 4 uitspraken van het CBE en CBHO.
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => onNavigate('p-juridisch')}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#00b0eb] text-white hover:bg-[#009fd4] transition-all shrink-0 cursor-pointer self-start sm:self-auto"
+                    >
+                      <span>Juridisch dossier</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 

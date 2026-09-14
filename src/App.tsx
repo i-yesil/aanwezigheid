@@ -10,15 +10,31 @@ import { StepNumber } from './types';
 import { Info, BookOpen, ExternalLink, ArrowUp, Mail } from 'lucide-react';
 
 export default function App() {
-  const [activeStep, setActiveStep] = useState<StepNumber>(1);
+  const [activeStep, setActiveStep] = useState<StepNumber | null>(null);
   const [openDrawerId, setOpenDrawerId] = useState<string | null>(null);
+  const [drawerInitialTab, setDrawerInitialTab] = useState<string | undefined>(undefined);
   const [isSourcesLibraryOpen, setIsSourcesLibraryOpen] = useState<boolean>(false);
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
+
+  const handleOpenDimension = (id: string, initialTab?: string) => {
+    setOpenDrawerId(id);
+    setDrawerInitialTab(initialTab);
+  };
 
   // Scroll-spy to automatically update active step in interactive wheel
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
+
+      // Als de bezoeker nog bovenin bij de introductie en het wiel kijkt, is geen enkele stap ingedrukt
+      const step1El = document.getElementById('stap-1');
+      if (step1El) {
+        const rect1 = step1El.getBoundingClientRect();
+        if (rect1.top > window.innerHeight * 0.4) {
+          setActiveStep(null);
+          return;
+        }
+      }
 
       const stepIds: StepNumber[] = [1, 2, 3, 4];
       const scrollThreshold = window.innerHeight * 0.35;
@@ -128,10 +144,10 @@ export default function App() {
 
         {/* 4 Steps Container */}
         <div className="relative space-y-2">
-          <StepSection stepNumber={1} onOpenDimension={(id) => setOpenDrawerId(id)} />
-          <StepSection stepNumber={2} onOpenDimension={(id) => setOpenDrawerId(id)} />
-          <StepSection stepNumber={3} onOpenDimension={(id) => setOpenDrawerId(id)} />
-          <StepSection stepNumber={4} onOpenDimension={(id) => setOpenDrawerId(id)} />
+          <StepSection stepNumber={1} onOpenDimension={handleOpenDimension} />
+          <StepSection stepNumber={2} onOpenDimension={handleOpenDimension} />
+          <StepSection stepNumber={3} onOpenDimension={handleOpenDimension} />
+          <StepSection stepNumber={4} onOpenDimension={handleOpenDimension} />
         </div>
 
         {/* Conclusion / Afsluiting Box */}
@@ -201,8 +217,15 @@ export default function App() {
         <div className="no-print">
           <DrawerDetail
             dimensionId={openDrawerId}
-            onClose={() => setOpenDrawerId(null)}
-            onNavigate={(id) => setOpenDrawerId(id)}
+            initialTab={drawerInitialTab}
+            onClose={() => {
+              setOpenDrawerId(null);
+              setDrawerInitialTab(undefined);
+            }}
+            onNavigate={(id, tab) => {
+              setOpenDrawerId(id);
+              setDrawerInitialTab(tab);
+            }}
           />
         </div>
       )}
