@@ -12,12 +12,12 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
 }) => {
   const [hoveredStep, setHoveredStep] = useState<StepNumber | null>(null);
 
-  // Suggestie 1: HR Balans (Rood, Diep Petrol, Cyaanblauw, Warm Okergoud)
+  // Kleurenpalet voor de 4 stappen met optimale contrastverhouding
   const stepColors = {
     step1: { fill: '#d3104c', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#d3104c', stroke: '#ffffff' },
     step2: { fill: '#003340', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#003340', stroke: '#ffffff' },
-    step3: { fill: '#0096c7', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#0096c7', stroke: '#ffffff' },
-    step4: { fill: '#d49400', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#d49400', stroke: '#ffffff' },
+    step3: { fill: '#008bb8', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#008bb8', stroke: '#ffffff' },
+    step4: { fill: '#c98a00', text: '#ffffff', tagText: '#ffffff', badgeBg: '#ffffff', badgeText: '#c98a00', stroke: '#ffffff' },
   };
 
   // Helper voor translation offsets per kwadrant.
@@ -63,7 +63,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         >
           {/* Segment Boog */}
           <path
-            d="M 40,340 A 300,300 0 0 1 340,40 L 340,210 A 130,130 0 0 0 210,340 Z"
+            d="M 34,340 A 306,306 0 0 1 340,34 L 340,224 A 116,116 0 0 0 224,340 Z"
             fill={stepColors.step1.fill}
             stroke={stepColors.step1.stroke}
             strokeWidth={hoveredStep === 1 ? '2.5' : '1.5'}
@@ -74,7 +74,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           {/* Cijferbadge 1 */}
           <circle
             cx="188"
-            cy="140"
+            cy="138"
             r={activeStep === 1 ? "21" : "19"}
             fill={stepColors.step1.badgeBg}
             stroke={stepColors.step1.badgeText}
@@ -83,7 +83,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           />
           <text
             x="188"
-            y="140"
+            y="138"
             textAnchor="middle"
             dy="0.36em"
             fill={stepColors.step1.badgeText}
@@ -96,7 +96,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           <g pointerEvents="none">
             <text
               x="188"
-              y="180"
+              y="178"
               textAnchor="middle"
               fill={stepColors.step1.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -105,7 +105,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="188"
-              y="202"
+              y="200"
               textAnchor="middle"
               fill={stepColors.step1.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -114,11 +114,10 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="188"
-              y="226"
+              y="224"
               textAnchor="middle"
               fill={stepColors.step1.tagText}
-              opacity={0.92}
-              className="text-[11px] uppercase tracking-wider font-bold"
+              className="text-[12px] font-semibold tracking-wide"
             >
               Feitelijke dimensie
             </text>
@@ -137,7 +136,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         >
           {/* Segment Boog */}
           <path
-            d="M 340,40 A 300,300 0 0 1 640,340 L 470,340 A 130,130 0 0 0 340,210 Z"
+            d="M 340,34 A 306,306 0 0 1 646,340 L 456,340 A 116,116 0 0 0 340,224 Z"
             fill={stepColors.step2.fill}
             stroke={stepColors.step2.stroke}
             strokeWidth={hoveredStep === 2 ? '2.5' : '1.5'}
@@ -148,7 +147,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           {/* Cijferbadge 2 */}
           <circle
             cx="492"
-            cy="140"
+            cy="138"
             r={activeStep === 2 ? "21" : "19"}
             fill={stepColors.step2.badgeBg}
             stroke={stepColors.step2.badgeText}
@@ -157,7 +156,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           />
           <text
             x="492"
-            y="140"
+            y="138"
             textAnchor="middle"
             dy="0.36em"
             fill={stepColors.step2.badgeText}
@@ -170,7 +169,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           <g pointerEvents="none">
             <text
               x="492"
-              y="180"
+              y="178"
               textAnchor="middle"
               fill={stepColors.step2.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -179,7 +178,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="202"
+              y="200"
               textAnchor="middle"
               fill={stepColors.step2.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -188,11 +187,10 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="226"
+              y="224"
               textAnchor="middle"
               fill={stepColors.step2.tagText}
-              opacity={0.92}
-              className="text-[11px] uppercase tracking-wider font-bold"
+              className="text-[12px] font-semibold tracking-wide"
             >
               Normatieve dimensie
             </text>
@@ -211,7 +209,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         >
           {/* Segment Boog */}
           <path
-            d="M 640,340 A 300,300 0 0 1 340,640 L 340,470 A 130,130 0 0 0 470,340 Z"
+            d="M 646,340 A 306,306 0 0 1 340,646 L 340,456 A 116,116 0 0 0 456,340 Z"
             fill={stepColors.step3.fill}
             stroke={stepColors.step3.stroke}
             strokeWidth={hoveredStep === 3 ? '2.5' : '1.5'}
@@ -222,7 +220,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           {/* Cijferbadge 3 */}
           <circle
             cx="492"
-            cy="445"
+            cy="442"
             r={activeStep === 3 ? "21" : "19"}
             fill={stepColors.step3.badgeBg}
             stroke={stepColors.step3.badgeText}
@@ -231,7 +229,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           />
           <text
             x="492"
-            y="445"
+            y="442"
             textAnchor="middle"
             dy="0.36em"
             fill={stepColors.step3.badgeText}
@@ -244,7 +242,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           <g pointerEvents="none">
             <text
               x="492"
-              y="485"
+              y="478"
               textAnchor="middle"
               fill={stepColors.step3.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -253,7 +251,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="507"
+              y="500"
               textAnchor="middle"
               fill={stepColors.step3.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -262,19 +260,27 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="531"
+              y="525"
               textAnchor="middle"
               fill={stepColors.step3.tagText}
-              opacity={0.92}
-              className="text-[11px] uppercase tracking-wider font-bold"
+              className="text-[13px] font-bold tracking-normal"
             >
-              Handelingsperspectieven
+              Handelings-
+            </text>
+            <text
+              x="492"
+              y="542"
+              textAnchor="middle"
+              fill={stepColors.step3.tagText}
+              className="text-[13px] font-bold tracking-normal"
+            >
+              perspectieven
             </text>
           </g>
         </g>
 
         {/* ========================================================
-            STAP 4: Linksonder (Bottom-Left) · De vier G's
+            STAP 4: Linksonder (Bottom-Left) · Evaluatie
            ======================================================== */}
         <g
           transform={getOffset(4)}
@@ -285,7 +291,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
         >
           {/* Segment Boog */}
           <path
-            d="M 340,640 A 300,300 0 0 1 40,340 L 210,340 A 130,130 0 0 0 340,470 Z"
+            d="M 340,646 A 306,306 0 0 1 34,340 L 224,340 A 116,116 0 0 0 340,456 Z"
             fill={stepColors.step4.fill}
             stroke={stepColors.step4.stroke}
             strokeWidth={hoveredStep === 4 ? '2.5' : '1.5'}
@@ -296,7 +302,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           {/* Cijferbadge 4 */}
           <circle
             cx="188"
-            cy="445"
+            cy="442"
             r={activeStep === 4 ? "21" : "19"}
             fill={stepColors.step4.badgeBg}
             stroke={stepColors.step4.badgeText}
@@ -305,7 +311,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           />
           <text
             x="188"
-            y="445"
+            y="442"
             textAnchor="middle"
             dy="0.36em"
             fill={stepColors.step4.badgeText}
@@ -318,7 +324,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           <g pointerEvents="none">
             <text
               x="188"
-              y="485"
+              y="478"
               textAnchor="middle"
               fill={stepColors.step4.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -327,7 +333,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="188"
-              y="507"
+              y="500"
               textAnchor="middle"
               fill={stepColors.step4.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -336,37 +342,36 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="188"
-              y="531"
+              y="528"
               textAnchor="middle"
               fill={stepColors.step4.tagText}
-              opacity={0.92}
-              className="text-[11px] uppercase tracking-wider font-bold"
+              className="text-[13px] font-bold tracking-wide"
             >
-              De vier G's
+              Evaluatie
             </text>
           </g>
         </g>
 
         {/* ========================================================
-            Centraal Hub (Duidelijker, groter cirkeltje in het midden zonder '4 stappen')
+            Centraal Hub (Duidelijker, groter cirkeltje in het midden)
            ======================================================== */}
         <circle cx="340" cy="340" r="105" fill="#ffffff" stroke="#003340" strokeWidth="1.5" strokeOpacity="0.14" pointerEvents="none" />
         <circle cx="340" cy="340" r="92" fill="#fbfaf7" pointerEvents="none" />
         <text
           x="340"
-          y="333"
+          y="331"
           textAnchor="middle"
           fill="#003340"
-          className="font-['Poppins',sans-serif] text-[15px] font-bold pointer-events-none"
+          className="font-['Poppins',sans-serif] text-[18.5px] font-bold pointer-events-none tracking-tight"
         >
           Aanwezigheids
         </text>
         <text
           x="340"
-          y="356"
+          y="358"
           textAnchor="middle"
           fill="#d3104c"
-          className="font-['Poppins',sans-serif] text-[16.5px] font-black pointer-events-none tracking-tight"
+          className="font-['Poppins',sans-serif] text-[21.5px] font-black pointer-events-none tracking-tight"
         >
           ethos
         </text>

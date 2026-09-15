@@ -842,7 +842,7 @@ if (stepNumber === 4) {
       </div>
         <div className="border-b border-[#003340]/10 pb-2 mb-4">
           <span className="inline-block px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider text-[#003340] bg-[#fcc200] shadow-2xs mb-1.5">
-            De vier G's
+            Evaluatie
           </span>
           <h2 className="text-2xl sm:text-[26px] font-semibold text-[#003340] tracking-tight mt-0.5">
             Staat het beleid stevig?

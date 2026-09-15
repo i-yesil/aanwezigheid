@@ -36,9 +36,9 @@ export const STEPS: StepSummary[] = [
   },
   {
     number: 4,
-    name: "De vier G's",
-    shortName: "De vier G's",
-    tag: "De vier G's",
+    name: 'Evaluatie',
+    shortName: 'Evaluatie',
+    tag: 'Evaluatie',
     leadQuestion: 'Staat het beleid stevig?',
     description: 'Vier evaluatievragen om te toetsen of de voorgenomen aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
     color: '#fcc200',
