@@ -86,7 +86,7 @@ export const PrintView: React.FC = () => {
           <ul className="text-[10px] space-y-1 text-neutral-800 pl-4 list-disc">
             {wetgevingSources.map((s) => (
               <li key={s.id}>
-                <strong>{s.title}</strong>{s.sourceOrPublisher ? ` — ${s.sourceOrPublisher}` : ''}
+                <strong>{s.title}</strong>{s.sourceOrPublisher ? `, ${s.sourceOrPublisher}` : ''}
               </li>
             ))}
           </ul>
@@ -100,7 +100,7 @@ export const PrintView: React.FC = () => {
           <ul className="text-[10px] space-y-1 text-neutral-800 pl-4 list-disc">
             {jurisprudentieSources.map((s) => (
               <li key={s.id}>
-                <strong>{s.title}</strong> ({s.year}){s.sourceOrPublisher ? ` — ${s.sourceOrPublisher}` : ''}
+                <strong>{s.title}</strong> ({s.year}){s.sourceOrPublisher ? `, ${s.sourceOrPublisher}` : ''}
               </li>
             ))}
           </ul>
@@ -128,7 +128,7 @@ export const PrintView: React.FC = () => {
           <ul className="text-[10px] space-y-1 text-neutral-800 pl-4 list-disc">
             {toolSources.map((s) => (
               <li key={s.id}>
-                <strong>{s.title}</strong> — {s.authors} ({s.year})
+                <strong>{s.title}</strong>: {s.authors} ({s.year})
               </li>
             ))}
           </ul>

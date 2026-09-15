@@ -118,7 +118,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       },
       {
         id: 'ey0HxatDHd8',
-        title: 'De Studeercrisis · aflevering 1 — Studeren als bijzaak',
+        title: 'De Studeercrisis · aflevering 1: Studeren als bijzaak',
         caption: 'Reportage over hoe studeren voor veel studenten een bijzaak is geworden naast werk, sociaal leven en andere verplichtingen.',
         source: 'youtube',
         mediaUrl: 'https://www.youtube.com/watch?v=ey0HxatDHd8'
@@ -195,7 +195,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     media: [
       {
         id: '6oRImQyWmcGbX3rtNngLeo',
-        title: 'Podcast · Even tussen Ons — Sam de Jong (ISO)',
+        title: 'Podcast · Even tussen Ons: Sam de Jong (ISO)',
         caption: 'Over financiële druk als oorzaak van afwezigheid en waarom studenten aanwezigheid als onderdeel van een breder vraagstuk zien.',
         source: 'spotify',
         mediaUrl: 'https://open.spotify.com/episode/6oRImQyWmcGbX3rtNngLeo'
@@ -251,7 +251,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     media: [
       {
         id: '19SLNyNMzjCgCyXkagOoFV',
-        title: 'Podcast · Tussen Ons — Izaak Dekker',
+        title: 'Podcast · Tussen Ons: Izaak Dekker',
         caption: 'Over onderwijs, didactisch ontwerp en de rol van aanwezigheid en engagement.',
         source: 'spotify',
         mediaUrl: 'https://open.spotify.com/episode/19SLNyNMzjCgCyXkagOoFV'
@@ -481,7 +481,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       },
       {
         id: 'de-studeercrisis-afl-2',
-        title: 'De Studeercrisis · aflevering 2 — Een leeg lokaal',
+        title: 'De Studeercrisis · aflevering 2: Een leeg lokaal',
         caption: 'Docenten en onderzoekers over lege collegezalen en wat dat vraagt van opleidingsteams.',
         source: 'external-video',
         mediaUrl: 'https://hvana.nl/kijk/de-studeercrisis-afl-2-een-leeg-lokaal'
@@ -629,7 +629,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Rooster, studeerbaarheid & didactische meerwaarde',
     shortDescription: 'Herontwerp van rooster, activerende didactiek en studeerbaarheid.',
     leadParagraph: 'Verander niet primair het gedrag van studenten, maar verander de context en randvoorwaarden die verzuim nu de makkelijkste keuze maken. Zorg voor merkbare meerwaarde in de les en een studeerbaar rooster.',
-    dialogueQuestion: 'Welk deel van het verzuim in onze opleiding is het gevolg van rooster, didactiek of ontwerp — en wat kunnen wij daar zelf aan doen zonder studenten aan te spreken op gedrag?',
+    dialogueQuestion: 'Welk deel van het verzuim in onze opleiding is het gevolg van rooster, didactiek of ontwerp, en wat kunnen wij daar zelf aan doen zonder studenten aan te spreken op gedrag?',
     insights: [
       {
         text: 'Wanneer ontwerp- of roosterproblemen de werkelijke oorzaak zijn, is een plicht pure symptoombestrijding. Eerst de structuur aanpakken.',
@@ -666,7 +666,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     subtitle: 'Binding, vroegsignalering & persoonlijke follow-up',
     shortDescription: 'Vroegtijdige signalering, warme follow-up en preventieve begeleiding.',
     leadParagraph: 'Werk niet met een starre regel, maar met de relatie en preventieve opvolging. Versterk binding en docentnabijheid, en spreek studenten tijdig persoonlijk aan bij verzuim.',
-    dialogueQuestion: 'Welke rol nemen wij als docenten en SLC in het opbouwen van de relatie en het opvangen van beginnend verzuim — en waar staan we nu?',
+    dialogueQuestion: 'Welke rol nemen wij als docenten en SLC in het opbouwen van de relatie en het opvangen van beginnend verzuim, en waar staan we nu?',
     insights: [
       {
         text: 'Een drietrapsaanpak werkt het best: preventie via een gastvrije cultuur en zichtbare registratie; gepersonaliseerde SLC-interventies; en specialistisch maatwerk bij structurele belemmeringen.',
