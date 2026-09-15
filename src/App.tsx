@@ -107,6 +107,9 @@ export default function App() {
         <div className="space-y-4 mb-6 sm:mb-8">
           {/* Wicked Problem Callout Box */}
           <div className="bg-white border border-[#003340]/15 rounded-xl p-5 sm:p-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#d3104c] block mb-2">
+              Voer het gesprek
+            </span>
             <p className="text-sm sm:text-[15px] text-[#003340] leading-relaxed mb-3 font-medium">
               Aanwezigheid van studenten in de les is een <strong>wicked problem</strong>: veel actoren, veel factoren, en beleidskeuzes die elkaar beïnvloeden. Er is geen één magische oplossing. Wat wel werkt: zorgen dat de keuzes die je maakt op elkaar zijn afgestemd; binnen het team en tussen de feitelijke en normatieve dimensies.
             </p>
