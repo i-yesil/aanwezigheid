@@ -13,7 +13,7 @@ export const StickyStepBar: React.FC<StickyStepBarProps> = ({
 }) => {
   return (
     <div className="sticky top-0 z-30 bg-[#f7efe3]/95 backdrop-blur-md border-b border-[#003340]/15 shadow-xs transition-all">
-      <div className="max-w-[1040px] mx-auto px-4 sm:px-6 py-2.5 flex items-center gap-3">
+      <div className="max-w-[1340px] mx-auto px-4 sm:px-8 py-2.5 flex items-center gap-3">
         <span className="hidden sm:inline-block text-[10px] font-bold tracking-[0.12em] uppercase text-[#003340]/60 shrink-0">
           Stappen
         </span>

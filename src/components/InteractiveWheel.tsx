@@ -41,7 +41,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
   };
 
   return (
-    <div className="w-full max-w-[420px] mx-auto my-3 sm:my-5 flex flex-col items-center">
+    <div className="w-full max-w-[420px] mx-auto mt-2 mb-0 sm:mt-3 sm:mb-1 flex flex-col items-center">
       <svg
         viewBox="0 0 680 680"
         className="w-full h-auto drop-shadow-sm select-none"

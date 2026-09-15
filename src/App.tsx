@@ -78,7 +78,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f7efe3] text-[#003340] font-['Poppins',system-ui,sans-serif]">
       {/* Main Page Container */}
-      <main className="max-w-[1140px] mx-auto px-4 sm:px-8 py-8 sm:py-12 no-print relative">
+      <main className="max-w-[1340px] mx-auto px-4 sm:px-8 py-8 sm:py-12 no-print relative">
         {/* Masthead */}
         <Masthead
           onPrint={handlePrint}
@@ -104,7 +104,7 @@ export default function App() {
         </div>
 
         {/* Hero Section: Wicked Problem & Interactive Wheel */}
-        <div className="space-y-6 mb-12">
+        <div className="space-y-4 mb-6 sm:mb-8">
           {/* Wicked Problem Callout Box */}
           <div className="bg-white border border-[#003340]/15 rounded-xl p-5 sm:p-6">
             <p className="text-sm sm:text-[15px] text-[#003340] leading-relaxed mb-3 font-medium">
@@ -129,13 +129,13 @@ export default function App() {
           </div>
 
           {/* Interactive Wheel */}
-          <div className="bg-transparent py-2 sm:py-4">
-            <div className="text-center mb-3">
+          <div className="bg-transparent pt-1 pb-0">
+            <div className="text-center mb-2">
               <h3 className="text-sm sm:text-base font-semibold text-[#003340]">
                 Doorloop de vier stappen in het wiel voor het teamgesprek
               </h3>
               <p className="text-xs sm:text-[13px] text-[#003340]/75 mt-0.5">
-                Klik op een stap of cijfer om direct naar inzichten en praktische handvatten te gaan
+                Of, klik op een stap om direct naar inzichten en praktische handvatten te gaan
               </p>
             </div>
             <InteractiveWheel activeStep={activeStep} onSelectStep={scrollToStep} />

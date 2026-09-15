@@ -15,7 +15,7 @@ export const Masthead: React.FC<MastheadProps> = ({
       <div className="flex justify-between items-center gap-4">
         <div>
           <span className="text-xs sm:text-sm text-[#003340]/85 font-medium">
-            Voor adviseurs, management en docenten
+            Voor adviseurs, management en (hoofd)docenten
           </span>
         </div>
 

@@ -312,11 +312,11 @@ export const StepSection: React.FC<StepSectionProps> = ({
         </p>
 
         {/* The Two Fundamental Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 items-stretch">
           {/* Spoor 1: Meerwaarde & Studeerbaarheid */}
           <div
             onClick={() => onOpenDimension('p-routeA')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex items-center justify-between gap-4 group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
@@ -325,22 +325,22 @@ export const StepSection: React.FC<StepSectionProps> = ({
               <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-1.5">
                 Werken aan meerwaarde en studeerbaarheid
               </h4>
-              <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed">
+              <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed mb-3">
                 Herontwerp van rooster, didactische meerwaarde en studeerbaarheid. Zorg dat bijeenkomsten interactief zijn en iets bieden wat zelfstudie of opnames niet kunnen vervangen.
               </p>
             </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0"
-            >
-              <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-              <span>Meer info</span>
-            </span>
+            <div className="flex items-center justify-end pt-3 border-t border-[#003340]/10 mt-auto">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info</span>
+              </span>
+            </div>
           </div>
 
           {/* Spoor 2: Relatie & Binding */}
           <div
             onClick={() => onOpenDimension('p-routeB')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex items-center justify-between gap-4 group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
@@ -349,16 +349,16 @@ export const StepSection: React.FC<StepSectionProps> = ({
               <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-1.5">
                 Werken aan relatie en binding
               </h4>
-              <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed">
+              <p className="text-xs sm:text-[13px] text-[#003340]/75 leading-relaxed mb-3">
                 Versterk de binding, docentnabijheid en het gevoel gezien en gemist te worden. Signaleer verzuim tijdig via zichtbare registratie en organiseer een directe, warme follow-up.
               </p>
             </div>
-            <span
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0"
-            >
-              <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-              <span>Meer info</span>
-            </span>
+            <div className="flex items-center justify-end pt-3 border-t border-[#003340]/10 mt-auto">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
+                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                <span>Meer info</span>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -379,7 +379,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
           {/* Spoor 3 (Linker kolom, uitgelijnd met Spoor 1) */}
           <div
             onClick={() => onOpenDimension('p-routeC')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#00b0eb] block mb-1">
@@ -392,10 +392,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
                 Overweegt het team een formele aanwezigheidsplicht, dan gelden de strikte kaders van Hogeschool Rotterdam en de WHW: studeren is een recht, geen plicht. Een plicht mag alleen op cursusniveau bij een praktische oefening (POA), met verplichte verankering in OER en curriculumschema.
               </p>
             </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
-              <span className="text-[11px] font-semibold text-[#00b0eb]">
-                Bekijk didactische proportionaliteit
-              </span>
+            <div className="flex items-center justify-end pt-3 border-t border-[#003340]/10 mt-auto">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
                 <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
                 <span>Meer info</span>
@@ -853,7 +850,7 @@ if (stepNumber === 4) {
         </div>
 
         <p className="text-sm sm:text-[15px] text-[#003340]/90 mb-5 leading-relaxed">
-          Vier evaluatievragen om te toetsen of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat. Alle vier moeten 'ja' zijn, anders weet je waar het werk ligt.
+          Deze vier evaluatievragen toetsen of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat. Alle vier moeten 'ja' zijn, anders weet je waar het werk ligt.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
