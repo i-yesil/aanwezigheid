@@ -105,16 +105,16 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
       {/* Drawer Panel */}
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
         <aside
-          className="w-screen max-w-2xl bg-[#f7efe3] text-[#003340] shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right duration-300"
+          className="w-screen max-w-2xl bg-[#f7efe3] text-[#003340] border-l-2 border-[#003340]/20 flex flex-col overflow-y-auto animate-in slide-in-from-right duration-300"
           role="dialog"
           aria-modal="true"
           aria-labelledby="drawer-title"
         >
           {/* Header - Consistent with hoofdpagina */}
-          <div className="p-5 sm:p-6 pb-4 bg-[#f7efe3] border-b border-[#003340]/15 flex items-start justify-between gap-4 sticky top-0 z-20 shadow-2xs">
+          <div className="p-5 sm:p-6 pb-4 bg-[#f7efe3] border-b border-[#003340]/15 flex items-start justify-between gap-4 sticky top-0 z-20">
             <div className="flex-1 min-w-0 pr-2">
               <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase shadow-2xs ${getStepBgColor()}`}>
+                <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase ${getStepBgColor()}`}>
                   {dimension.step === 'bronnen' ? 'Bronnen' : `Stap ${dimension.step}`}
                 </span>
                 <span className="text-xs font-semibold text-[#003340]/75 uppercase tracking-wider">
@@ -133,7 +133,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
 
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/90 border border-[#003340]/20 hover:bg-white hover:text-[#d3104c] transition-all flex items-center justify-center text-[#003340] cursor-pointer shadow-2xs shrink-0"
+              className="w-8 h-8 rounded-full bg-white/90 border border-[#003340]/20 hover:bg-white hover:text-[#d3104c] transition-all flex items-center justify-center text-[#003340] cursor-pointer shrink-0"
               aria-label="Sluit paneel"
             >
               <X className="w-5 h-5" />
@@ -150,7 +150,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
 
             {/* Dialogue Question / Gespreksvraag Card */}
             {dimension.dialogueQuestion && (
-              <div className="bg-white border border-[#003340]/15 rounded-lg p-3.5 shadow-2xs">
+              <div className="bg-white border border-[#003340]/15 rounded-lg p-3.5">
                 <div className="flex items-start gap-2.5">
                   <HelpCircle className="w-4 h-4 text-[#d3104c] shrink-0 mt-0.5" />
                   <div className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
@@ -168,7 +168,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                   {ALL_SOURCES.map((s) => (
                     <div
                       key={s.id}
-                      className="bg-white border border-[#003340]/10 rounded-lg p-3 sm:p-3.5 shadow-2xs hover:border-[#003340]/30 transition-all text-xs leading-relaxed"
+                      className="bg-white border border-[#003340]/10 rounded-lg p-3 sm:p-3.5 hover:border-[#003340]/30 transition-all text-xs leading-relaxed"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="text-[#003340]">
@@ -202,12 +202,12 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'inzichten'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
                             : dimension.step === 1
-                            ? 'bg-[#d3104c] text-white shadow-xs'
-                            : 'bg-[#003340] text-white shadow-xs'
+                            ? 'bg-[#d3104c] text-white'
+                            : 'bg-[#003340] text-white'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                       }`}
                     >
@@ -221,7 +221,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       onClick={() => setActiveTab('whw')}
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'whw'
-                          ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                          ? 'bg-[#00b0eb] text-[#003340] font-bold'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
                       }`}
                     >
@@ -235,7 +235,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       onClick={() => setActiveTab('zaken')}
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'zaken'
-                          ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
+                          ? 'bg-[#00b0eb] text-[#003340] font-bold'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
                       }`}
                     >
@@ -250,10 +250,10 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'tools'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
-                            : 'bg-[#003340] text-white shadow-xs'
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
+                            : 'bg-[#003340] text-white'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                       }`}
                     >
@@ -268,10 +268,10 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'media'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold shadow-xs border border-[#b58a00]/30'
+                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold shadow-xs'
-                            : 'bg-[#003340] text-white shadow-xs'
+                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
+                            : 'bg-[#003340] text-white'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                       }`}
                     >
@@ -301,7 +301,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     return (
                       <li
                         key={idx}
-                        className="bg-white border border-[#003340]/10 rounded-md p-2.5 sm:p-3 text-xs sm:text-[13px] leading-relaxed text-[#003340] shadow-2xs"
+                        className="bg-white border border-[#003340]/10 rounded-md p-2.5 sm:p-3 text-xs sm:text-[13px] leading-relaxed text-[#003340]"
                       >
                         <span>{cleanText} </span>
                         {insight.citation && (
@@ -406,7 +406,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                 </h3>
                 <div className="space-y-3">
                   {dimension.lawArticles.map((art, idx) => (
-                    <div key={idx} className="bg-white border border-[#003340]/15 rounded-md p-4 shadow-2xs">
+                    <div key={idx} className="bg-white border border-[#003340]/15 rounded-md p-4">
                       <div className="flex items-center justify-between gap-2 mb-1.5">
                         <span className="text-xs font-bold text-[#00b0eb] uppercase tracking-wider">
                           {art.lawRef}
@@ -451,7 +451,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     return (
                       <div
                         key={c.id}
-                        className="bg-white border border-[#003340]/15 rounded-md overflow-hidden shadow-2xs"
+                        className="bg-white border border-[#003340]/15 rounded-md overflow-hidden"
                       >
                         <button
                           onClick={() => toggleCase(c.id)}
@@ -546,7 +546,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                         </span>
                       </div>
                     </div>
-                    <ul className="bg-white border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 text-xs sm:text-[13px] space-y-2.5 shadow-2xs">
+                    <ul className="bg-white border border-[#003340]/15 rounded-lg p-3 sm:p-3.5 text-xs sm:text-[13px] space-y-2.5">
                       {dimension.policyRecommendations.map((r, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-2.5 text-[#003340] leading-relaxed">
                           <span className="w-4 h-4 rounded-full bg-[#00b0eb]/15 text-[#00b0eb] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">•</span>
@@ -564,7 +564,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     </h4>
                     <div className="space-y-2.5">
                       {dimension.practicalMaterials.map((mat, mIdx) => (
-                        <div key={mIdx} className="bg-white border border-[#003340]/15 rounded p-3 shadow-2xs">
+                        <div key={mIdx} className="bg-white border border-[#003340]/15 rounded p-3">
                           <div className="flex items-center justify-between gap-2 mb-1">
                             <span className="text-xs sm:text-sm font-semibold text-[#003340]">
                               {mat.title}
@@ -595,7 +595,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                     </h4>
                     <div className="space-y-2">
                       {dimension.pilots.map((pilot, pIdx) => (
-                        <div key={pIdx} className="bg-white border border-[#003340]/15 rounded p-3 text-xs shadow-2xs">
+                        <div key={pIdx} className="bg-white border border-[#003340]/15 rounded p-3 text-xs">
                           <div className="font-semibold text-[#003340] mb-0.5">{pilot.title}</div>
                           <p className="text-[#003340]/75 leading-relaxed mb-1">{pilot.description}</p>
                           {pilot.contactPerson && (
@@ -624,7 +624,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       href={med.mediaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white border border-[#003340]/15 rounded-md p-3 flex items-center justify-between gap-3 hover:border-[#d3104c] hover:shadow-xs transition-all block group"
+                      className="bg-white border border-[#003340]/15 rounded-md p-3 flex items-center justify-between gap-3 hover:border-[#d3104c] transition-all block group"
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div className="w-8 h-8 rounded-md bg-[#d3104c]/10 text-[#d3104c] flex items-center justify-center shrink-0 group-hover:bg-[#d3104c] group-hover:text-white transition-colors">

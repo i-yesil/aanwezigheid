@@ -12,7 +12,7 @@ export const StickyStepBar: React.FC<StickyStepBarProps> = ({
   onSelectStep,
 }) => {
   return (
-    <div className="sticky top-0 z-30 bg-[#f7efe3]/95 backdrop-blur-md border-b border-[#003340]/15 shadow-xs transition-all">
+    <div className="sticky top-0 z-30 bg-[#f7efe3]/95 backdrop-blur-md border-b border-[#003340]/15 transition-all">
       <div className="max-w-[1340px] mx-auto px-4 sm:px-8 py-2.5 flex items-center gap-3">
         <span className="hidden sm:inline-block text-[10px] font-bold tracking-[0.12em] uppercase text-[#003340]/60 shrink-0">
           Stappen
@@ -27,7 +27,7 @@ export const StickyStepBar: React.FC<StickyStepBarProps> = ({
                 onClick={() => onSelectStep(step.number)}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all shrink-0 cursor-pointer ${
                   isActive
-                    ? 'text-white font-semibold shadow-xs'
+                    ? 'text-white font-semibold'
                     : 'bg-white border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                 }`}
                 style={{

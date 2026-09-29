@@ -1,0 +1,24 @@
+# Beveiliging en MIME-types conform HR postulatieserver
+Options -Indexes
+ServerSignature Off
+
+# UTF-8 als standaard tekenset
+AddDefaultCharset UTF-8
+
+# Correcte content-types
+<IfModule mod_mime.c>
+  AddType application/json .json
+  AddType application/pdf .pdf
+  AddType text/css .css
+  AddType text/javascript .js
+</IfModule>
+
+# Caching van statische bestanden voor snelle laadtijd
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/json "access plus 1 day"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>

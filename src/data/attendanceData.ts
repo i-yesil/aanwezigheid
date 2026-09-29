@@ -28,19 +28,19 @@ export const STEPS: StepSummary[] = [
     name: 'Handelingsperspectieven',
     shortName: 'Handelingsperspectieven',
     tag: 'Handelingsperspectieven',
-    leadQuestion: 'Hoe stimuleren we aanwezigheid en wanneer is aanwezigheidsplicht zinvol?',
-    description: 'Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan meerwaarde en studeerbaarheid en werken aan relatie en binding. Pas als dat aantoonbaar niet volstaat, onderzoek je of een formele aanwezigheidsplicht (POA) didactisch proportioneel is en juridisch voldoet aan de WHW en het HR-kader (2025).',
+    leadQuestion: 'Hoe werken we aan aanwezigheid?',
+    description: 'Aanwezigheid bevorder je niet met één maatregel, maar door drie handelingsperspectieven: kunnen, willen en moeten. Kúnnen studenten er zijn, zonder onnodige drempels in rooster en organisatie? Wíllen ze er zijn, omdat de les merkbaar meerwaarde heeft en ze zich verbonden voelen? En wat verwachten we van elkaar, en wanneer is een formele plicht passend (moeten)?',
     color: '#00b0eb',
     activeBorderColor: 'border-[#00b0eb]',
     dimensions: ['p-routeA', 'p-routeB', 'p-routeC', 'p-juridisch']
   },
   {
     number: 4,
-    name: 'Evaluatie',
-    shortName: 'Evaluatie',
-    tag: 'Evaluatie',
+    name: 'Toetsing',
+    shortName: 'Toetsing',
+    tag: 'Toetsing',
     leadQuestion: 'Staat het beleid stevig?',
-    description: 'Vier evaluatievragen om te toetsen of de voorgenomen aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
+    description: 'Vier toetsvragen om te onderzoeken of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
     color: '#fcc200',
     activeBorderColor: 'border-[#fcc200]',
     dimensions: ['p-g1', 'p-g2', 'p-g3', 'p-g4']
@@ -619,35 +619,45 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ]
   },
 
-  // STAP 3: HANDELINGSPERSPECTIEVEN (STIMULEREN & NORMEREN)
+  // STAP 3: HANDELINGSPERSPECTIEVEN (KUNNEN · WILLEN · MOETEN)
   'p-routeA': {
     id: 'p-routeA',
     step: 3,
     stepName: 'Handelingsperspectieven',
-    stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan meerwaarde en studeerbaarheid',
-    subtitle: 'Rooster, studeerbaarheid & didactische meerwaarde',
-    shortDescription: 'Herontwerp van rooster, activerende didactiek en studeerbaarheid.',
-    leadParagraph: 'Verander niet primair het gedrag van studenten, maar verander de context en randvoorwaarden die verzuim nu de makkelijkste keuze maken. Zorg voor merkbare meerwaarde in de les en een studeerbaar rooster.',
-    dialogueQuestion: 'Welk deel van het verzuim in onze opleiding is het gevolg van rooster, didactiek of ontwerp, en wat kunnen wij daar zelf aan doen zonder studenten aan te spreken op gedrag?',
+    stepTag: 'KUNNEN',
+    name: 'Zorg dat studenten kúnnen komen',
+    subtitle: 'Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken',
+    shortDescription: 'Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken.',
+    leadParagraph: 'Organisatorische randvoorwaarden op orde: richt alle omstandigheden zo in dat studenten feitelijk kúnnen komen. Zorg voor een fijn, samenhangend en voorspelbaar rooster: laat studenten niet slechts voor één losse les naar school reizen, voorkom loze tussenuren en zorg dat rooster- of deadlineconflicten tussen vakken studenten niet dwingen tot keuzeverzuim.',
+    dialogueQuestion: 'Zijn alle organisatorische randvoorwaarden (rooster, reistijd, voorspelbaarheid, faciliteiten) zo ingericht dat studenten feitelijk kunnen komen, of lokt de organisatie verzuim uit?',
     insights: [
       {
-        text: 'Wanneer ontwerp- of roosterproblemen de werkelijke oorzaak zijn, is een plicht pure symptoombestrijding. Eerst de structuur aanpakken.',
+        text: 'Organisatorische randvoorwaarden: het rooster moet fijn en voorspelbaar zijn. Studenten moeten niet slechts voor 1 les naar school hoeven te reizen.',
+        citation: 'Aantekeningen onderwijsteams; Dekker et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Wanneer ontwerp- of roosterproblemen de werkelijke oorzaak zijn, is een aanwezigheidsplicht pure symptoombestrijding. Pak altijd eerst de structuur en studeerbaarheid aan.',
         citation: 'Biggs & Tang, 2011; Ralph et al., 2025',
         citationUrl: 'https://doi.org/10.71634/er166487'
       },
       {
-        text: 'Constructive alignment en activerende werkvormen zorgen dat de bijeenkomst geen online substituut heeft, waardoor aanwezig zijn loont.',
-        citation: 'Biggs, 1996; Fitzpatrick et al., 2011',
-        citationUrl: 'https://doi.org/10.1007/BF00138871'
+        text: 'Interdependentie in opdrachten en doordachte spreiding van toetsmomenten voorkomen dat studenten onderwijsbijeenkomsten skippen om urgente deadlines voor andere vakken te halen.',
+        citation: 'Cutler et al., 2016; Fitzpatrick et al., 2011',
+        citationUrl: 'https://doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x'
       },
       {
-        text: 'Interdependentie in opdrachten geeft aanwezigheid zin: de les moet iets bieden dat zelfstudie niet kan.',
-        citation: 'Cutler et al., 2016',
-        citationUrl: 'https://doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x'
+        text: 'Facilitering door management: management faciliteert docenten en opleidingsteams met voldoende uren, professionele ruimte en een kwaliteitscultuur om onderwijs studeerbaar te organiseren.',
+        citation: 'Klatter & Smeets, 2023',
+        citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/'
       }
     ],
     practicalMaterials: [
+      {
+        title: 'Checklist Studeerbaar Roosteren',
+        description: 'Vuistregels voor onderwijsplanning: bloktijden, aaneengesloten bijeenkomsten en minimale reistijd voor studenten.',
+        type: 'guide'
+      },
       {
         title: 'Managementfacilitering',
         description: 'Randvoorwaarde: management faciliteert docenten met voldoende uren, professionele ruimte en een kwaliteitscultuur (Klatter & Smeets, 2023).',
@@ -661,34 +671,44 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     id: 'p-routeB',
     step: 3,
     stepName: 'Handelingsperspectieven',
-    stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan relatie en binding',
-    subtitle: 'Binding, vroegsignalering & persoonlijke follow-up',
-    shortDescription: 'Vroegtijdige signalering, warme follow-up en preventieve begeleiding.',
-    leadParagraph: 'Werk niet met een starre regel, maar met de relatie en preventieve opvolging. Versterk binding en docentnabijheid, en spreek studenten tijdig persoonlijk aan bij verzuim.',
-    dialogueQuestion: 'Welke rol nemen wij als docenten en SLC in het opbouwen van de relatie en het opvangen van beginnend verzuim, en waar staan we nu?',
+    stepTag: 'WILLEN',
+    name: 'Zorg dat studenten wíllen komen',
+    subtitle: 'Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt',
+    shortDescription: 'Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt.',
+    leadParagraph: 'Onderwijskwaliteit en verbinding: zorg dat studenten wíllen komen. Wat er in de les gebeurt mag géén passieve "one-manshow" zijn, maar moet doelgericht gericht zijn op wat er geleerd moet worden voor het vak of de toets. Daarnaast zijn meerwaarde, de docent-studentrelatie en het gevoel van verbondenheid (sense of belonging) doorslaggevend: studenten die zich gezien, gewaardeerd en gemist voelen, komen graag naar de bijeenkomsten.',
+    dialogueQuestion: 'Wat gebeurt er in onze bijeenkomsten dat studenten nergens anders kunnen ervaren (geen one-manshow), en hoe versterken we de relatie en sense of belonging zodat studenten wíllen komen?',
     insights: [
       {
-        text: 'Een drietrapsaanpak werkt het best: preventie via een gastvrije cultuur en zichtbare registratie; gepersonaliseerde SLC-interventies; en specialistisch maatwerk bij structurele belemmeringen.',
-        citation: 'Jaftha et al., 2022',
-        citationUrl: 'https://www.researchgate.net/publication/359802934'
+        text: 'Onderwijskwaliteit: wat er in de les gebeurt mag geen one-manshow zijn, maar moet direct en merkbaar bedoeld zijn voor wat er geleerd moet worden voor het vak of de toets.',
+        citation: 'Aantekeningen onderwijsteams; Biggs, 1996; Kappe, 2026',
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       },
       {
-        text: 'Aanwezigheidsdata inzetten als vroegsignaal voor hulp, niet als bestraffend instrument. Werkt met name krachtig bij eerstejaars.',
-        citation: 'Trotter & Roberts, 2006',
+        text: 'Relatie en "sense of belonging": studenten komen voor de verbinding met medestudenten en de docent. Erbij horen en gezien worden is de sterkste voorspeller van actieve aanwezigheid.',
+        citation: 'Ralph et al., 2025; Tahir et al., 2024',
+        citationUrl: 'https://doi.org/10.71634/er166487'
+      },
+      {
+        text: 'Werken aan een positieve docent-studentrelatie en persoonlijke benaderbaarheid verlaagt stress en vergroot de intrinsieke leerbereidheid aanzienlijk: wie zich veilig voelt, staat open om te leren.',
+        citation: 'Vanhoof et al., 2012',
+        citationUrl: 'https://www.researchgate.net/publication/235433831_Leerbereidheid_van_leerlingen_aanwakkeren_principes_die_motiveren_inspireren_en_werken'
+      },
+      {
+        text: 'Persoonlijke follow-up: signaleer beginnend verzuim tijdig en spreek studenten belangstellend aan ("we hebben je gemist, hoe gaat het?") in plaats van direct administratief te sanctioneren.',
+        citation: 'Jaftha et al., 2022; Trotter & Roberts, 2006',
         citationUrl: 'https://doi.org/10.1080/07294360600947368'
       }
     ],
     practicalMaterials: [
       {
-        title: 'Data-gedreven nudges',
-        description: 'Vriendelijk bericht vanuit SLC: "we hebben je gemist bij de laatste 2 practica, hoe gaat het met de voorbereiding?"',
-        type: 'tool'
+        title: 'Versterken van Sense of Belonging in de Klas',
+        description: 'Praktische didactische werkvormen om vanaf de eerste week binding en wederzijdse betrokkenheid tussen studenten en docent op te bouwen.',
+        type: 'guide'
       },
       {
-        title: 'Zichtbare registratie als norm',
-        description: 'Directe persoonlijke follow-up als professionele norm in plaats van administratieve formaliteit.',
-        type: 'guide'
+        title: 'Data-gedreven warme nudges',
+        description: 'Vriendelijk bericht vanuit docent of SLC: "we hebben je gemist bij de laatste bijeenkomst, hoe gaat het met de voorbereiding?"',
+        type: 'tool'
       }
     ]
   },
@@ -698,15 +718,20 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     id: 'p-routeC',
     step: 3,
     stepName: 'Handelingsperspectieven',
-    stepTag: 'Handelingsperspectieven',
-    name: 'Werken aan aanwezigheidsplicht',
-    subtitle: 'Spoor 3 · Wanneer is een formele norm didactisch proportioneel en verdedigbaar?',
-    shortDescription: 'Spoor 3: Werken aan aanwezigheidsplicht. Didactische afweging en proportionaliteit.',
-    leadParagraph: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel. Een alternatief model is "optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt voor de beoordeling. Dit behoudt autonomie en verhoogt opkomst structureel. Blijft het opleidingsteam bij stimuleren via het systeem en begeleiding? Dan is er géén formele beperking van de academische studievrijheid (art. 1.6 WHW) en hoeft er juridisch niets in de OER geregeld te worden. Kiest het team na zorgvuldige afweging wél voor een formele norm, dan gelden de wettelijke randvoorwaarden.',
-    dialogueQuestion: 'Hebben we als opleidingsteam eerst alle mogelijkheden benut, en waarom is een verplichting noodzakelijk?',
+    stepTag: 'MOETEN',
+    name: 'Bepaal wat je van elkaar verwacht',
+    subtitle: 'Spreek als team en met studenten uit wat je van elkaar verwacht, en bepaal wanneer een formele eis passend is',
+    shortDescription: 'Spreek als team en met studenten uit wat je van elkaar verwacht, en bepaal wanneer een formele eis passend is.',
+    leadParagraph: 'Moeten omvat twee duidelijke lagen: allereerst heldere, eenduidige normen en verwachtingen vanuit het docententeam ("er moeten zijn" als professionele standaard, zonder dubbele signalen). Ten tweede: wanneer is een formele aanwezigheids- of participatieplicht didactisch en juridisch passend? Studeren is een recht, geen plicht (art. 1.6 WHW). Een generieke plicht voor een opleiding is verboden. Uitsluitend bij een praktische oefening (POA) op cursusniveau waar actieve participatie onmisbaar is voor de leeruitkomsten, mag een plicht worden vastgelegd in de OER conform het HR-kader (2025).',
+    dialogueQuestion: 'Hebben we als team duidelijke normen en verwachtingen over "er moeten zijn" afgesproken, en hebben we getoetst of een formele plicht didactisch noodzakelijk (POA) en juridisch verankerd is in de OER?',
     insights: [
       {
-        text: 'Een aanwezigheidseis is nooit het vertrekpunt, maar een uiterst middel. Als stimuleren via didactiek en relatie volstaat, blijft de academische studievrijheid (art. 1.6 WHW) intact en is geen OER-wijziging vereist.',
+        text: 'Aanwezigheidsplicht en verwachtingen: "Er moeten zijn" moet als eenduidige professionele verwachting door het hele team gedragen worden. Dubbele signalen verzwakken de norm.',
+        citation: 'Aantekeningen onderwijsteams; Jaftha et al., 2022',
+        citationUrl: 'https://www.researchgate.net/publication/359802934'
+      },
+      {
+        text: 'Een aanwezigheidseis is nooit het vertrekpunt, maar het sluitstuk na "kunnen" en "willen". Als stimuleren via randvoorwaarden en didactiek volstaat, blijft de academische vrijheid intact en is geen OER-wijziging vereist.',
         citation: 'Art. 1.6 & 7.13 WHW; Kappe, 2026',
         citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
       },
@@ -734,11 +759,6 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         text: '"Optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel zonder juridische dwang.',
         citation: 'Cullen & Oppenheimer, 2024',
         citationUrl: 'https://doi.org/10.1126/sciadv.ado6759'
-      },
-      {
-        text: 'Een normatieve ingreep past goed bij eerstejaars, praktische vaardigheden en beroepscompetenties; minder bij theoretische hoorcolleges van ouderejaars.',
-        citation: 'Bijsmans & Schakel, 2018; Dobkin et al., 2010; Klatter & Smeets, 2023',
-        citationUrl: 'https://www.scienceguide.nl/2023/06/studentsucces-verbeteren-focus-op-oorzaken-niet-op-symptomen/'
       }
     ]
   },

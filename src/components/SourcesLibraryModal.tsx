@@ -62,11 +62,11 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-[#003340]/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6">
-      <div className="bg-[#f7efe3] text-[#003340] w-full max-w-3xl rounded-xl shadow-2xl border border-[#003340]/20 flex flex-col max-h-[90vh] overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="bg-[#f7efe3] text-[#003340] w-full max-w-3xl rounded-xl border-2 border-[#003340]/25 flex flex-col max-h-[90vh] overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="p-5 sm:px-6 bg-[#003340] text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#d3104c] text-white flex items-center justify-center shadow-xs">
+            <div className="w-8 h-8 rounded-lg bg-[#d3104c] text-white flex items-center justify-center">
               <BookOpen className="w-4 h-4" />
             </div>
             <div>
@@ -117,7 +117,7 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
                   {items.map((s) => (
                     <div
                       key={s.id}
-                      className="bg-white border border-[#003340]/10 rounded-lg p-3 sm:p-3.5 shadow-2xs hover:border-[#003340]/30 transition-all text-xs leading-relaxed"
+                      className="bg-white border border-[#003340]/10 rounded-lg p-3 sm:p-3.5 hover:border-[#003340]/30 transition-all text-xs leading-relaxed"
                     >
                       <div className="font-semibold text-[#003340] flex items-start justify-between gap-2">
                         <span>

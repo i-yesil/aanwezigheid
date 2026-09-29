@@ -44,7 +44,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
     <div className="w-full max-w-[420px] mx-auto mt-2 mb-0 sm:mt-3 sm:mb-1 flex flex-col items-center">
       <svg
         viewBox="0 0 680 680"
-        className="w-full h-auto drop-shadow-sm select-none"
+        className="w-full h-auto select-none"
         role="img"
         aria-label="De vier stappen van het Aanwezigheidsethos in één interactief wiel"
       >
@@ -79,7 +79,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             fill={stepColors.step1.badgeBg}
             stroke={stepColors.step1.badgeText}
             strokeWidth={activeStep === 1 ? "2.5" : "1.5"}
-            className="shadow-xs transition-transform duration-150"
+            className="transition-transform duration-150"
           />
           <text
             x="188"
@@ -152,7 +152,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             fill={stepColors.step2.badgeBg}
             stroke={stepColors.step2.badgeText}
             strokeWidth={activeStep === 2 ? "2.5" : "1.5"}
-            className="shadow-xs transition-transform duration-150"
+            className="transition-transform duration-150"
           />
           <text
             x="492"
@@ -225,7 +225,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             fill={stepColors.step3.badgeBg}
             stroke={stepColors.step3.badgeText}
             strokeWidth={activeStep === 3 ? "2.5" : "1.5"}
-            className="shadow-xs transition-transform duration-150"
+            className="transition-transform duration-150"
           />
           <text
             x="492"
@@ -242,7 +242,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
           <g pointerEvents="none">
             <text
               x="492"
-              y="478"
+              y="476"
               textAnchor="middle"
               fill={stepColors.step3.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -251,7 +251,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="500"
+              y="497"
               textAnchor="middle"
               fill={stepColors.step3.text}
               className="text-[16px] sm:text-[17px] font-bold tracking-tight"
@@ -260,21 +260,21 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="525"
+              y="522"
               textAnchor="middle"
               fill={stepColors.step3.tagText}
-              className="text-[13px] font-bold tracking-normal"
+              className="text-[12.5px] font-bold tracking-normal"
             >
-              Handelings-
+              Handelingsperspectieven
             </text>
             <text
               x="492"
-              y="542"
+              y="540"
               textAnchor="middle"
               fill={stepColors.step3.tagText}
-              className="text-[13px] font-bold tracking-normal"
+              className="text-[11px] font-semibold tracking-wide opacity-95"
             >
-              perspectieven
+              Kunnen · Willen · Moeten
             </text>
           </g>
         </g>
@@ -307,7 +307,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             fill={stepColors.step4.badgeBg}
             stroke={stepColors.step4.badgeText}
             strokeWidth={activeStep === 4 ? "2.5" : "1.5"}
-            className="shadow-xs transition-transform duration-150"
+            className="transition-transform duration-150"
           />
           <text
             x="188"
@@ -347,7 +347,7 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
               fill={stepColors.step4.tagText}
               className="text-[13px] font-bold tracking-wide"
             >
-              Evaluatie
+              Toetsing
             </text>
           </g>
         </g>

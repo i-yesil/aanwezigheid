@@ -1,0 +1,69 @@
+[
+  {
+    "number": 1,
+    "name": "Feitelijke dimensie",
+    "shortName": "Feitelijke dimensie",
+    "tag": "Feitelijk",
+    "leadQuestion": "Wat is eigenlijk het probleem?",
+    "description": "Voordat we over een maatregel spreken: waar zit het probleem eigenlijk? Aanwezigheid heeft zeven feitelijke domeinen. Vaak wijst het werkelijke probleem naar een ander domein dan we denken.",
+    "color": "#d3104c",
+    "activeBorderColor": "border-[#d3104c]",
+    "dimensions": [
+      "p-doelgroep",
+      "p-didactiek",
+      "p-ontwerp",
+      "p-pedagogiek",
+      "p-beleid",
+      "p-technisch",
+      "p-team",
+      "p-logistiek"
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Normatieve dimensie",
+    "shortName": "Normatieve dimensie",
+    "tag": "Normatief",
+    "leadQuestion": "Welke waarden spelen hier?",
+    "description": "Feiten alleen wijzen geen aanpak aan. Elke feitelijke dimensie rust op waarden die vaak impliciet blijven. De drie perspectieven maken die waarden bespreekbaar vóór je besluit.",
+    "color": "#003340",
+    "activeBorderColor": "border-[#003340]",
+    "dimensions": [
+      "p-soc",
+      "p-psy",
+      "p-ok"
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Handelingsperspectieven",
+    "shortName": "Handelingsperspectieven",
+    "tag": "Handelingsperspectieven",
+    "leadQuestion": "Hoe stimuleren we aanwezigheid en wanneer is aanwezigheidsplicht zinvol?",
+    "description": "Om aanwezigheid te bevorderen zet je als opleidingsteam primair in op twee elkaar versterkende sporen: werken aan meerwaarde en studeerbaarheid en werken aan relatie en binding. Pas als dat aantoonbaar niet volstaat, onderzoek je of een formele aanwezigheidsplicht (POA) didactisch proportioneel is en juridisch voldoet aan de WHW en het HR-kader (2025).",
+    "color": "#00b0eb",
+    "activeBorderColor": "border-[#00b0eb]",
+    "dimensions": [
+      "p-routeA",
+      "p-routeB",
+      "p-routeC",
+      "p-juridisch"
+    ]
+  },
+  {
+    "number": 4,
+    "name": "Evaluatie",
+    "shortName": "Evaluatie",
+    "tag": "Evaluatie",
+    "leadQuestion": "Staat het beleid stevig?",
+    "description": "Vier evaluatievragen om te toetsen of de voorgenomen aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.",
+    "color": "#fcc200",
+    "activeBorderColor": "border-[#fcc200]",
+    "dimensions": [
+      "p-g1",
+      "p-g2",
+      "p-g3",
+      "p-g4"
+    ]
+  }
+]

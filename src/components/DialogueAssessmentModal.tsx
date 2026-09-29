@@ -88,7 +88,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-[#003340]/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6">
-      <div className="bg-[#f7efe3] text-[#003340] w-full max-w-3xl rounded-xl shadow-2xl border border-[#003340]/20 flex flex-col max-h-[92vh] overflow-hidden">
+      <div className="bg-[#f7efe3] text-[#003340] w-full max-w-3xl rounded-xl border-2 border-[#003340]/25 flex flex-col max-h-[92vh] overflow-hidden">
         {/* Header */}
         <div className="p-5 sm:px-6 bg-[#003340] text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -137,7 +137,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
         <div className="p-6 overflow-y-auto flex-1 space-y-6">
           {showReport ? (
             /* REPORT VIEW */
-            <div className="space-y-6 bg-white p-6 rounded-lg border border-[#003340]/15 shadow-xs">
+            <div className="space-y-6 bg-white p-6 rounded-lg border border-[#003340]/15">
               <div className="border-b border-[#003340]/15 pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                 <div>
                   <span className="text-xs uppercase tracking-wider font-bold text-[#d3104c]">
@@ -149,7 +149,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                 </div>
                 <button
                   onClick={handlePrintReport}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#003340] text-white text-xs font-semibold hover:bg-[#003340]/90 transition-colors shadow-2xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#003340] text-white text-xs font-semibold hover:bg-[#003340]/90 transition-colors cursor-pointer"
                 >
                   <Printer className="w-4 h-4" />
                   <span>Afdrukken / PDF</span>
@@ -193,7 +193,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                       ))}
                     </ul>
                   ) : (
-                    <span className="text-[#003340]/60 italic">Geen specifieke knelpunten geselecteerd.</span>
+                    <span className="text-[#003340]/60 italic">Geen specifieke knelpunten aangevinkt.</span>
                   )}
                 </div>
 
@@ -318,7 +318,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
 
                   <div>
                     <label className="block text-xs font-semibold text-[#003340] mb-2">
-                      Welke feitelijke factoren spelen in dit vak een rol bij verzuim? (Selecteer wat van toepassing is)
+                      Welke feitelijke factoren spelen in dit vak een rol bij verzuim? (Kruis aan wat van toepassing is)
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       {[
@@ -419,7 +419,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                           onClick={() => setAssessment({ ...assessment, chosenRoute: r.route })}
                           className={`p-4 rounded-lg border-2 text-left cursor-pointer transition-all ${
                             selected
-                              ? 'bg-white border-[#00b0eb] shadow-md'
+                              ? 'bg-white border-[#00b0eb]'
                               : 'bg-white/60 border-[#003340]/15 hover:bg-white'
                           }`}
                         >
@@ -457,7 +457,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                         onClick={() => setAssessment({ ...assessment, isObligationPlanned: false })}
                         className={`p-3 rounded border text-left cursor-pointer transition-all ${
                           !assessment.isObligationPlanned
-                            ? 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold shadow-2xs'
+                            ? 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold'
                             : 'bg-white border-[#003340]/20 text-[#003340]/75 hover:bg-[#fbfaf5]'
                         }`}
                       >
@@ -472,7 +472,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                         onClick={() => setAssessment({ ...assessment, isObligationPlanned: true })}
                         className={`p-3 rounded border text-left cursor-pointer transition-all ${
                           assessment.isObligationPlanned
-                            ? 'bg-[#f0f9fd] border-[#00b0eb] text-[#003340] font-semibold shadow-2xs'
+                            ? 'bg-[#f0f9fd] border-[#00b0eb] text-[#003340] font-semibold'
                             : 'bg-white border-[#003340]/20 text-[#003340]/75 hover:bg-[#fbfaf5]'
                         }`}
                       >
@@ -560,7 +560,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
                       { key: 'gerechtvaardigd' as const, name: 'Gerechtvaardigd', desc: 'Is de eis proportioneel gedifferentieerd naar studiefase met zorgplicht?' },
                       { key: 'gedeeld' as const, name: 'Gedeeld', desc: 'Is er partnerschap tussen docenten, management, SLC en studenten?' },
                     ].map((g) => (
-                      <div key={g.key} className="bg-white border border-[#003340]/15 rounded p-3.5 shadow-2xs">
+                      <div key={g.key} className="bg-white border border-[#003340]/15 rounded p-3.5">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-xs font-bold text-[#003340]">{g.name}</span>
                           <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#f7efe3] text-[#d3104c]">
@@ -632,7 +632,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
             activeStep === 5 ? (
               <button
                 onClick={() => setShowReport(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#d3104c] text-white hover:bg-[#b80c3e] transition-colors shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#d3104c] text-white hover:bg-[#b80c3e] transition-colors cursor-pointer"
               >
                 <span>Bekijk Adviesrapport</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -640,7 +640,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
             ) : (
               <button
                 onClick={() => setActiveStep((p) => Math.min(5, p + 1))}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#003340] text-white hover:bg-[#003340]/90 transition-colors shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#003340] text-white hover:bg-[#003340]/90 transition-colors cursor-pointer"
               >
                 <span>Volgende stap</span>
                 <ChevronRight className="w-3.5 h-3.5" />
