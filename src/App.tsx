@@ -112,19 +112,14 @@ export default function App() {
             Aanwezigheid van studenten in de les is een <strong className="text-[#d3104c] font-semibold">wicked problem</strong>: er zijn veel actoren, veel factoren en beleidskeuzes die elkaar beïnvloeden. Er is geen één magische oplossing. Hoe beter de keuzes die je maakt in elkaar passen, des te meer effect ze zullen hebben. Deze leidraad rafelt de verschillende dimensies uit elkaar en helpt op die manier om zicht te krijgen op het probleem, om aanpakken te kiezen die bij de situatie passen.
           </p>
 
-          {/* Alinea 4: Bronnen en tools */}
-          <p className="text-sm sm:text-[15px] text-[#003340]/90 leading-relaxed mb-3">
-            Er zijn veel verschillende soorten bronnen en tools toegevoegd, om de actuele kennis over de achterliggende factoren van aanwezigheid te delen en ook het evidence informed werken te stimuleren.
-          </p>
-
-          {/* Verplaatste toelichting: Klik op Meer info */}
-          <p className="text-xs sm:text-sm text-[#003340]/80 italic flex flex-wrap items-center gap-1.5 mb-6">
-            <span>Klik op</span>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold border border-[#d3104c] text-[#d3104c] bg-[#d3104c]/5 not-italic">
+          {/* Alinea 4: Bronnen en tools met toelichting Meer info */}
+          <p className="text-sm sm:text-[15px] text-[#003340]/90 leading-relaxed mb-6">
+            Er zijn veel verschillende soorten bronnen en tools toegevoegd, om de actuele kennis over de achterliggende factoren van aanwezigheid te delen en ook het evidence informed werken te stimuleren. Klik op{' '}
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold border border-[#d3104c] text-[#d3104c] bg-[#d3104c]/5 not-italic align-baseline mx-1">
               <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
               <span>Meer info</span>
-            </span>
-            <span>voor wetenschappelijke inzichten, praktijkvoorbeelden, media en concrete tools om te werken aan een aanwezigheidsethos.</span>
+            </span>{' '}
+            voor wetenschappelijke inzichten, praktijkvoorbeelden, media en concrete tools om te werken aan een aanwezigheidsethos.
           </p>
 
           {/* Blok: Zo voer je het gesprek */}
