@@ -13,11 +13,13 @@ export const StepSection: React.FC<StepSectionProps> = ({
   onOpenDimension,
 }) => {
   const [activeLegalPanel, setActiveLegalPanel] = useState<'whw' | 'randvoorwaarden' | 'jurisprudentie' | null>(null);
+  const [isDutyOpen, setIsDutyOpen] = useState<boolean>(false);
 
   const toggleLegalPanel = (panel: 'whw' | 'randvoorwaarden' | 'jurisprudentie', e?: React.MouseEvent) => {
     if (e) {
       e.stopPropagation();
     }
+    setIsDutyOpen(true);
     setActiveLegalPanel(prev => (prev === panel ? null : panel));
   };
   if (stepNumber === 1) {
@@ -317,43 +319,41 @@ export const StepSection: React.FC<StepSectionProps> = ({
         </p>
 
         {/* 3 Kaarten in 3 kolommen: Kunnen, Willen, Moeten */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 items-stretch">
           {/* Tegel 1 · Kunnen */}
           <div
             onClick={() => onOpenDimension('p-routeA')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col h-full group"
           >
-            <div>
-              <div className="mb-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
-                  KUNNEN
-                </span>
-              </div>
-              <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
-                Zorg dat studenten kúnnen komen
-              </h4>
-              <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
-                Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken.
-              </p>
-              <ul className="space-y-2 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Roostert slim:</strong> plan geen losse lesuren waarvoor studenten enkel voor één les hoeven te reizen.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Programmeert aaneengesloten:</strong> voorkom versnippering en loze tussenuren die de dag onnodig lang maken.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Bewaakt studeerbaarheid:</strong> stem deadlines tussen parallelle vakken af, zodat aanwezigheid niet botst met piekdruk.</span>
-                </li>
-              </ul>
-            </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
-              <span className="text-[11px] text-[#003340]/65 font-medium italic">
-                logistiek en curriculair ontwerp
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
+                KUNNEN
               </span>
+              <span className="text-[11px] text-[#003340]/65 font-medium italic whitespace-nowrap">
+                Logistiek · Curriculair ontwerp
+              </span>
+            </div>
+            <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
+              Zorg dat studenten kúnnen komen
+            </h4>
+            <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
+              Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken.
+            </p>
+            <ul className="flex-1 space-y-2 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Roostert slim:</strong> plan geen losse lesuren waarvoor studenten enkel voor één les hoeven te reizen.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Programmeert aaneengesloten:</strong> voorkom versnippering en loze tussenuren die de dag onnodig lang maken.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Bewaakt studeerbaarheid:</strong> stem deadlines tussen parallelle vakken af, zodat aanwezigheid niet botst met piekdruk.</span>
+              </li>
+            </ul>
+            <div className="mt-auto pt-2 flex justify-end">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
                 <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
                 <span>Meer info</span>
@@ -364,39 +364,37 @@ export const StepSection: React.FC<StepSectionProps> = ({
           {/* Tegel 2 · Willen */}
           <div
             onClick={() => onOpenDimension('p-routeB')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col h-full group"
           >
-            <div>
-              <div className="mb-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
-                  WILLEN
-                </span>
-              </div>
-              <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
-                Zorg dat studenten wíllen komen
-              </h4>
-              <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
-                Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt.
-              </p>
-              <ul className="space-y-2 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Bied merkbare meerwaarde:</strong> zorg dat wat in de les gebeurt iets toevoegt dat opnames of zelfstudie niet kunnen vervangen.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Kies activerende werkvormen:</strong> maak van de les een actieve, interactieve bijeenkomst, geen passieve overdracht.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Investeer in binding:</strong> versterk docentnabijheid, onderling contact en een warme follow-up bij verzuim (sense of belonging).</span>
-                </li>
-              </ul>
-            </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
-              <span className="text-[11px] text-[#003340]/65 font-medium italic">
-                onderwijskundig, curriculair ontwerp, pedagogiek
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
+                WILLEN
               </span>
+              <span className="text-[11px] text-[#003340]/65 font-medium italic whitespace-nowrap">
+                Didactiek · Pedagogiek
+              </span>
+            </div>
+            <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
+              Zorg dat studenten wíllen komen
+            </h4>
+            <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
+              Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt.
+            </p>
+            <ul className="flex-1 space-y-2 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Bied merkbare meerwaarde:</strong> zorg dat wat in de les gebeurt iets toevoegt dat opnames of zelfstudie niet kunnen vervangen.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Kies activerende werkvormen:</strong> maak van de les een actieve, interactieve bijeenkomst, geen passieve overdracht.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                <span><strong>Investeer in binding:</strong> versterk docentnabijheid, onderling contact en een warme follow-up bij verzuim (sense of belonging).</span>
+              </li>
+            </ul>
+            <div className="mt-auto pt-2 flex justify-end">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
                 <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
                 <span>Meer info</span>
@@ -407,44 +405,58 @@ export const StepSection: React.FC<StepSectionProps> = ({
           {/* Tegel 3 · Moeten */}
           <div
             onClick={() => onOpenDimension('p-routeC')}
-            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col justify-between group h-full"
+            className="bg-white border border-[#003340]/15 rounded-lg p-4 hover:border-[#00b0eb] transition-all cursor-pointer flex flex-col h-full group"
           >
-            <div>
-              <div className="mb-2.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
-                  MOETEN
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b0eb] bg-[#00b0eb]/10 px-2.5 py-0.5 rounded">
+                MOETEN
+              </span>
+              <span className="text-[11px] text-[#003340]/65 font-medium italic whitespace-nowrap">
+                Beleid · Teamethos · Registratie
+              </span>
+            </div>
+            <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
+              Zorg dat studenten weten waarom ze móeten komen
+            </h4>
+            <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
+              Maak samen met studenten helder wat je van elkaar verwacht en wanneer een formele eis past.
+            </p>
+            <ul className="flex-1 space-y-2.5 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>Maak verwachtingen eenduidig:</strong> één lijn als team, zonder dubbele signalen.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>Doe een beroep op de beroepshouding:</strong> samenwerken en er zijn voor elkaar als reden om te komen.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <span className="text-[#00b0eb] font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>Maak deelname noodzakelijk:</strong> oefening, feedback en vaardigheden die alleen in de les te halen zijn en terugkomen in de toets.</span>
+              </li>
+            </ul>
+
+            {/* Uitgeklapte toelichting formele aanwezigheidsplicht */}
+            <div
+              id="moeten-duty-content"
+              className={`bg-[#e6f7fd] rounded-md text-[#003340] mb-3 p-3 transition-all ${isDutyOpen ? 'block' : 'hidden print:block'}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between mb-1.5 pb-1 border-b border-[#003340]/10">
+                <span className="font-bold text-xs sm:text-[12.5px] text-[#003340]">
+                  Formele aanwezigheidsplicht
                 </span>
+                <button
+                  type="button"
+                  onClick={() => setIsDutyOpen(false)}
+                  className="text-[11px] text-[#008bb8] hover:underline font-semibold cursor-pointer print:hidden"
+                >
+                  Sluiten
+                </button>
               </div>
-              <h4 className="text-base font-semibold text-[#003340] group-hover:text-[#00b0eb] transition-colors mb-2">
-                Bepaal wat je van elkaar verwacht
-              </h4>
-              <p className="text-xs sm:text-[13px] text-[#003340]/80 leading-relaxed mb-3">
-                Spreek als team en met studenten uit wat je van elkaar verwacht, en bepaal wanneer een formele eis passend is.
+              <p className="text-[11.5px] sm:text-[12px] text-[#003340]/90 leading-relaxed mb-2">
+                Pas als deelname echt noodzakelijk is voor het leren, en alleen bij een praktische oefening in de OER.
               </p>
-              <ul className="space-y-2 text-xs text-[#003340]/85 bg-[#fbfaf5] p-3 rounded border border-[#003340]/10 mb-3">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Maak verwachtingen eenduidig:</strong> spreek als team één professionele verwachting uit, zonder dubbele signalen.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Doe een beroep op de beroepshouding:</strong> benut samenwerkingsopdrachten en het &apos;er zijn voor elkaar&apos; als natuurlijke reden om te komen.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
-                  <span><strong>Weeg zorgvuldig wat je afdwingt:</strong> meestal volstaat een heldere verwachting.</span>
-                </li>
-                <li className="list-none">
-                  <div
-                    className="bg-[#e6f7fd] rounded-md px-3 py-2.5 text-[#003340]"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span className="block font-bold text-xs sm:text-[12.5px] text-[#003340] mb-0.5">
-                      Formele aanwezigheidsplicht
-                    </span>
-                    <p className="text-[11.5px] sm:text-[12px] text-[#003340]/90 leading-relaxed mb-2">
-                      Alleen bij een praktische oefening, vastgelegd in de OER en onder voorwaarden. Een generieke plicht mag niet.
-                    </p>
 
                     {/* Drie pillen binnen het blauwe vlak */}
                     <div className="flex flex-wrap items-center gap-1.5" role="tablist">
@@ -600,14 +612,8 @@ export const StepSection: React.FC<StepSectionProps> = ({
 
                       {/* HR Juridisch Kader Callout */}
                       <div className="bg-[#fbfaf5] border border-[#003340]/15 rounded p-3 space-y-2">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#003340] text-white tracking-wide">
-                            HR-kader 2025
-                          </span>
-                        </div>
-
                         <p className="text-[11.5px] text-[#003340] leading-relaxed">
-                          Het juridisch kader van Hogeschool Rotterdam is helder: <strong>een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan</strong>. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening betreft. Binnen HR heet dit een <strong>POA: een praktische oefening met aanwezigheidsplicht</strong>, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.
+                          Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening (POA) betreft, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.
                         </p>
 
                         {/* Zes HR-voorbeelden van een praktische oefening */}
@@ -724,82 +730,238 @@ export const StepSection: React.FC<StepSectionProps> = ({
                         De rechtspraak (o.a. Maastricht) sluit naadloos aan op het juridisch kader van HR: de wet biedt <strong>geen grondslag voor een generieke aanwezigheidsplicht</strong>. Een aanwezigheidseis mag alleen op cursusniveau bij een praktische oefening (POA) met specifieke didactische motivering en formele verankering in de OER.
                       </p>
 
-                      <div className="space-y-2">
+                      <div className="space-y-2.5">
                         {/* Case 1 */}
-                        <div className="bg-[#fbfaf5]/80 border border-[#003340]/15 rounded p-2.5 flex flex-col justify-between">
-                          <div>
-                            <div className="flex items-start justify-between gap-1.5 mb-1">
-                              <h5 className="text-[12px] font-bold text-[#003340]">Maastricht Univ. · Calculus 70%-eis</h5>
-                              <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10 shrink-0">
-                                Student wint
+                        <details open className="group bg-white border border-[#003340]/15 rounded-md overflow-hidden">
+                          <summary className="flex items-center justify-between p-2.5 cursor-pointer hover:bg-[#fbfaf5] select-none list-none [&::-webkit-details-marker]:hidden">
+                            <div className="flex-1 pr-2">
+                              <div className="flex items-center gap-1.5 flex-wrap">
+                                <h5 className="text-[12px] font-bold text-[#003340]">1. Maastricht Univ. · Calculus 70%-eis</h5>
+                                <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10">
+                                  Student wint
+                                </span>
+                              </div>
+                              <span className="text-[10.5px] text-[#003340]/60 block mt-0.5">
+                                CBE Maastricht · Zaak 2020.105 (Calculus)
                               </span>
                             </div>
-                            <p className="text-[11px] text-[#003340]/75 mb-1.5 leading-relaxed">
-                              Aanwezigheid is geen tentamenonderdeel (geen fraude bij aftekenen). WHW biedt geen grondslag voor aanwezigheidsplicht als toelatingseis voor theorievakken.
-                            </p>
+                            <span className="text-[11px] text-[#003340]/60 transition-transform duration-200 group-open:rotate-90 shrink-0 ml-1">
+                              ▶
+                            </span>
+                          </summary>
+                          <div className="p-3 pt-2 border-t border-[#003340]/10 bg-[#fbfaf5]/40 space-y-2 text-[11px]">
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Wat hield de zaak in?
+                              </strong>
+                              <p className="text-[#003340]/85 leading-relaxed bg-white border border-[#003340]/10 p-2 rounded">
+                                Een student tekende tijdens een Calculus-college de presentielijst af voor twee afwezige medestudenten en werd door de examencommissie wegens &apos;fraude&apos; uitgesloten van het tentamen. De OER stelde 70% aanwezigheid als toelatingseis.
+                              </p>
+                            </div>
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Waarom won de student?
+                              </strong>
+                              <ul className="space-y-1 bg-white border border-[#003340]/10 p-2 rounded text-[#003340]/85">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Aanwezigheid is geen tentamen:</strong> Aanwezigheid toetst op zichzelf geen kennis of inzicht; een valse handtekening zetten op een presentielijst kwalificeert daarom volgens de WHW niet als examen- of tentamenfraude.</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Geen wettelijke grondslag voor theorievak:</strong> De WHW biedt geen bevoegdheid om voor een theorievak (zoals Calculus) aanwezigheid te eisen als toelatingsvoorwaarde voor een tentamen (art. 7.13 lid 1 sub s en t WHW). Dat mag uitsluitend bij een praktische oefening.</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div className="bg-[#f7efe3] border border-[#003340]/15 p-2 rounded">
+                              <strong className="text-[#008bb8] block font-bold text-[10px] uppercase tracking-wider">
+                                Belangrijkste les:
+                              </strong>
+                              <p className="text-[#003340]/90 leading-relaxed">
+                                Aanwezigheid mag nooit als toelatingseis voor een tentamen dienen bij theoretische vakken, en presentielijsten vallen niet onder het fraudebegrip van de WHW.
+                              </p>
+                            </div>
+                            <div className="text-[10px] text-[#003340]/60 pt-1 border-t border-[#003340]/10 flex justify-between items-center">
+                              <span>Grondslag: Art. 7.13 lid 1 sub s/t &amp; Art. 7.34 WHW</span>
+                              <span className="italic font-semibold">Beroep gegrond</span>
+                            </div>
                           </div>
-                          <div className="text-[10px] text-[#003340]/60 border-t border-[#003340]/10 pt-1 flex justify-between items-center">
-                            <span>Art. 7.13 lid 1 sub s/t WHW</span>
-                            <span className="italic">CBE 2020.105</span>
-                          </div>
-                        </div>
+                        </details>
 
                         {/* Case 2 */}
-                        <div className="bg-[#fbfaf5]/80 border border-[#003340]/15 rounded p-2.5 flex flex-col justify-between">
-                          <div>
-                            <div className="flex items-start justify-between gap-1.5 mb-1">
-                              <h5 className="text-[12px] font-bold text-[#003340]">Erasmus Univ. · Bonuspunt aanwezigheid</h5>
-                              <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10 shrink-0">
-                                Student wint
+                        <details className="group bg-white border border-[#003340]/15 rounded-md overflow-hidden">
+                          <summary className="flex items-center justify-between p-2.5 cursor-pointer hover:bg-[#fbfaf5] select-none list-none [&::-webkit-details-marker]:hidden">
+                            <div className="flex-1 pr-2">
+                              <div className="flex items-center gap-1.5 flex-wrap">
+                                <h5 className="text-[12px] font-bold text-[#003340]">2. Erasmus Univ. · Bonuspunt aanwezigheid</h5>
+                                <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10">
+                                  Student wint
+                                </span>
+                              </div>
+                              <span className="text-[10.5px] text-[#003340]/60 block mt-0.5">
+                                CBHO 2016/069 · Minor Arbeidsrecht &amp; Reorganisatie
                               </span>
                             </div>
-                            <p className="text-[11px] text-[#003340]/75 mb-1.5 leading-relaxed">
-                              Aanwezigheid toetst op zichzelf geen kennis of inzicht. Bonuspunten toekennen mag niet zonder expliciete OER-grondslag.
-                            </p>
+                            <span className="text-[11px] text-[#003340]/60 transition-transform duration-200 group-open:rotate-90 shrink-0 ml-1">
+                              ▶
+                            </span>
+                          </summary>
+                          <div className="p-3 pt-2 border-t border-[#003340]/10 bg-[#fbfaf5]/40 space-y-2 text-[11px]">
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Wat hield de zaak in?
+                              </strong>
+                              <p className="text-[#003340]/85 leading-relaxed bg-white border border-[#003340]/10 p-2 rounded">
+                                Een examinator beloofde 0,5 bonuspunt op het eindcijfer voor studenten die alle bijeenkomsten bijwoonden. Een student die lessen miste liep het bonuspunt mis en vocht het eindcijfer aan bij het College van Beroep voor het Hoger Onderwijs.
+                              </p>
+                            </div>
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Waarom won de student?
+                              </strong>
+                              <ul className="space-y-1 bg-white border border-[#003340]/10 p-2 rounded text-[#003340]/85">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Aanwezigheid toetst geen beheersing:</strong> Louter in het lokaal zitten meet geen kennis, inzicht of vaardigheid. Het kan ook niet gelden als een mondeling tentamen omdat er geen verplichting bestaat iets te zeggen.</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Buiten de OER gehandeld:</strong> Een examinator mag niet op eigen houtje bonuspunten verbinden aan aanwezigheid zonder expliciete wettelijke grondslag in de OER onder &quot;andere wijze van tentaminering&quot;.</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div className="bg-[#f7efe3] border border-[#003340]/15 p-2 rounded">
+                              <strong className="text-[#008bb8] block font-bold text-[10px] uppercase tracking-wider">
+                                Belangrijkste les:
+                              </strong>
+                              <p className="text-[#003340]/90 leading-relaxed">
+                                Aanwezigheid mag nooit worden beloond of bestraft met (bonus)punten op een tentamencijfer. Toetsing moet altijd gericht zijn op leeruitkomsten.
+                              </p>
+                            </div>
+                            <div className="text-[10px] text-[#003340]/60 pt-1 border-t border-[#003340]/10 flex justify-between items-center">
+                              <span>Grondslag: Art. 7.3 lid 3 &amp; Art. 7.13 lid 2 sub l WHW</span>
+                              <span className="italic font-semibold">Beroep gegrond</span>
+                            </div>
                           </div>
-                          <div className="text-[10px] text-[#003340]/60 border-t border-[#003340]/10 pt-1 flex justify-between items-center">
-                            <span>Art. 7.3 &amp; 7.13 WHW</span>
-                            <span className="italic">CBHO 2016/069</span>
-                          </div>
-                        </div>
+                        </details>
 
                         {/* Case 3 */}
-                        <div className="bg-[#fbfaf5]/80 border border-[#003340]/15 rounded p-2.5 flex flex-col justify-between">
-                          <div>
-                            <div className="flex items-start justify-between gap-1.5 mb-1">
-                              <h5 className="text-[12px] font-bold text-[#003340]">UvA · Conflict Studies (Dispensatie)</h5>
-                              <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10 shrink-0">
-                                Student wint
+                        <details className="group bg-white border border-[#003340]/15 rounded-md overflow-hidden">
+                          <summary className="flex items-center justify-between p-2.5 cursor-pointer hover:bg-[#fbfaf5] select-none list-none [&::-webkit-details-marker]:hidden">
+                            <div className="flex-1 pr-2">
+                              <div className="flex items-center gap-1.5 flex-wrap">
+                                <h5 className="text-[12px] font-bold text-[#003340]">3. UvA · Introduction to Conflict Studies</h5>
+                                <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#d3104c] bg-[#d3104c]/10">
+                                  Student wint
+                                </span>
+                              </div>
+                              <span className="text-[10.5px] text-[#003340]/60 block mt-0.5">
+                                CBE AC 2207 3278 · Afwijzing dispensatie aanwezigheidsplicht
                               </span>
                             </div>
-                            <p className="text-[11px] text-[#003340]/75 mb-1.5 leading-relaxed">
-                              &quot;Omdat het bij ons altijd zo is&quot; is geen geldige rechtvaardiging; je moet per specifiek vak motiveren welk bijzonder leerdoel gediend wordt.
-                            </p>
+                            <span className="text-[11px] text-[#003340]/60 transition-transform duration-200 group-open:rotate-90 shrink-0 ml-1">
+                              ▶
+                            </span>
+                          </summary>
+                          <div className="p-3 pt-2 border-t border-[#003340]/10 bg-[#fbfaf5]/40 space-y-2 text-[11px]">
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Wat hield de zaak in?
+                              </strong>
+                              <p className="text-[#003340]/85 leading-relaxed bg-white border border-[#003340]/10 p-2 rounded">
+                                Een student vroeg dispensatie voor een aanwezigheidsplicht bij een algemeen werkcollege. De opleiding wees het verzoek af met het standaardargument: &quot;het is bij onze opleiding nu eenmaal een vaste regel dat werkgroepen verplicht zijn&quot;.
+                              </p>
+                            </div>
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Waarom won de student?
+                              </strong>
+                              <ul className="space-y-1 bg-white border border-[#003340]/10 p-2 rounded text-[#003340]/85">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Generieke regels zijn ongeldig:</strong> &quot;Omdat het bij ons altijd zo is&quot; of een algemene afdelingsregel is geen geldige juridische rechtvaardiging.</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Didactische noodzaak ontbrak:</strong> De opleiding kon niet motiveren wélk specifiek leerdoel van dít vak uitsluitend via fysieke aanwezigheid gehaald kon worden. Zonder vakspecifieke motivering ontbreekt de rechtsgrond.</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div className="bg-[#f7efe3] border border-[#003340]/15 p-2 rounded">
+                              <strong className="text-[#008bb8] block font-bold text-[10px] uppercase tracking-wider">
+                                Belangrijkste les:
+                              </strong>
+                              <p className="text-[#003340]/90 leading-relaxed">
+                                Een opleiding moet per individuele cursus aantonen en vastleggen waarom fysieke aanwezigheid didactisch noodzakelijk is om de leeruitkomsten te behalen.
+                              </p>
+                            </div>
+                            <div className="text-[10px] text-[#003340]/60 pt-1 border-t border-[#003340]/10 flex justify-between items-center">
+                              <span>Grondslag: Art. 7.13 WHW (didactische rechtvaardiging)</span>
+                              <span className="italic font-semibold">Beroep gegrond</span>
+                            </div>
                           </div>
-                          <div className="text-[10px] text-[#003340]/60 border-t border-[#003340]/10 pt-1 flex justify-between items-center">
-                            <span>Didactische rechtvaardiging</span>
-                            <span className="italic">CBE AC 2207 3278</span>
-                          </div>
-                        </div>
+                        </details>
 
                         {/* Case 4 */}
-                        <div className="bg-[#fbfaf5]/80 border border-[#003340]/15 rounded p-2.5 flex flex-col justify-between">
-                          <div>
-                            <div className="flex items-start justify-between gap-1.5 mb-1">
-                              <h5 className="text-[12px] font-bold text-[#003340]">UvA · Werkgroepen met groepswerk</h5>
-                              <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold text-[#003340] bg-[#00b0eb]/20 shrink-0">
-                                Opleiding wint
+                        <details className="group bg-white border border-[#003340]/15 rounded-md overflow-hidden">
+                          <summary className="flex items-center justify-between p-2.5 cursor-pointer hover:bg-[#fbfaf5] select-none list-none [&::-webkit-details-marker]:hidden">
+                            <div className="flex-1 pr-2">
+                              <div className="flex items-center gap-1.5 flex-wrap">
+                                <h5 className="text-[12px] font-bold text-[#003340]">4. UvA · Werkgroepen met groepswerk</h5>
+                                <span className="inline-block px-1.5 py-0.5 rounded text-[9.5px] font-bold text-[#003340] bg-[#00b0eb]/20">
+                                  Opleiding wint
+                                </span>
+                              </div>
+                              <span className="text-[10.5px] text-[#003340]/60 block mt-0.5">
+                                CBE UvA · Beroep ongegrond · Aanwezigheidsplicht gehandhaafd
                               </span>
                             </div>
-                            <p className="text-[11px] text-[#003340]/75 mb-1.5 leading-relaxed">
-                              Aanwezigheidsplicht houdt stand wanneer groepswerk getoetst wordt, vaardigheden actief geoefend worden en borging in OER klopt.
-                            </p>
+                            <span className="text-[11px] text-[#003340]/60 transition-transform duration-200 group-open:rotate-90 shrink-0 ml-1">
+                              ▶
+                            </span>
+                          </summary>
+                          <div className="p-3 pt-2 border-t border-[#003340]/10 bg-[#fbfaf5]/40 space-y-2 text-[11px]">
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Wat hield de zaak in?
+                              </strong>
+                              <p className="text-[#003340]/85 leading-relaxed bg-white border border-[#003340]/10 p-2 rounded">
+                                Een student ging in beroep tegen de aanwezigheidsplicht bij een vak met intensieve werkgroepen waarin groepsopdrachten werden gemaakt en samenwerkingsvaardigheden werden getoetst in een gezamenlijke eindopdracht.
+                              </p>
+                            </div>
+                            <div>
+                              <strong className="text-[10.5px] uppercase tracking-wider text-[#003340] font-bold block mb-0.5">
+                                Waarom won de opleiding?
+                              </strong>
+                              <ul className="space-y-1 bg-white border border-[#003340]/10 p-2 rounded text-[#003340]/85">
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Echte praktische oefening:</strong> In de werkgroepen werd actief geoefend met teamvaardigheden, peer feedback en het evalueren van elkaars bronnen, wat niet individueel thuis kan worden gedaan.</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Samenwerkingsopdracht als toets:</strong> Omdat de studenten elkaars groepsprestatie beïnvloedden, was fysieke participatie inherent aan de eindbeoordeling.</span>
+                                </li>
+                                <li className="flex items-start gap-1.5">
+                                  <span className="text-[#00b0eb] font-bold shrink-0">•</span>
+                                  <span><strong>Juridisch en transparant geborgd:</strong> De plicht was vooraf expliciet vastgelegd in artikel B5.5 van de OER én vooraf glashelder uitgelegd in de studiehandleiding.</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div className="bg-[#f7efe3] border border-[#003340]/15 p-2 rounded">
+                              <strong className="text-[#008bb8] block font-bold text-[10px] uppercase tracking-wider">
+                                Belangrijkste les:
+                              </strong>
+                              <p className="text-[#003340]/90 leading-relaxed">
+                                Een aanwezigheidsplicht houdt juridisch wél stand wanneer groepswerk getoetst wordt, vaardigheden actief geoefend worden en de borging in OER en studiehandleiding klopt.
+                              </p>
+                            </div>
+                            <div className="text-[10px] text-[#003340]/60 pt-1 border-t border-[#003340]/10 flex justify-between items-center">
+                              <span>Grondslag: Art. 7.13 WHW &amp; Art. B5.5 OER UvA</span>
+                              <span className="italic font-semibold text-[#003340]">Beroep ongegrond</span>
+                            </div>
                           </div>
-                          <div className="text-[10px] text-[#003340]/60 border-t border-[#003340]/10 pt-1 flex justify-between items-center">
-                            <span>Art. B5.5 OER UvA</span>
-                            <span className="italic">CBE Ongegrond</span>
-                          </div>
-                        </div>
+                        </details>
                       </div>
 
                       <div className="pt-2 flex justify-end border-t border-[#003340]/10 print:hidden">
@@ -815,19 +977,35 @@ export const StepSection: React.FC<StepSectionProps> = ({
                       </div>
                     </div>
                   </div>
-                </li>
-              </ul>
+
+              {/* Footer bar van Moeten: Formele aanwezigheidsplicht knop links, Meer info rechts */}
+              <div className="mt-auto pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-[#003340]/10">
+                <button
+                  type="button"
+                  aria-expanded={isDutyOpen}
+                  aria-controls="moeten-duty-content"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsDutyOpen(prev => !prev);
+                  }}
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold transition-all cursor-pointer ${
+                    isDutyOpen
+                      ? 'bg-[#00b0eb] text-white shadow-xs'
+                      : 'bg-[#e6f7fd] text-[#003340] hover:bg-[#d5f0fb]'
+                  }`}
+                >
+                  <span className="text-[10px] leading-none shrink-0 print:hidden">
+                    {isDutyOpen ? '▴' : '▾'}
+                  </span>
+                  <span>Formele aanwezigheidsplicht</span>
+                </button>
+
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
+                  <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
+                  <span>Meer info</span>
+                </span>
+              </div>
             </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[#003340]/10 mt-auto">
-              <span className="text-[11px] text-[#003340]/65 font-medium italic">
-                beleid, teamethos, registratie
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border border-[#00b0eb] text-[#00b0eb] bg-[#00b0eb]/5 group-hover:bg-[#00b0eb] group-hover:text-white transition-all shrink-0">
-                <span className="w-3.5 h-3.5 rounded-full border border-current flex items-center justify-center font-serif italic text-[10px] font-bold">i</span>
-                <span>Meer info</span>
-              </span>
-            </div>
-          </div>
         </div>
       </section>
     );
@@ -849,7 +1027,7 @@ export const StepSection: React.FC<StepSectionProps> = ({
         </div>
 
         <p className="text-sm sm:text-[15px] text-[#003340]/90 mb-5 leading-relaxed">
-          Deze vier toetsvragen onderzoeken of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat. Alle vier moeten &apos;ja&apos; zijn, anders weet je waar het werk ligt.
+          Deze vier G&apos;s onderzoeken of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat. Alle vier moeten &apos;ja&apos; zijn, anders weet je waar het werk ligt.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">

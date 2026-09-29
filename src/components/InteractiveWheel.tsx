@@ -260,21 +260,12 @@ export const InteractiveWheel: React.FC<InteractiveWheelProps> = ({
             </text>
             <text
               x="492"
-              y="522"
+              y="528"
               textAnchor="middle"
               fill={stepColors.step3.tagText}
-              className="text-[12.5px] font-bold tracking-normal"
+              className="text-[13px] font-bold tracking-wide"
             >
               Handelingsperspectieven
-            </text>
-            <text
-              x="492"
-              y="540"
-              textAnchor="middle"
-              fill={stepColors.step3.tagText}
-              className="text-[11px] font-semibold tracking-wide opacity-95"
-            >
-              Kunnen · Willen · Moeten
             </text>
           </g>
         </g>

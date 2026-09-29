@@ -719,9 +719,9 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 3,
     stepName: 'Handelingsperspectieven',
     stepTag: 'MOETEN',
-    name: 'Bepaal wat je van elkaar verwacht',
-    subtitle: 'Spreek als team en met studenten uit wat je van elkaar verwacht, en bepaal wanneer een formele eis passend is',
-    shortDescription: 'Spreek als team en met studenten uit wat je van elkaar verwacht, en bepaal wanneer een formele eis passend is.',
+    name: 'Zorg dat studenten weten waarom ze móeten komen',
+    subtitle: 'Maak samen met studenten helder wat je van elkaar verwacht en wanneer een formele eis past',
+    shortDescription: 'Maak samen met studenten helder wat je van elkaar verwacht en wanneer een formele eis past.',
     leadParagraph: 'Moeten omvat twee duidelijke lagen: allereerst heldere, eenduidige normen en verwachtingen vanuit het docententeam ("er moeten zijn" als professionele standaard, zonder dubbele signalen). Ten tweede: wanneer is een formele aanwezigheids- of participatieplicht didactisch en juridisch passend? Studeren is een recht, geen plicht (art. 1.6 WHW). Een generieke plicht voor een opleiding is verboden. Uitsluitend bij een praktische oefening (POA) op cursusniveau waar actieve participatie onmisbaar is voor de leeruitkomsten, mag een plicht worden vastgelegd in de OER conform het HR-kader (2025).',
     dialogueQuestion: 'Hebben we als team duidelijke normen en verwachtingen over "er moeten zijn" afgesproken, en hebben we getoetst of een formele plicht didactisch noodzakelijk (POA) en juridisch verankerd is in de OER?',
     insights: [
@@ -915,7 +915,7 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ],
     hrFramework: {
       title: 'Juridisch kader Hogeschool Rotterdam (Juridische Zaken en O&K, 2025)',
-      summary: 'Het juridisch kader van Hogeschool Rotterdam (Juridische Zaken en O&K, 2025) is helder: een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan. Studeren is een recht, geen plicht. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening betreft. Binnen HR heet dit een POA: een praktische oefening met aanwezigheidsplicht, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.',
+      summary: 'Het juridisch kader van Hogeschool Rotterdam (Juridische Zaken en O&K, 2025) is helder: een algemene, generieke aanwezigheidsplicht voor een hele opleiding of een heel studiejaar is juridisch niet toegestaan. Studeren is een recht, geen plicht. Een aanwezigheidsplicht mag alleen op cursusniveau, en uitsluitend wanneer de cursus een praktische oefening (POA) betreft, die als zodanig in het curriculumschema van de hogeschoolgids wordt aangegeven. In de cursushandleiding moet worden onderbouwd welk leereffect wordt beoogd en waarom dat leereffect alleen in een verplichte lessituatie te behalen is.',
       practicalExercises: [
         'Contextrijk onderwijs waarin theorie wordt verbonden aan praktijkvraagstukken, en waarin houdingsaspecten en vaardigheden in de les worden geoefend.',
         'Projectonderwijs, waar samenwerking en actieve deelname essentieel zijn.',

@@ -49,4 +49,13 @@ html {
   .print-only {
     display: block !important;
   }
+  details {
+    display: block !important;
+  }
+  details > summary {
+    pointer-events: none !important;
+  }
+  details > :not(summary) {
+    display: block !important;
+  }
 }

@@ -480,28 +480,59 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                         </button>
 
                         {isOpen && (
-                          <div className="p-4 pt-0 border-t border-[#003340]/10 bg-[#fbfaf5]/50 space-y-3 text-xs sm:text-[13px]">
-                            <div className="text-xs text-[#003340]/80">
-                              <strong className="text-[#003340] block">Onderwerp van beroep:</strong>
-                              {c.subject}
+                          <div className="p-4 pt-3 border-t border-[#003340]/10 bg-[#fbfaf5]/50 space-y-3 text-xs sm:text-[13px]">
+                            <div>
+                              <strong className="text-xs uppercase tracking-wider text-[#003340] font-bold block mb-1">
+                                Wat hield de zaak in?
+                              </strong>
+                              <p className="text-xs text-[#003340]/85 leading-relaxed bg-white border border-[#003340]/10 p-2.5 rounded">
+                                {c.subject}
+                              </p>
                             </div>
 
                             <div>
-                              <strong className="text-xs uppercase tracking-wider text-[#00b0eb] block mb-1">
-                                Geciteerde wetsartikelen
+                              <strong className="text-xs uppercase tracking-wider text-[#003340] font-bold block mb-1">
+                                Waarom {c.verdictType === 'student' ? 'won de student' : 'won de opleiding'}?
                               </strong>
-                              <ul className="space-y-1 pl-3 text-xs text-[#003340]/75">
+                              <div className="bg-white border border-[#003340]/10 p-2.5 rounded">
+                                {c.detailedReasons && c.detailedReasons.length > 0 ? (
+                                  <ul className="space-y-1.5 text-xs text-[#003340]/90">
+                                    {c.detailedReasons.map((reason, rIdx) => (
+                                      <li key={rIdx} className="flex items-start gap-1.5">
+                                        <span className="text-[#00b0eb] font-bold shrink-0 mt-0.5">•</span>
+                                        <span className="leading-relaxed">{reason}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p className="text-xs text-[#003340]/90 leading-relaxed">{c.keyLessons}</p>
+                                )}
+                              </div>
+                            </div>
+
+                            <div className="bg-[#f7efe3] border border-[#003340]/15 p-2.5 rounded text-xs space-y-1">
+                              <strong className="text-[#008bb8] block font-bold text-xs uppercase tracking-wider">
+                                Belangrijkste les voor opleidingen:
+                              </strong>
+                              <p className="text-xs text-[#003340]/90 leading-relaxed font-medium">
+                                {c.keyLessons}
+                              </p>
+                            </div>
+
+                            <div>
+                              <strong className="text-[11px] uppercase tracking-wider text-[#003340]/70 font-bold block mb-1">
+                                Geciteerde wetsartikelen & OER
+                              </strong>
+                              <ul className="space-y-1 pl-1 text-[11.5px] text-[#003340]/80">
                                 {c.citedArticles.map((art, aIdx) => (
-                                  <li key={aIdx}>
-                                    <strong className="text-[#003340]">{art.title}:</strong> {art.text}
+                                  <li key={aIdx} className="flex items-start gap-1.5">
+                                    <span className="text-[#00b0eb] font-bold shrink-0">§</span>
+                                    <span>
+                                      <strong className="text-[#003340]">{art.title}:</strong> {art.text}
+                                    </span>
                                   </li>
                                 ))}
                               </ul>
-                            </div>
-
-                            <div className="bg-[#f7efe3] border border-[#003340]/10 p-2.5 rounded text-xs">
-                              <strong className="text-[#00b0eb] block mb-0.5">Oordeel & Belangrijkste les:</strong>
-                              {c.keyLessons}
                             </div>
                           </div>
                         )}
