@@ -152,21 +152,42 @@ export default function App() {
                     Maak vooral gebruik van bestaande analyses, zoals studentevaluaties én (de open vragen van) het onderzoek 100 dagen HR. Je kunt studenten in de voorbereiding raadplegen om de stap ‘ken je studentenpopulatie’ meer inhoud te geven. Maar een gesprek met studenten kan ook een onderdeel vormen van het teamgesprek.
                   </p>
                   <p className="text-sm text-[#003340]/90 leading-relaxed">
+                    De tijdsbesteding van studenten wordt sinds 2016 landelijk bijgehouden en is openbaar in te zien via{' '}
+                    <a
+                      href="https://studentenmonitor.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#008bb8] hover:underline font-semibold"
+                    >
+                      studentenmonitor
+                    </a>
+                    . Daarmee kun je het beeld van je eigen opleiding naast de landelijke trend leggen. Hoe vaak studenten daadwerkelijk naar college komen wordt daarentegen zelden systematisch geregistreerd. Ga daarom voor het gesprek na wat jullie hierover eigenlijk weten, en waar dat op gebaseerd is (
+                    <a
+                      href="https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#008bb8] hover:underline font-semibold"
+                    >
+                      Theelen et al., 2026
+                    </a>
+                    ).
+                  </p>
+                  <p className="text-sm text-[#003340]/90 leading-relaxed">
                     Een teamgesprek zal mogelijk begeleid worden door onderwijsadviseurs, managers of hoofddocenten. Als je hier ondersteuning bij wilt, kan dat bij de makers van deze pagina,{' '}
                     <a
                       href="mailto:TG-SO-adviseurs@hr.nl?subject=Aanwezigheid%20in%20het%20Hoger%20Onderwijs%20-%20Ondersteuning%20Teamgesprek"
-                      className="text-[#008bb8] hover:underline font-semibold inline-flex items-center gap-1"
+                      className="text-[#008bb8] hover:underline font-semibold"
                     >
-                      themagroep studentgerichte omgeving van O&K <Mail className="w-3 h-3" />
+                      themagroep studentgerichte omgeving van O&K
                     </a>
                     . Je kunt dit verzoek ook doen aan de{' '}
                     <a
                       href="https://hint.hr.nl/nl/HR/Werken-bij/faciliteiten/hr-academie/activiteiten/teamontwikkeltraject/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#008bb8] hover:underline font-semibold inline-flex items-center gap-1"
+                      className="text-[#008bb8] hover:underline font-semibold"
                     >
-                      begeleidingskundigen van O&K <ExternalLink className="w-3 h-3" />
+                      begeleidingskundigen van O&K
                     </a>
                     .
                   </p>
@@ -193,37 +214,9 @@ export default function App() {
                     De waarde van het gebruik van de leidraad zit vooral in het teamgesprek zelf. Door reflectieve vragen te stellen en niet alleen de feitelijkheden te bespreken. En door niet alleen studentgedrag, maar ook de eigen onderliggende waarden te bespreken. Deze leidraad kan tegelijkertijd helpen om focus te houden.
                   </p>
 
-                  <div className="space-y-2.5 pt-1">
-                    {/* Stap 1 */}
-                    <div className="bg-[#f7efe3] border border-[#e4d9c8] rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#d3104c] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                        1
-                      </span>
-                      <p className="text-sm text-[#003340]/95 leading-relaxed">
-                        We raden aan om niet te snel naar oplossingen te springen, maar tijd te nemen voor de analyse van het probleem bij jullie opleiding in de feitelijke en normatieve dimensies.
-                      </p>
-                    </div>
-
-                    {/* Stap 2 */}
-                    <div className="bg-[#f7efe3] border border-[#e4d9c8] rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#d3104c] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                        2
-                      </span>
-                      <p className="text-sm text-[#003340]/95 leading-relaxed">
-                        Ga daarna pas naar de handelingsperspectieven en bespreek de balans tussen kunnen en willen: veranderingen in rooster en organisatie of in de les en begeleiding. Daarna volgt moeten: wat verwacht je van elkaar, en in hoeverre is een aanwezigheidsplicht zinvol?
-                      </p>
-                    </div>
-
-                    {/* Stap 3 */}
-                    <div className="bg-[#f7efe3] border border-[#e4d9c8] rounded-lg p-3 sm:p-3.5 flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#d3104c] text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                        3
-                      </span>
-                      <p className="text-sm text-[#003340]/95 leading-relaxed">
-                        De vier G’s dienen als kompas om de uitkomst te toetsen: is onze aanpak gedragen, geloofwaardig, gerechtvaardigd en gedeeld.
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-sm text-[#003340]/90 leading-relaxed">
+                    We raden aan om niet te snel naar oplossingen te springen, maar eerst de tijd te nemen voor de analyse van het vraagstuk bij jullie opleiding in de feitelijke en normatieve dimensies. Ga daarna pas naar de handelingsperspectieven en bespreek de balans tussen kunnen en willen: veranderingen in rooster en organisatie of in de les en begeleiding. Daarna volgt moeten: wat verwacht je van elkaar, en in hoeverre is een aanwezigheidsplicht didactisch en juridisch passend? De vier G’s dienen ten slotte als kompas om de gezamenlijke aanpak te toetsen: is onze aanpak gedragen, geloofwaardig, gerechtvaardigd en gedeeld.
+                  </p>
                 </div>
               </details>
 
@@ -248,43 +241,32 @@ export default function App() {
                       Consensus loslaten?
                     </h4>
                     <p className="text-sm text-[#003340]/90 leading-relaxed">
-                      Een gespreksvraag kan zijn:
+                      Een gespreksvraag kan zijn: “Hoe formuleren we bij onze opleiding beleid waar docenten achterstaan en allen naleven?”
                     </p>
-                    <blockquote className="italic font-medium text-sm text-[#003340] bg-[#f7efe3] border border-[#e4d9c8] px-3.5 py-2.5 rounded-lg">
-                      “Hoe formuleren we bij onze opleiding beleid waar docenten achterstaan en allen naleven?”
-                    </blockquote>
                     <p className="text-sm text-[#003340]/90 leading-relaxed">
                       Streven naar consensus, vooral als het gaat om waarden, kan een gesprek verlammen. Er zijn altijd wel mensen die het er niet mee eens zijn. Bij de{' '}
                       <a
                         href="https://on.nl/nl/hulpmiddelen/snelstartgids/manier-van-organiseren/beslissingen"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#008bb8] hover:text-[#d3104c] underline font-semibold inline-flex items-center gap-0.5"
+                        className="text-[#008bb8] hover:text-[#d3104c] underline font-semibold"
                       >
                         consent methode
-                        <ExternalLink className="w-3 h-3 ml-0.5 inline shrink-0" />
                       </a>{' '}
-                      laat je de consensus los maar stel je de vraag:
+                      laat je de consensus los maar stel je de vraag: “Heb je een onoverkomelijk bezwaar?”
                     </p>
-                    <blockquote className="italic font-medium text-sm text-[#003340] bg-[#f7efe3] border border-[#e4d9c8] px-3.5 py-2.5 rounded-lg">
-                      “Heb je een onoverkomelijk bezwaar?”
-                    </blockquote>
                     <p className="text-sm text-[#003340]/90 leading-relaxed">
                       Behulpzaam is ook de{' '}
                       <a
                         href="https://deepdemocracy.nl/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#008bb8] hover:text-[#d3104c] underline font-semibold inline-flex items-center gap-0.5"
+                        className="text-[#008bb8] hover:text-[#d3104c] underline font-semibold"
                       >
                         deep democracy
-                        <ExternalLink className="w-3 h-3 ml-0.5 inline shrink-0" />
                       </a>{' '}
-                      vraag:
+                      vraag: “Wat heb jij nodig om toch mee te gaan in dit besluit?”
                     </p>
-                    <blockquote className="italic font-medium text-sm text-[#003340] bg-[#f7efe3] border border-[#e4d9c8] px-3.5 py-2.5 rounded-lg">
-                      “Wat heb jij nodig om toch mee te gaan in dit besluit?”
-                    </blockquote>
                     <p className="text-sm text-[#003340]/90 leading-relaxed">
                       Het gesprek blijft op gang en de uitkomst zal breder worden gedragen.
                     </p>
@@ -305,18 +287,12 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* Banaan als kader */}
-                  <div className="bg-[#f7efe3] border border-[#e4d9c8] rounded-[10px] p-4 sm:p-5 mt-4 space-y-2.5">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#d3104c] block">
-                      Oefening voor het team
-                    </span>
-                    <h5 className="text-[16px] font-bold text-[#003340]">
-                      Zoek de banaan!
-                    </h5>
+                  {/* Banaan metafoor */}
+                  <div className="mt-4 pt-3 border-t border-[#e4d9c8]/50 space-y-2.5">
                     <p className="text-sm text-[#003340]/90 leading-relaxed">
-                      Filosoof Lammert Kamphuis gaf in zijn lezing over perspectivistische lenigheid (HR, Four Seasons, sept 2026) de oefening: <em>Zoek de banaan!</em> Hij refereerde aan de bekende metafoor over natgespoten apen:
+                      Filosoof Lammert Kamphuis gaf in zijn lezing over perspectivistische lenigheid de oefening: Zoek de banaan! Hij refereerde aan de bekende metafoor over natgespoten apen:
                     </p>
-                    <p className="text-sm text-[#003340]/90 leading-relaxed italic bg-white/80 border border-[#003340]/10 rounded-lg p-3.5 my-2">
+                    <p className="text-sm text-[#003340]/95 leading-relaxed italic bg-[#f4efe6] border border-[#e4d9c8] rounded-lg p-3.5 my-2">
                       In het verhaal hangt een banaan boven een ladder. Wanneer een aap de ladder beklimt om de banaan te pakken, worden alle apen natgespoten. Al snel voorkomen de apen dat iemand nog naar de banaan klimt. Vervolgens worden de apen één voor één vervangen. Nieuwe apen proberen de banaan te pakken, maar worden door de anderen tegengehouden, ook al weten zij niet waarom. Uiteindelijk bestaat de groep volledig uit apen die nooit zijn natgespoten, maar die elkaar nog steeds beletten de banaan te pakken.
                     </p>
                     <p className="text-sm text-[#003340]/90 leading-relaxed">

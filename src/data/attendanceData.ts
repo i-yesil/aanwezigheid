@@ -18,7 +18,7 @@ export const STEPS: StepSummary[] = [
     shortName: 'Normatieve dimensie',
     tag: 'Normatief',
     leadQuestion: 'Welke waarden spelen hier?',
-    description: 'Feiten alleen wijzen geen aanpak aan. Elke feitelijke dimensie rust op waarden die vaak impliciet blijven. De drie perspectieven maken die waarden bespreekbaar vóór je besluit.',
+    description: 'Hoe je afwezigheid uitlegt, bepaalt welke oplossingen in beeld komen. Zie je het als een tekort bij de student, dan zoek je naar prikkels. Zie je het als signaal van een verschuiving in hoe studenten hun tijd verdelen, dan kijk je naar je eigen ontwerp. De drie perspectieven maken die waarden bespreekbaar vóór je besluit.',
     color: '#003340',
     activeBorderColor: 'border-[#003340]',
     dimensions: ['p-soc', 'p-psy', 'p-ok']
@@ -29,9 +29,9 @@ export const STEPS: StepSummary[] = [
     shortName: 'Handelingsperspectieven',
     tag: 'Handelingsperspectieven',
     leadQuestion: 'Hoe werken we aan aanwezigheid?',
-    description: 'Aanwezigheid bevorder je niet met één maatregel, maar door drie handelingsperspectieven: kunnen, willen en moeten. Kúnnen studenten er zijn, zonder onnodige drempels in rooster en organisatie? Wíllen ze er zijn, omdat de les merkbaar meerwaarde heeft en ze zich verbonden voelen? En wat verwachten we van elkaar, en wanneer is een formele plicht passend (moeten)?',
-    color: '#00b0eb',
-    activeBorderColor: 'border-[#00b0eb]',
+    description: 'Voor meer aanwezigheid bestaat geen snelle oplossing. Begin bij de vraag of studenten kúnnen komen: past het rooster bij hun reistijd, hun werk en hun andere vakken? Kijk ook of ze wíllen komen, omdat de les hun iets geeft wat een opname of het boek niet biedt en ze zich er welkom voelen. Weten ze waarom ze móeten komen? Zijn de verwachtingen helder en is deelname nodig om de leerdoelen te halen?',
+    color: '#00789b',
+    activeBorderColor: 'border-[#00789b]',
     dimensions: ['p-routeA', 'p-routeB', 'p-routeC', 'p-juridisch']
   },
   {
@@ -41,8 +41,8 @@ export const STEPS: StepSummary[] = [
     tag: 'Toetsing',
     leadQuestion: 'Staat het beleid stevig?',
     description: 'Vier toetsvragen om te onderzoeken of de voorgenomen of bestaande aanpak van aanwezigheid stevig staat: Gedragen, Geloofwaardig, Gerechtvaardigd en Gedeeld.',
-    color: '#fcc200',
-    activeBorderColor: 'border-[#fcc200]',
+    color: '#9a6a00',
+    activeBorderColor: 'border-[#9a6a00]',
     dimensions: ['p-g1', 'p-g2', 'p-g3', 'p-g4']
   }
 ];
@@ -56,9 +56,39 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Zicht op de studentpopulatie',
     subtitle: 'Wie is onze student eigenlijk? Leefwereld, belasting, behoeften',
     shortDescription: 'Wie is onze student eigenlijk? Leefwereld, belasting en behoeften.',
-    leadParagraph: 'Voordat we beleid maken, is de vraag wie onze studenten eigenlijk zijn. Verzuim is vaak een rationele keuze binnen een druk leven, niet onwil. Kwalitatief onderzoek onder eerstejaars schetst een herkenbaar beeld van hun leefwereld.',
+    leadParagraph: 'Wie zijn onze studenten eigenlijk? Wegblijven is zelden onwil. Vaker is het een rationele keuze in een week die al vol zit met werk, reistijd en andere verplichtingen. Kwalitatief onderzoek onder eerstejaars laat die afweging van binnenuit zien, en landelijke cijfers bevestigen het beeld van buitenaf: de voltijdstudent is steeds minder voltijds beschikbaar.',
     dialogueQuestion: 'Wat weten we feitelijk over de leefwereld, tijdsbesteding en prioriteiten van onze huidige studenten, en hoe sluit ons onderwijs daarop aan?',
     insights: [
+      {
+        text: 'Hbo-bachelorstudenten zeiden in 2016 nog gemiddeld 39 uur per week aan hun studie te besteden. In 2024 is dat 29 uur, een daling van ruim 25%. Het aandeel studenten dat 40 uur of meer studeert daalde van 51% naar 24%. Het aandeel dat minder dan 20 uur studeert steeg van 9% naar 24%.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Studenten vervullen meerdere rollen tegelijk: ze studeren, werken, zijn sociaal actief en zijn soms mantelzorger of vrijwilliger. De studie voegt zich vaker naar die andere levensdomeinen dan andersom.',
+        citation: 'Theelen et al., 2026; Strayhorn, 2025',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Betaald werk steeg bij hbo-bachelors van 10 naar 15 uur per week, parallel aan de daling in studietijd. Dat verklaart vijf van de tien verdwenen uren. Werkgevers bieden bovendien studenten steeds eerder stages, parttimefuncties en vroege werving aan.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: '61% van de hbo-studenten woont nog bij de ouders, maar thuiswonende en uitwonende studenten besteden vergelijkbaar veel tijd aan hun studie. Meer reistijd verklaart de daling dus niet.',
+        citation: 'Theelen et al., 2026; ABF Research, 2025',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Jongeren van 15 tot 28 jaar besteden 18,3 uur per week aan sociale media, maar de grootste stijging vond plaats vóór 2016.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'In het funderend onderwijs stegen de afgelopen drie jaar zowel het relatieve als het absolute verzuim. Nieuwe studenten zijn het missen van lessen dus meer gewend.',
+        citation: 'Theelen et al., 2026; Dee, 2024',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'School is voor veel eerstejaarsstudenten in dit onderzoek "één van de ballen die hoog gehouden moeten worden", naast werk, zorgtaken en sociaal leven; zij maken bewuste keuzes op basis van nut en timing.',
         citation: 'Tahir et al., 2024',
@@ -68,16 +98,6 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         text: 'Een ruime meerderheid van de hbo-studenten ervaart vaak stress door studie- en prestatiedruk, en meer dan de helft kampt met emotionele of psychische klachten.',
         citation: 'Dopmeijer et al., 2022',
         citationUrl: 'https://doi.org/10.21945/RIVM-2022-0100'
-      },
-      {
-        text: 'De voltijdstudent van vandaag is in de praktijk vaak "voltijds ingeschreven, maar deeltijds beschikbaar": waar hbo-bachelors in 2016 nog 39 uur per week aan studie besteedden, is dat gedaald naar 29 uur.',
-        citation: 'Dekker et al., 2026',
-        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
-      },
-      {
-        text: 'Door de deeltijdse beschikbaarheid maken studenten pragmatische afwegingen rondom contacttijd: zij plannen aanwezigheid strategisch rondom deadlines en werkschema’s; als een lesbijeenkomst passief is of geen directe toets- en leermeerwaarde heeft, verliest fysieke aanwezigheid het stelselmatig van betaald werk of zelfstudie.',
-        citation: 'Dekker et al., 2026',
-        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
         text: 'Studenten beschrijven medestudenten vaker als "collega\'s" dan als vrienden; verbondenheid ontstaat niet vanzelf en voorspelt aanwezigheid sterker dan dwang.',
@@ -134,9 +154,24 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Onderwijskundig',
     subtitle: 'Activerende didactiek, constructive alignment, docentkwaliteit',
     shortDescription: 'Activerende didactiek, constructive alignment en docentkwaliteit.',
-    leadParagraph: 'Wat studenten in de les ervaren, bepaalt sterker dan beleid de keuze om te komen. Aanwezigheid stijgt significant wanneer lessen interactief zijn en een duidelijke leerwaarde bieden.',
+    leadParagraph: 'Ons curriculum rekent met een student die veertig uur per week beschikbaar is. Zolang die rekensom niet klopt, wringt elk onderwijsconcept dat aanwezigheid vanzelfsprekend veronderstelt. De keuze om te komen valt bovendien in de les zelf: wat studenten daar ervaren weegt zwaarder dan wat het beleid voorschrijft. Lessen die activeren en een merkbare leerwaarde hebben, zien meer studenten terug.',
     dialogueQuestion: 'Wat gebeurt er in onze bijeenkomsten dat studenten nergens anders kunnen ervaren, en welke werkvormen maken fysieke aanwezigheid voor hen onmisbaar?',
     insights: [
+      {
+        text: 'Curricula rekenen met ongeveer 26 uur per studiepunt en veertig beschikbare uren per week. Dat uitgangspunt geldt voor de meerderheid van de studenten niet meer.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Een lege klas valt niet te flippen, en zonder studenten is het moeilijk om formatief feedback te geven in de les.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Generatieve AI haalt de stok achter de deur weg. De toets borgde vroeger of studenten de stof beheersten, waardoor opleidingen aanwezigheid konden vrijlaten. Nu zegt vier op de vijf studenten AI te gebruiken bij eindopdrachten en geeft een op de vier toe het voor fraude te gebruiken. Omdat toetsing zich daardoor moet richten op het leerproces, maakt AI juist datgene belangrijker wat onder druk staat: aanwezigheid en actieve deelname.',
+        citation: 'Theelen et al., 2026; Xia et al., 2024',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Interactief, activerend onderwijs bevordert aanwezigheid, al blijkt een sterk gevoel van erbij horen (sense of belonging) uiteindelijk de doorslaggevende factor.',
         citation: 'Ralph et al., 2025',
@@ -238,6 +273,11 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         text: 'Als een bijeenkomst net zo goed een kennisclip kan zijn, ontwerp het dan ook zo en benut de contacttijd voor interactie.',
         citation: 'Trimbos-instituut, z.d.',
         citationUrl: 'https://www.trimbos.nl/actueel/blogs/verbinding-verbroken-hoe-krijg-je-studenten-weer-gemotiveerd-naar-de-campus-school/'
+      },
+      {
+        text: 'Interdependentie in opdrachten en doordachte spreiding van toetsmomenten voorkomen dat studenten onderwijsbijeenkomsten skippen om urgente deadlines voor andere vakken te halen.',
+        citation: 'Cutler et al., 2016',
+        citationUrl: 'https://doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x'
       }
     ],
     practicalMaterials: [
@@ -267,9 +307,24 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Pedagogiek',
     subtitle: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren',
     shortDescription: 'Gedragsverandering door intrinsiek en extrinsiek te motiveren.',
-    leadParagraph: 'Sancties en beloningen werken, maar niet voor iedereen even sterk en zonder risico\'s. Te veel dwang kan averechts werken op de motivatie- en autonomie-ontwikkeling van hbo-studenten.',
+    leadParagraph: 'Aanwezigheid gaat niet alleen over de kwaliteit van de les, maar ook over de relatie en het klimaat eromheen. Juist dat pedagogische deel van het docentschap krijgt in het hoger onderwijs weinig aandacht. Sancties en beloningen werken, maar niet voor iedereen even sterk en zonder risico\'s. Te veel dwang kan averechts werken op de motivatie- en autonomie-ontwikkeling van hbo-studenten.',
     dialogueQuestion: 'Welke balans tussen uitnodigen, stimuleren en begrenzen versterkt de motivatie van studenten om actief deel te nemen?',
     insights: [
+      {
+        text: 'De daling doet zich voor op alle opleidingen, leerjaren en domeinen, ook bij docenten die hun onderwijs zorgvuldig ontwerpen en veel in interactie investeren. Er is geen aanleiding om aan te nemen dat de onderwijskwaliteit sinds 2016 is afgenomen.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Goed ontworpen, interactieve en betekenisvolle lessen hangen samen met hogere aanwezigheid.',
+        citation: 'Theelen et al., 2026; Moores et al., 2019',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Docentprofessionalisering in het hoger onderwijs blijft vaak beperkt tot een didactische basiskwalificatie, met weinig aandacht voor pedagogisch handelen: relaties opbouwen, een leerklimaat creëren en omgaan met gedrag en betrokkenheid.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Gedragsregulatie (sancties/beloningen) is effectief voor aanwezigheid, maar onderpresteerders en studenten met beperkte voorkennis profiteren het meest.',
         citation: 'Credé et al., 2010; Moores et al., 2019',
@@ -294,6 +349,16 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         text: 'De Zelf-Determinatie Theorie stelt dat leren gedijt als basisbehoeften aan relatie, competentie en autonomie worden bevredigd.',
         citation: 'Ryan & Deci, 2000',
         citationUrl: 'https://doi.org/10.1006/ceps.1999.1020'
+      },
+      {
+        text: 'Sense of belonging: erbij horen en gezien worden is de sterkste voorspeller van actieve aanwezigheid.',
+        citation: 'Ralph et al., 2025; Tahir et al., 2024',
+        citationUrl: 'https://doi.org/10.71634/er166487'
+      },
+      {
+        text: 'Persoonlijke follow-up: beginnend verzuim tijdig signaleren en studenten belangstellend aanspreken ("we hebben je gemist, hoe gaat het?") in plaats van direct administratief te sanctioneren.',
+        citation: 'Trotter & Roberts, 2006',
+        citationUrl: 'https://doi.org/10.1080/07294360600947368'
       }
     ],
     practicalMaterials: [
@@ -314,9 +379,24 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Beleid',
     subtitle: 'Eenduidige definitie, zwaarwegend beleid, coulance',
     shortDescription: 'Eenduidige definitie, zwaarwegend beleid en coulance.',
-    leadParagraph: 'Een helder geformuleerd beleid is een randvoorwaarde, maar "one size fits all" werkt niet. Heldere regels over consequenties verkleinen de kans op verzuim, mits afgestemd op de studiefase.',
+    leadParagraph: 'Beleid stuurt niet alleen met regels, maar ook met de boodschap die eruit spreekt. Wat wij over flexibiliteit zeggen in onze onderwijsvisie en onze werving, lezen studenten als een uitspraak over hoeveel de studie van hen mag vragen. Een helder geformuleerd beleid is een randvoorwaarde, maar "one size fits all" werkt niet.',
     dialogueQuestion: 'Hoe vangen we overmacht en afwezigheid in het docententeam laagdrempelig op, en welke afspraken voorkomen onnodige juridisering?',
     insights: [
+      {
+        text: 'Meer keuzevrijheid, blended onderwijs en soepeler aanwezigheidseisen kunnen de impliciete boodschap dragen dat de studie zich voegt naar het leven van de student. Dat kan aanpassing aan de student zijn, maar ook beleid dat de verandering versnelt.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Instellingen rekenen op papier met veertig uur per week, maar schrijven op hun wervingspagina\'s dat de voltijdsopleiding te combineren is met een bijbaan.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Er is een balans tussen flexibiliteit en structuur, en die kan doorslaan wanneer een instelling studenten te weinig houvast biedt om voor de studie te kiezen.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Duidelijke regels over consequenties en afmelden verkleinen de kans op verzuim aanzienlijk.',
         citation: 'Jaftha et al., 2022',
@@ -342,14 +422,6 @@ export const DIMENSIONS: Record<string, DimensionData> = {
         citation: 'Kappe, 2026',
         citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       }
-    ],
-    practicalMaterials: [
-      {
-        title: 'Voorbeeld Aanwezigheids- en inspanningsplicht Pabo / Bouwkunde',
-        description: 'De pabo van Hogeschool Rotterdam en bouwkunde van Inholland voerden voor de eerste twee studiejaren een aanwezigheids- en inspanningsplicht in; bij bouwkunde halveerde de uitval sindsdien (Dekker, 2026).',
-        url: 'https://cms.web.hva.nl/sites/default/files/lectoraten/foo/kansrijke-schoolloopbanen-een-diverse-stad/260527-essay-lks-izaak-dekker.pdf',
-        type: 'pilot'
-      }
     ]
   },
 
@@ -361,9 +433,24 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Registratie',
     subtitle: 'Registratiesysteem, betrouwbare data, beperkte administratielast',
     shortDescription: 'Registratiesysteem, betrouwbare data en beperkte administratielast.',
-    leadParagraph: 'Registratie lijkt een technisch detail, maar heeft zelfstandig effect: het enkel registreren van aanwezigheid stimuleert al de opkomst en levert data voor vroegsignalering.',
+    leadParagraph: 'Wat we over aanwezigheid weten, berustte lang op indrukken uit de docentenkamer. Inmiddels bevestigen grootschalige analyses dat beeld, terwijl veel opleidingen zelf nauwelijks zicht hebben op hun eigen cijfers. Registratie lijkt een technisch detail, maar heeft zelfstandig effect: het enkel registreren van aanwezigheid stimuleert al de opkomst en levert data voor vroegsignalering.',
     dialogueQuestion: 'Hoe zetten we aanwezigheidsregistratie in als pedagogisch signaal voor tijdige begeleiding, en wat hebben we als team nodig om daarin één lijn te trekken?',
     insights: [
+      {
+        text: 'Uit 8,9 miljoen aanwezigheidsregistraties van 27.568 studenten bij zeven hbo-opleidingen over elf jaar blijkt dat de aanwezigheid daalde van 43% voor de pandemie naar 37,5% tijdens de lockdowns en 30,6% procent daarna. Minder dan een op de drie studenten is aanwezig bij een reguliere les. Binnen elk jaar daalt de aanwezigheid per blok sterk, en door de jaren heen worden de pieken lager en de dalen dieper.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'De daling was al voor de pandemie ingezet en zette daarna door. Corona is dus niet de oorzaak.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Het ministerie laat de tijdsbesteding van studenten al sinds 2000 onderzoeken, maar deze cijfers komen niet terug in de jaarlijkse trendrapportages. Daardoor bleef de verschuiving lang onopgemerkt.',
+        citation: 'Theelen et al., 2026; DUO, 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Het enkel zichtbaar registreren van aanwezigheid heeft zelf al een positief effect op opkomst.',
         citation: 'Moores et al., 2019',
@@ -433,9 +520,14 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Teamethos en consistentie',
     subtitle: 'Eenduidige, hoge verwachtingen; geen dubbele boodschappen',
     shortDescription: 'Eenduidige, hoge verwachtingen; geen dubbele boodschappen.',
-    leadParagraph: 'Eén docent die wel handhaaft en een ander die dat laat lopen, ondermijnt elk beleid. Een sterk teamethos zorgt dat verwachtingen consistent en collegiaal worden uitgedragen.',
+    leadParagraph: 'Bij dalende aanwezigheid ligt de vraag "doen wij iets fout?" snel op tafel. Die vraag is begrijpelijk, maar hij vertekent het gesprek als de oorzaken ook buiten het bereik van het team liggen. Eén docent die wel handhaaft en een ander die dat laat lopen, ondermijnt elk beleid. Een sterk teamethos zorgt dat verwachtingen consistent en collegiaal worden uitgedragen.',
     dialogueQuestion: 'Hoe dragen we als team aanwezigheid en onze verwachtingen eenduidig uit, en wat spreken we met elkaar af om tegenstrijdige signalen naar studenten te voorkomen?',
     insights: [
+      {
+        text: 'De opdracht is dubbel: erken dat structurele verschuivingen in tijdsbesteding de grens bepalen van wat een docent kan beïnvloeden, en investeer tegelijk in pedagogisch handelen en gezamenlijke afspraken.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Opleidingen met positief effect op retentie kenmerken zich door een sterk teamethos waarin aanwezigheid als absolute vereiste wordt uitgedragen, niet als vrijblijvende verwachting.',
         citation: 'Trotter & Roberts, 2006',
@@ -494,12 +586,27 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     step: 1,
     stepName: 'Feitelijke dimensie',
     stepTag: 'Logistiek',
-    name: 'Onderwijslogistiek & Rooster',
+    name: 'Logistiek',
     subtitle: 'Rooster- en organisatiekwaliteit: tussenuren en bloktijden',
     shortDescription: 'Rooster- en organisatiekwaliteit: tussenuren en bloktijden.',
-    leadParagraph: 'Vaak wordt hier niet over gesproken in het aanwezigheidsdebat, ten onrechte. Het rooster is een van de grootste structurele oorzaken van verzuim.',
+    leadParagraph: 'Het rooster is de meest onderschatte knop. Studenten wegen elke lesweek af tegen werk en andere verplichtingen, en een rooster dat laat verschijnt of versnipperd is, beslist die afweging in hun nadeel. Vaak wordt hier niet over gesproken in het aanwezigheidsdebat, ten onrechte. Het rooster is een van de grootste structurele oorzaken van verzuim.',
     dialogueQuestion: 'Welke roosterkeuzes maken bij ons aanwezigheid onnodig moeilijk, en wie kan daar iets aan veranderen?',
     insights: [
+      {
+        text: 'Studenten geven zelf aan dat het rooster grote invloed heeft op hun aanwezigheid. Toch maken opleidingen het rooster vaak pas enkele weken voor een blok bekend, waardoor studenten moeten kiezen tussen hun werkgever en een niet-verplicht college.',
+        citation: 'Theelen et al., 2026; Moores et al., 2019',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'Publiceer het rooster voor het hele jaar, houd vaste lesdagen aan, rooster in dagdelen in plaats van losse uren en zet twee docenten op een groep van vijftig om lesuitval te beperken.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'De onderzochte hogeschool investeerde bewust in een aantrekkelijke campus, maar dat was niet voldoende om de dalende trend te keren.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Versnipperde roosters met onnodige tussenuren ("fallow periods" / gaps) zijn een van de grootste voorspellers van afwezigheid.',
         citation: 'Jaftha et al., 2022; Ralph et al., 2025',
@@ -531,12 +638,12 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     id: 'p-soc',
     step: 2,
     stepName: 'Normatieve dimensie',
-    stepTag: 'Sociologisch',
-    name: 'Normvorming (Sociologisch perspectief)',
-    subtitle: 'Normvorming: wat vinden we normaal? Effect op de groep die wél komt',
-    shortDescription: 'Normvorming: wat vinden we normaal? Hoe wegen we effecten op de groep?',
-    leadParagraph: 'Welke aanwezigheid vinden we normaal, en hoe wegen we de effecten op de studenten die wél komen? Afwezigheid heeft een rimpeleffect op de groepsdynamiek.',
-    dialogueQuestion: 'Wat beschouwen wij binnen ons docententeam als een gezonde norm voor aanwezigheid, en hoe zorgen we voor een gedeelde pedagogische lijn tussen docenten?',
+    stepTag: 'Sociologisch perspectief',
+    name: 'Normvorming',
+    subtitle: '',
+    shortDescription: 'Normvorming binnen de groep en effecten op aanwezige studenten.',
+    leadParagraph: 'Aanwezigheid is ook een groepsverschijnsel. Wat normaal is, bepaalt een klas grotendeels zelf, en dat schuift mee met wie er wel en niet komt. Afwezigheid raakt daarmee niet alleen de student die wegblijft: het werkt door in de groepsdynamiek en in de ervaring van de studenten die er wél zijn.',
+    dialogueQuestion: 'Welke aanwezigheid vinden we normaal, en hoe wegen we de effecten op de studenten die wél komen?',
     insights: [
       {
         text: 'Een sterk teamethos functioneert sociologisch: aanwezigheid als absolute vereiste, niet als vrijblijvende verwachting.',
@@ -569,9 +676,24 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Het psychologisch contract',
     subtitle: 'Psychologisch contract: wat verwachten student en opleiding van elkaar?',
     shortDescription: 'Psychologisch contract: wederkerigheid tussen student en opleiding.',
-    leadParagraph: 'Het psychologisch contract draait om wederkerigheid. Wat verwachten student en opleiding van elkaar, en wordt die relatie als eerlijk en betekenisvol ervaren?',
+    leadParagraph: 'Hoe je afwezigheid uitlegt, bepaalt welke oplossingen in beeld komen. Zie je het als een tekort bij de student, dan zoek je naar prikkels. Zie je het als signaal van een verschuiving in hoe studenten hun tijd verdelen, dan kijk je naar je eigen ontwerp. Het psychologisch contract draait om wederkerigheid: wat verwachten student en opleiding van elkaar, en wordt die relatie als eerlijk en betekenisvol ervaren?',
     dialogueQuestion: 'Wanneer we van studenten actieve aanwezigheid verwachten, welke kwaliteit, docentbeschikbaarheid en feedback zetten wij daar als opleiding tegenover?',
     insights: [
+      {
+        text: 'Je kunt afwezigheid uitleggen als gebrek aan motivatie of betrokkenheid bij de student. Maar ook als signaal van een bredere verschuiving in hoe studenten hun tijd verdelen.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'De kernvraag die de onderzoekers aan opleidingen stellen: hoe expliciet zijn wij over de tijd die we van studenten verwachten?',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
+        text: 'De tabellen waarmee instellingen de studielast per studiepunt verantwoorden aan de NVAO wijken steeds verder af van de manier waarop studenten in de praktijk studeren.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
       {
         text: 'Dwang zonder wederkerigheid ondermijnt autonomie en intrinsieke motivatie (zelfdeterminatietheorie).',
         citation: 'Cullen & Oppenheimer, 2024',
@@ -628,22 +750,27 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Zorg dat studenten kúnnen komen',
     subtitle: 'Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken',
     shortDescription: 'Haal de praktische drempels weg die aanwezigheid onlogisch of onhaalbaar maken.',
-    leadParagraph: 'Organisatorische randvoorwaarden op orde: richt alle omstandigheden zo in dat studenten feitelijk kúnnen komen. Zorg voor een fijn, samenhangend en voorspelbaar rooster: laat studenten niet slechts voor één losse les naar school reizen, voorkom loze tussenuren en zorg dat rooster- of deadlineconflicten tussen vakken studenten niet dwingen tot keuzeverzuim.',
+    leadParagraph: 'Van alle maatregelen in het onderzoek is roostering de enige waarbij de aanwezigheid aantoonbaar weer steeg. Organisatorische randvoorwaarden op orde: richt alle omstandigheden zo in dat studenten feitelijk kúnnen komen. Zorg voor een fijn, samenhangend en voorspelbaar rooster, voorkom loze tussenuren en stem deadlines tussen parallelle vakken af om piekdruk te voorkomen.',
     dialogueQuestion: 'Zijn alle organisatorische randvoorwaarden (rooster, reistijd, voorspelbaarheid, faciliteiten) zo ingericht dat studenten feitelijk kunnen komen, of lokt de organisatie verzuim uit?',
     insights: [
       {
+        text: 'Van alle factoren die de onderzoekers bespreken, is roostering de enige waarbij zij in hun eigen data een stijgende aanwezigheid zagen. Publiceer het jaarrooster in één keer, houd vaste lesdagen aan en rooster in dagdelen.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
         text: 'Organisatorische randvoorwaarden: het rooster moet fijn en voorspelbaar zijn. Studenten moeten niet slechts voor 1 les naar school hoeven te reizen.',
-        citation: 'Aantekeningen onderwijsteams; Dekker et al., 2026',
+        citation: 'Theelen et al., 2026',
         citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
         text: 'Wanneer ontwerp- of roosterproblemen de werkelijke oorzaak zijn, is een aanwezigheidsplicht pure symptoombestrijding. Pak altijd eerst de structuur en studeerbaarheid aan.',
-        citation: 'Biggs & Tang, 2011; Ralph et al., 2025',
+        citation: 'Ralph et al., 2025',
         citationUrl: 'https://doi.org/10.71634/er166487'
       },
       {
         text: 'Interdependentie in opdrachten en doordachte spreiding van toetsmomenten voorkomen dat studenten onderwijsbijeenkomsten skippen om urgente deadlines voor andere vakken te halen.',
-        citation: 'Cutler et al., 2016; Fitzpatrick et al., 2011',
+        citation: 'Cutler et al., 2016',
         citationUrl: 'https://doi.org/10.1002/j.0022-0337.2016.80.12.tb06236.x'
       },
       {
@@ -654,9 +781,14 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ],
     practicalMaterials: [
       {
-        title: 'Checklist Studeerbaar Roosteren',
-        description: 'Vuistregels voor onderwijsplanning: bloktijden, aaneengesloten bijeenkomsten en minimale reistijd voor studenten.',
-        type: 'guide'
+        title: 'Voorbeelden van andere scholen & instellingen',
+        description: 'Bewezen roosterinterventies uit de praktijk van andere hogescholen en universiteiten om drempels voor aanwezigheid structureel weg te nemen:',
+        type: 'guide',
+        details: [
+          'Blokroosters: onderwijs programmeren in aaneengesloten blokken van 3 tot 4 uur (halve dagen), waarin instructie, actieve verwerking en feedback samenkomen.',
+          'Geen tussenuurtjes: lessen en werkcolleges sluitend op elkaar laten aansluiten; vermijd "dode gaten" van 2 of 3 uur die studenten stimuleren om naar huis te gaan.',
+          'Niet te vroeg of te laat roosteren: plan starttijden bij voorkeur niet om 08:30 (i.v.m. spitstijden, vertragingen en ov-druk) en voorkom versnipperde late uurtjes aan het eind van de dag.'
+        ]
       },
       {
         title: 'Managementfacilitering',
@@ -675,18 +807,23 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Zorg dat studenten wíllen komen',
     subtitle: 'Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt',
     shortDescription: 'Maak aanwezigheid de moeite waard, zodat komen een logische keuze wordt.',
-    leadParagraph: 'Onderwijskwaliteit en verbinding: zorg dat studenten wíllen komen. Wat er in de les gebeurt mag géén passieve "one-manshow" zijn, maar moet doelgericht gericht zijn op wat er geleerd moet worden voor het vak of de toets. Daarnaast zijn meerwaarde, de docent-studentrelatie en het gevoel van verbondenheid (sense of belonging) doorslaggevend: studenten die zich gezien, gewaardeerd en gemist voelen, komen graag naar de bijeenkomsten.',
+    leadParagraph: 'Betere lessen keren de landelijke trend niet, maar ze bepalen wel het verschil binnen wat je zelf in de hand hebt. Onderwijskwaliteit en verbinding: zorg dat studenten wíllen komen. Wat er in de les gebeurt mag géén passieve "one-manshow" zijn, maar moet doelgericht gericht zijn op wat er geleerd moet worden voor het vak of de toets. Daarnaast zijn meerwaarde, de docent-studentrelatie en het gevoel van verbondenheid (sense of belonging) doorslaggevend: studenten die zich gezien, gewaardeerd en gemist voelen, komen graag naar de bijeenkomsten.',
     dialogueQuestion: 'Wat gebeurt er in onze bijeenkomsten dat studenten nergens anders kunnen ervaren (geen one-manshow), en hoe versterken we de relatie en sense of belonging zodat studenten wíllen komen?',
     insights: [
       {
+        text: 'De daling is niet te verklaren uit onderwijskwaliteit, dus tips om je college aantrekkelijker te maken keren de trend niet. Ze helpen wel binnen wat je zelf kunt beïnvloeden.',
+        citation: 'Theelen et al., 2026; Moores et al., 2019',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
+      },
+      {
         text: 'Onderwijskwaliteit: wat er in de les gebeurt mag geen one-manshow zijn, maar moet direct en merkbaar bedoeld zijn voor wat er geleerd moet worden voor het vak of de toets.',
-        citation: 'Aantekeningen onderwijsteams; Biggs, 1996; Kappe, 2026',
+        citation: 'Kappe, 2026',
         citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       },
       {
         text: 'Relatie en "sense of belonging": studenten komen voor de verbinding met medestudenten en de docent. Erbij horen en gezien worden is de sterkste voorspeller van actieve aanwezigheid.',
-        citation: 'Ralph et al., 2025; Tahir et al., 2024',
-        citationUrl: 'https://doi.org/10.71634/er166487'
+        citation: 'Tahir et al., 2024',
+        citationUrl: 'https://www.fleviskenniswerkplaatsjeugd.nl/wp-content/uploads/2024/01/Rapport-Sense-of-Belonging-nov2023-kleiner.pdf'
       },
       {
         text: 'Werken aan een positieve docent-studentrelatie en persoonlijke benaderbaarheid verlaagt stress en vergroot de intrinsieke leerbereidheid aanzienlijk: wie zich veilig voelt, staat open om te leren.',
@@ -695,14 +832,15 @@ export const DIMENSIONS: Record<string, DimensionData> = {
       },
       {
         text: 'Persoonlijke follow-up: signaleer beginnend verzuim tijdig en spreek studenten belangstellend aan ("we hebben je gemist, hoe gaat het?") in plaats van direct administratief te sanctioneren.',
-        citation: 'Jaftha et al., 2022; Trotter & Roberts, 2006',
+        citation: 'Trotter & Roberts, 2006',
         citationUrl: 'https://doi.org/10.1080/07294360600947368'
       }
     ],
     practicalMaterials: [
       {
-        title: 'Versterken van Sense of Belonging in de Klas',
-        description: 'Praktische didactische werkvormen om vanaf de eerste week binding en wederzijdse betrokkenheid tussen studenten en docent op te bouwen.',
+        title: 'Versterken van Sense of Belonging en Binding',
+        description: 'Praktische didactische werkvormen en methodieken om vanaf de eerste week binding, gemeenschapsvorming en actieve betrokkenheid tussen studenten en docententeams op te bouwen.',
+        url: 'https://husite.nl/gemeenschapsvorming/toolbox-hu-introductie/',
         type: 'guide'
       },
       {
@@ -722,43 +860,41 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     name: 'Zorg dat studenten weten waarom ze móeten komen',
     subtitle: 'Maak samen met studenten helder wat je van elkaar verwacht en wanneer een formele eis past',
     shortDescription: 'Maak samen met studenten helder wat je van elkaar verwacht en wanneer een formele eis past.',
-    leadParagraph: 'Moeten omvat twee duidelijke lagen: allereerst heldere, eenduidige normen en verwachtingen vanuit het docententeam ("er moeten zijn" als professionele standaard, zonder dubbele signalen). Ten tweede: wanneer is een formele aanwezigheids- of participatieplicht didactisch en juridisch passend? Studeren is een recht, geen plicht (art. 1.6 WHW). Een generieke plicht voor een opleiding is verboden. Uitsluitend bij een praktische oefening (POA) op cursusniveau waar actieve participatie onmisbaar is voor de leeruitkomsten, mag een plicht worden vastgelegd in de OER conform het HR-kader (2025).',
+    leadParagraph: 'Een plicht werkt alleen als hij over het geheel klopt. Een eis op een klein deel van het curriculum verschuift het probleem naar de rest. Moeten omvat twee duidelijke lagen: allereerst heldere, eenduidige normen en verwachtingen vanuit het docententeam ("er moeten zijn" als professionele standaard, zonder dubbele signalen). Ten tweede: wanneer is een formele aanwezigheids- of participatieplicht didactisch en juridisch passend? Studeren is een recht, geen plicht (art. 1.6 WHW). Een generieke plicht voor een opleiding is verboden. Uitsluitend bij een praktische oefening (POA) op cursusniveau waar actieve participatie onmisbaar is voor de leeruitkomsten, mag een plicht worden vastgelegd in de OER conform het HR-kader (2025).',
     dialogueQuestion: 'Hebben we als team duidelijke normen en verwachtingen over "er moeten zijn" afgesproken, en hebben we getoetst of een formele plicht didactisch noodzakelijk (POA) en juridisch verankerd is in de OER?',
     insights: [
       {
-        text: 'Aanwezigheidsplicht en verwachtingen: "Er moeten zijn" moet als eenduidige professionele verwachting door het hele team gedragen worden. Dubbele signalen verzwakken de norm.',
-        citation: 'Aantekeningen onderwijsteams; Jaftha et al., 2022',
-        citationUrl: 'https://www.researchgate.net/publication/359802934'
+        text: 'Een aanwezigheidsplicht voor een klein deel van het curriculum levert netto geen hogere aanwezigheid op en is funest voor de opkomst bij de niet-verplichte colleges.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
-        text: 'Een aanwezigheidseis is nooit het vertrekpunt, maar het sluitstuk na "kunnen" en "willen". Als stimuleren via randvoorwaarden en didactiek volstaat, blijft de academische vrijheid intact en is geen OER-wijziging vereist.',
-        citation: 'Art. 1.6 & 7.13 WHW; Kappe, 2026',
-        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+        text: 'De pabo van Hogeschool Rotterdam (80 procent) en bouwkunde van Hogeschool Inholland (70 procent) voerden een aanwezigheidsplicht in voor alle eerste- en tweedejaarsvakken, met coulance bij bijzondere omstandigheden. Sindsdien nemen meer studenten deel aan de eerste toetsgelegenheid en leveren zij hun portfolio op tijd in; bij bouwkunde steeg het aandeel nominale studenten en daalde de uitval significant.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
-        text: 'Een generieke aanwezigheidsplicht voor een heel studiejaar of opleiding is juridisch niet toegestaan. Een aanwezigheidseis mag uitsluitend op cursusniveau wanneer sprake is van een praktische oefening (POA).',
-        citation: 'Juridische Zaken & O&K Hogeschool Rotterdam, 2025; Art. 7.13 WHW',
-        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+        text: 'De uitvoering blijkt het lastigste deel: de pabo laat studenten vervangende opdrachten maken, die docenten vóór de toetsgelegenheid moeten nakijken; bouwkunde geeft studenten die meer dan twee van de zeven colleges missen geen toegang tot de eerste toetskans.',
+        citation: 'Theelen et al., 2026',
+        citationUrl: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar'
       },
       {
-        text: 'Een aanwezigheidsplicht vereist formele borging in de OER (art. 7.13 WHW) en een aantoonbare didactische koppeling aan een praktische oefening waarin interactie, vaardigheden of samenwerking onmisbaar zijn.',
-        citation: 'Biggs, 1996; Artikel 7.13 WHW',
-        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
-      },
-      {
-        text: 'Bij een aanwezigheidseis is een regeling voor vervangende opdrachten bij overmacht of geoorloofde afwezigheid wettelijk verplicht (art. 7.13 lid 2 sub t WHW); de vervanging moet didactisch evenredig en toetsbaar zijn.',
-        citation: 'Artikel 7.13 lid 2 sub t WHW; CBE Maastricht 2020.105',
-        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
-      },
-      {
-        text: 'Tijdige betrokkenheid van de medezeggenschap (opleidingscommissie en instituutsmedezeggenschapsraad) is wettelijk verplicht bij OER-wijzigingen en toetsbeleid (art. 9.18 & 10.3c WHW).',
-        citation: 'Artikelen 9.18 en 10.3c WHW',
-        citationUrl: 'https://wetten.overheid.nl/BWBR0005682'
+        text: 'Aanwezigheidseisen specifiek bij eerstejaars: in onderwijsonderzoek en de opleidingspraktijk wordt een aanwezigheidsnorm dikwijls specifiek ingezet in de propedeutische fase (eerste studiejaar) om studenten te ondersteunen bij binding, studieritme en uitvalpreventie. Ook voor eerstejaars geldt echter wettelijk dat een aanwezigheidsplicht alleen per cursus bij een praktische oefening (POA) in de OER mag worden vastgelegd, nooit als generiek studiejaarsvoorschrift.',
+        citation: 'Kappe, 2026',
+        citationUrl: 'https://www.inholland.nl/onderzoek/publicaties/afwezig-maar-aanwezig-het-rimpeleffect-van-afwezigheid-van-studenten/'
       },
       {
         text: '"Optioneel-verplicht": de student kiest vooraf of aanwezigheid meetelt. Behoudt autonomie en verhoogt opkomst structureel zonder juridische dwang.',
         citation: 'Cullen & Oppenheimer, 2024',
         citationUrl: 'https://doi.org/10.1126/sciadv.ado6759'
+      }
+    ],
+    practicalMaterials: [
+      {
+        title: 'Praktijkvoorbeeld Aanwezigheidsplicht Pabo & Bouwkunde',
+        description: 'De pabo van Hogeschool Rotterdam (80%) en bouwkunde van Hogeschool Inholland (70%) voerden een aanwezigheidsplicht in voor alle eerste- en tweedejaarsvakken, met coulance bij bijzondere omstandigheden. Sindsdien nemen meer studenten deel aan de eerste toetsgelegenheid en leveren zij hun portfolio op tijd in; bij bouwkunde steeg het aandeel nominale studenten en daalde de uitval significant. De uitvoering blijkt het lastigste deel: de pabo laat studenten vervangende opdrachten maken, die docenten vóór de toetsgelegenheid moeten nakijken, en bouwkunde geeft studenten die meer dan twee van de zeven colleges missen geen toegang tot de eerste toetsgelegenheid, wel tot de herkansing.',
+        url: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar',
+        type: 'pilot'
       }
     ]
   },
@@ -1098,3 +1234,13 @@ export const DIMENSIONS: Record<string, DimensionData> = {
     ]
   }
 };
+
+// Koppel juridische documenten (WHW, HR-kaders, Jurisprudentie) direct aan Moeten (p-routeC)
+if (DIMENSIONS['p-routeC'] && DIMENSIONS['p-juridisch']) {
+  DIMENSIONS['p-routeC'].lawArticles = DIMENSIONS['p-juridisch'].lawArticles;
+  DIMENSIONS['p-routeC'].hrFramework = DIMENSIONS['p-juridisch'].hrFramework;
+  DIMENSIONS['p-routeC'].courtCases = DIMENSIONS['p-juridisch'].courtCases;
+  DIMENSIONS['p-routeC'].proportionalityQuestions = DIMENSIONS['p-juridisch'].proportionalityQuestions;
+  DIMENSIONS['p-routeC'].policyRecommendations = DIMENSIONS['p-juridisch'].policyRecommendations;
+}
+

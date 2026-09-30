@@ -545,7 +545,7 @@ export const DialogueAssessmentModal: React.FC<DialogueAssessmentModalProps> = (
               {activeStep === 5 && (
                 <div className="space-y-4">
                   <div className="border-b border-[#003340]/10 pb-3">
-                    <span className="text-xs font-bold text-[#fcc200] text-[#003340] uppercase tracking-wider">De vier G's</span>
+                    <span className="text-xs font-bold text-[#9a6a00] uppercase tracking-wider">De vier G's</span>
                     <h3 className="text-lg font-bold text-[#003340]">Staat het beleid stevig?</h3>
                   </div>
 

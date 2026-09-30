@@ -26,7 +26,7 @@ interface DrawerDetailProps {
   onNavigate: (dimensionId: string, initialTab?: string) => void;
 }
 
-type TabType = 'inzichten' | 'tools' | 'media' | 'whw' | 'zaken';
+type TabType = 'inzichten' | 'tools' | 'media' | 'whw' | 'hr' | 'zaken';
 
 export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   dimensionId,
@@ -42,8 +42,14 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   // Reset tab and expanded cases on dimension change
   useEffect(() => {
     if (dimension) {
-      if (initialTab && (initialTab === 'whw' || initialTab === 'zaken' || initialTab === 'inzichten' || initialTab === 'tools' || initialTab === 'media')) {
-        setActiveTab(initialTab as TabType);
+      if (initialTab) {
+        if (initialTab === 'randvoorwaarden' || initialTab === 'hr') {
+          setActiveTab('hr');
+        } else if (initialTab === 'jurisprudentie') {
+          setActiveTab('zaken');
+        } else if (initialTab === 'whw' || initialTab === 'zaken' || initialTab === 'inzichten' || initialTab === 'tools' || initialTab === 'media') {
+          setActiveTab(initialTab as TabType);
+        }
       } else if (dimension.id === 'p-juridisch') {
         setActiveTab('whw');
       } else {
@@ -75,6 +81,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
   const hasPractical = (dimension.practicalMaterials && dimension.practicalMaterials.length > 0) || (dimension.pilots && dimension.pilots.length > 0);
   const hasMedia = Boolean(dimension.media && dimension.media.length > 0);
   const hasWHW = Boolean(dimension.lawArticles && dimension.lawArticles.length > 0);
+  const hasHR = Boolean(dimension.hrFramework);
   const hasCases = Boolean(dimension.courtCases && dimension.courtCases.length > 0);
   const hasTools = (hasPractical || Boolean(dimension.policyRecommendations && dimension.policyRecommendations.length > 0) || Boolean(dimension.proportionalityQuestions && dimension.proportionalityQuestions.length > 0));
   const hasInsights = Boolean(dimension.insights && dimension.insights.length > 0);
@@ -87,8 +94,8 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
     switch (dimension.step) {
       case 1: return 'bg-[#d3104c] text-white';
       case 2: return 'bg-[#003340] text-white';
-      case 3: return 'bg-[#00b0eb] text-[#003340]';
-      case 4: return 'bg-[#fcc200] text-[#003340]';
+      case 3: return 'bg-[#00789b] text-white';
+      case 4: return 'bg-[#9a6a00] text-white';
       default: return 'bg-[#003340] text-white';
     }
   };
@@ -118,7 +125,7 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                   {dimension.step === 'bronnen' ? 'Bronnen' : `Stap ${dimension.step}`}
                 </span>
                 <span className="text-xs font-semibold text-[#003340]/75 uppercase tracking-wider">
-                  · {dimension.stepName || 'Dimensie'}
+                  · {dimension.stepTag || dimension.stepName || 'Dimensie'}
                 </span>
               </div>
               <h2 id="drawer-title" className="text-xl sm:text-2xl font-bold text-[#003340] leading-tight">
@@ -202,9 +209,9 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'inzichten'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
+                            ? 'bg-[#9a6a00] text-white font-bold'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
+                            ? 'bg-[#00789b] text-white font-bold'
                             : dimension.step === 1
                             ? 'bg-[#d3104c] text-white'
                             : 'bg-[#003340] text-white'
@@ -221,12 +228,26 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       onClick={() => setActiveTab('whw')}
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'whw'
-                          ? 'bg-[#00b0eb] text-[#003340] font-bold'
-                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
+                          ? 'bg-[#00789b] text-white font-bold'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00789b]'
                       }`}
                     >
                       <Scale className="w-3.5 h-3.5" />
-                      <span>WHW-Kapstok</span>
+                      <span>WHW-artikelen</span>
+                    </button>
+                  )}
+
+                  {hasHR && (
+                    <button
+                      onClick={() => setActiveTab('hr')}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                        activeTab === 'hr'
+                          ? 'bg-[#00789b] text-white font-bold'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00789b]'
+                      }`}
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>HR-kaders</span>
                     </button>
                   )}
 
@@ -235,8 +256,8 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       onClick={() => setActiveTab('zaken')}
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'zaken'
-                          ? 'bg-[#00b0eb] text-[#003340] font-bold'
-                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00b0eb]'
+                          ? 'bg-[#00789b] text-white font-bold'
+                          : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#00789b]'
                       }`}
                     >
                       <Award className="w-3.5 h-3.5" />
@@ -250,15 +271,15 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'tools'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
+                            ? 'bg-[#9a6a00] text-white font-bold'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
+                            ? 'bg-[#00789b] text-white font-bold'
                             : 'bg-[#003340] text-white'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                       }`}
                     >
                       <Hammer className="w-3.5 h-3.5" />
-                      <span>{dimension.id === 'p-routeC' ? 'Beleidsaanbevelingen' : 'Tools'}</span>
+                      <span>{dimension.id === 'p-routeC' ? 'Handvatten' : 'Tools'}</span>
                     </button>
                   )}
 
@@ -268,9 +289,9 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         activeTab === 'media'
                           ? dimension.step === 4
-                            ? 'bg-[#fcc200] text-[#003340] font-bold border border-[#b58a00]/30'
+                            ? 'bg-[#9a6a00] text-white font-bold'
                             : dimension.step === 3
-                            ? 'bg-[#00b0eb] text-[#003340] font-bold'
+                            ? 'bg-[#00789b] text-white font-bold'
                             : 'bg-[#003340] text-white'
                           : 'bg-white border border-[#003340]/15 text-[#003340] hover:border-[#003340]/40'
                       }`}
@@ -354,53 +375,6 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
             {/* TAB CONTENT: WHW */}
             {activeTab === 'whw' && dimension.lawArticles && (
               <div className="space-y-4">
-                {dimension.hrFramework && (
-                  <div className="bg-[#fbfaf5] border border-[#00b0eb]/40 rounded-lg p-4 space-y-3">
-                    <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#003340] text-white">
-                          HR-Kader 2025
-                        </span>
-                        <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
-                          {dimension.hrFramework.title}
-                        </h4>
-                      </div>
-                      {dimension.hrFramework.sourceMemo?.fileUrl && (
-                        <a
-                          href={dimension.hrFramework.sourceMemo.fileUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00b0eb]/10 hover:bg-[#00b0eb]/20 text-[#003340] font-semibold text-[11px] border border-[#00b0eb]/30 transition-colors"
-                        >
-                          <FileText className="w-3.5 h-3.5 text-[#00b0eb]" />
-                          <span>Open intern memo (PDF)</span>
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
-                      {dimension.hrFramework.summary}
-                    </p>
-
-                    {dimension.hrFramework.practicalExercises && (
-                      <div className="bg-white border border-[#003340]/15 rounded-md p-3">
-                        <h5 className="font-bold text-xs text-[#003340] mb-2 flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#00b0eb]"></span>
-                          Wat telt binnen HR als praktische oefening?
-                        </h5>
-                        <ul className="space-y-1 text-xs text-[#003340]/85 list-disc pl-4 leading-relaxed">
-                          {dimension.hrFramework.practicalExercises.map((ex, i) => (
-                            <li key={i}>{ex}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    <div className="pt-1.5 border-t border-[#003340]/10 text-[11px] text-[#003340]/75">
-                      <strong>Bron:</strong> {dimension.hrFramework.sourceMemo?.title || 'Hogeschool Rotterdam (Juridische Zaken en O&K, juni 2025)'}
-                    </div>
-                  </div>
-                )}
-
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#00b0eb]">
                   Wettelijk kader (Wet op het Hoger Onderwijs en Wetenschappelijk Onderzoek)
                 </h3>
@@ -431,6 +405,56 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                       )}
                     </div>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* TAB CONTENT: HR-KADERS */}
+            {activeTab === 'hr' && dimension.hrFramework && (
+              <div className="space-y-4">
+                <div className="bg-[#fbfaf5] border border-[#00b0eb]/40 rounded-lg p-4 space-y-3">
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#003340] text-white">
+                        HR-Kader 2025
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-[#003340]">
+                        {dimension.hrFramework.title}
+                      </h4>
+                    </div>
+                    {dimension.hrFramework.sourceMemo?.fileUrl && (
+                      <a
+                        href={dimension.hrFramework.sourceMemo.fileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00b0eb]/10 hover:bg-[#00b0eb]/20 text-[#003340] font-semibold text-[11px] border border-[#00b0eb]/30 transition-colors"
+                      >
+                        <FileText className="w-3.5 h-3.5 text-[#00b0eb]" />
+                        <span>Open intern memo (PDF)</span>
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-xs sm:text-[13px] text-[#003340] leading-relaxed">
+                    {dimension.hrFramework.summary}
+                  </p>
+
+                  {dimension.hrFramework.practicalExercises && (
+                    <div className="bg-white border border-[#003340]/15 rounded-md p-3">
+                      <h5 className="font-bold text-xs text-[#003340] mb-2 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00b0eb]"></span>
+                        Wat telt binnen HR als praktische oefening?
+                      </h5>
+                      <ul className="space-y-1 text-xs text-[#003340]/85 list-disc pl-4 leading-relaxed">
+                        {dimension.hrFramework.practicalExercises.map((ex, i) => (
+                          <li key={i}>{ex}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="pt-1.5 border-t border-[#003340]/10 text-[11px] text-[#003340]/75">
+                    <strong>Bron:</strong> {dimension.hrFramework.sourceMemo?.title || 'Hogeschool Rotterdam (Juridische Zaken en O&K, juni 2025)'}
+                  </div>
                 </div>
               </div>
             )}
@@ -613,6 +637,16 @@ export const DrawerDetail: React.FC<DrawerDetailProps> = ({
                             )}
                           </div>
                           <p className="text-xs text-[#003340]/75 leading-relaxed">{mat.description}</p>
+                          {mat.details && mat.details.length > 0 && (
+                            <ul className="mt-2.5 space-y-1.5 pl-1 border-t border-[#003340]/10 pt-2">
+                              {mat.details.map((detail, dIdx) => (
+                                <li key={dIdx} className="text-xs text-[#003340]/90 flex items-start gap-1.5 leading-relaxed">
+                                  <span className="text-[#00b0eb] font-bold shrink-0 mt-0.5">•</span>
+                                  <span>{detail}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       ))}
                     </div>

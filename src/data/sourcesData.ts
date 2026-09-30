@@ -392,17 +392,17 @@ export const ALL_SOURCES: SourceItem[] = [
     keyQuoteOrTakeaway: 'Gezien en gekend worden door de docent trekt studenten naar de campus.'
   },
   {
-    id: 'dekker-et-al-2026',
+    id: 'theelen-2026',
     category: 'wetenschap',
-    title: 'Voltijds ingeschreven, deeltijds beschikbaar: over de veranderende tijdsbesteding van studenten',
-    authors: 'Dekker, I., Theelen, H., & Debats, P.',
+    title: 'Voltijds ingeschreven, deeltijds beschikbaar',
+    authors: 'Theelen, H., Dekker, I., & Debats, P.',
     year: 2026,
-    sourceOrPublisher: 'Thema, Tijdschrift voor Hoger Onderwijs',
+    sourceOrPublisher: 'Thema Hoger Onderwijs',
     url: 'https://www.themahogeronderwijs.org/artikel/110-4223_Voltijds-ingeschreven-deeltijds-beschikbaar',
     doiOrRef: 'Thema Hoger Onderwijs 110-4223',
-    topicTags: ['Tijdsbesteding', 'Beleid', 'HBO-Trends', 'Deeltijds Beschikbaar'],
-    summary: 'Analyseert de structurele kloof tussen het formele curriculum van 40 uur en de feitelijke beschikbaarheid (gem. 29 uur studietijd) van hedendaagse hbo-studenten met bijbanen en mantelzorg.',
-    keyQuoteOrTakeaway: 'De voltijdstudent van vandaag is in de praktijk vaak voltijds ingeschreven, maar deeltijds beschikbaar.'
+    topicTags: ['Aanwezigheidscijfers', 'Tijdsbesteding', 'Beleid', 'HBO-Trends', 'Deeltijds Beschikbaar'],
+    summary: 'Grootschalig empirisch onderzoek op basis van 8,9 miljoen aanwezigheidsregistraties van 27.568 studenten bij zeven hbo-opleidingen over elf jaar. Toont aan dat de gemiddelde aanwezigheid daalde van 43,0% naar 30,6% en dat de wekelijkse studietijd daalde van 39 naar 29 uur.',
+    keyQuoteOrTakeaway: 'De voltijdstudent van vandaag is in de praktijk voltijds ingeschreven, maar deeltijds beschikbaar.'
   },
   {
     id: 'trotter-roberts-2006',

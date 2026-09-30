@@ -13,6 +13,7 @@ export interface PracticalMaterial {
   url?: string;
   type?: 'tool' | 'framework' | 'guide' | 'pilot';
   contactPerson?: string;
+  details?: string[];
 }
 
 export interface MediaItem {
@@ -55,7 +56,7 @@ export interface DimensionData {
   shortDescription: string;
   leadParagraph: string;
   dialogueQuestion: string;
-  insights: ScientificInsight[];
+  insights?: ScientificInsight[];
   practicalMaterials?: PracticalMaterial[];
   pilots?: PracticalMaterial[];
   media?: MediaItem[];

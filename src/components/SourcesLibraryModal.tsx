@@ -55,8 +55,8 @@ export const SourcesLibraryModal: React.FC<SourcesLibraryModalProps> = ({
     {
       id: 'tools',
       label: 'Praktijkinstrumenten & Canvassen (HR)',
-      icon: <Hammer className="w-4 h-4 text-[#fcc200]" />,
-      colorClass: 'border-[#fcc200]',
+      icon: <Hammer className="w-4 h-4 text-[#9a6a00]" />,
+      colorClass: 'border-[#9a6a00]',
     },
   ];
 

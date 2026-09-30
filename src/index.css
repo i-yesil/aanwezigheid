@@ -8,10 +8,10 @@
   --hr-line: rgba(0, 51, 64, 0.15);
   --hr-muted: rgba(0, 51, 64, 0.65);
   --hr-faint: rgba(0, 51, 64, 0.08);
-  --hr-lichtblauw: #00b0eb;
+  --hr-lichtblauw: #00789b;
   --hr-groen: #3ab7b0;
-  --hr-geel: #fcc200;
-  --hr-link: #00a0db;
+  --hr-geel: #9a6a00;
+  --hr-link: #00789b;
 }
 
 html {
